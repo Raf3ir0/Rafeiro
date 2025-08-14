@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f5f5f5;
+    color: #222;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #ddd;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+}
+
+img {
+    max-width: 90%;
+    max-height: 80vh;
+    border: 2px solid #333;
+}
+
+.nav-btn {
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#lista-paginas {
+    margin: 20px 0;
+}
+
+#lista-paginas button {
+    margin: 2px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* Tema Escuro */
+body.escuro {
+    background-color: #1c1c1c;
+    color: #eee;
+}
+
+body.escuro header {
+    background-color: #333;
+}
+
+body.escuro img {
+    border-color: #eee;
+}
