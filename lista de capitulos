@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="height=device-height, initial-scale=1.0">
+  <title>Rafeiro - Banda Desenhada</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>📚 RAFEIR0 </h1>
+
+<div class="capitulos">
+  <!-- Capítulo mais recente -->
+  <div class="capitulo" data-date="2025-08-10">
+    <a href="capitulo1.html">
+      <img src="imagen/capas/cap1.png" alt="Capítulo 1">
+      <span class="titulo">Capítulo 1</span>
+    </a>
+  </div>
+
+  <!-- Capítulo anterior -->
+  <div class="capitulo" data-date="2025-08-01">
+    <a href="capitulo2.html">
+      <img src="imagen/capas/cap2.png" alt="Capítulo 2">
+      <span class="titulo">Capítulo 2</span>
+      <span class="novo">NEW</span>
+    </a>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
