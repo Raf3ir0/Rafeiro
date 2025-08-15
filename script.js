@@ -1,5 +1,5 @@
 // Total de páginas (altera se necessário)
-const totalPaginas = 24;
+const totalPaginas = 23;
 let paginaAtual = 1;
 
 const imgPagina = document.getElementById("pagina");
@@ -15,8 +15,13 @@ function mostrarPagina(num) {
     if (num > totalPaginas) num = totalPaginas;
     paginaAtual = num;
     imgPagina.src = `imagens/pagina${paginaAtual}.png`;
-}
 
+   if (paginaAtual === 23) {
+        imgPagina.src = `imagens/23-24.png`; // página dupla final
+    } else {
+        imgPagina.src = `imagens/${paginaAtual}.png`; 
+    }
+}
 // Botões de navegação
 btnAnterior.addEventListener("click", () => {
     mostrarPagina(paginaAtual - 1);
