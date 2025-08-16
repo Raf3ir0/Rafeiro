@@ -14,10 +14,12 @@ body {
   height: 400px; /* ajuste conforme a altura da sua imagem */
 }
 
-.lista-capitulos {
+.capitulos {
   text-align: center;
 }
-
+.capitulo {
+  text-align: center;
+}
 
 
 /* Menu */
