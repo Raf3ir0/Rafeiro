@@ -19,12 +19,12 @@ main {
     justify-content: center;
     align-items: center;
     gap: 10px;
-    padding: 20px;
+    padding: 0px;
 }
 
 img {
-    max-width: 90%;
-    max-height: 80vh;
+    max-width: 100%;
+    max-height: 100vh;
     border: 2px solid #333;
 }
 
