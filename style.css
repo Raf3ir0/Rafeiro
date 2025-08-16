@@ -11,6 +11,7 @@ body {
   font-family: RAFEIROPLUS2, sans-serif;
   background-color: #f5f5f5;
   color: #222;
+  text-transform: uppercase; /* deixa tudo maiúsculo */
 }
 
 
