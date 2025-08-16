@@ -12,16 +12,16 @@ body {
   background-size: cover;
   background-position: center;
   height: auto; /* altura menor, tipo no site do One Piece */
-  width: 3000px;
+  width: 100%px;
 }
 
 
 /* Menu */
 .menu {
-  background-color: #222;
+  background-color: black;
   text-align: center;
-  padding: 10px 0;
-  margin-top: 2000px;
+  padding: 30px 0;
+  margin-top: 1000px;
 }
 
 .menu a {
