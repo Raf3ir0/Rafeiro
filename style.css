@@ -6,6 +6,19 @@ body {
     color: #222;
 }
 
+html {
+    font-size: 16px; /* Base */
+}
+
+h1 {
+    font-size: 3rem; /* 3 × 16px = 48px */
+}
+
+p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
 header {
     display: flex;
     justify-content: space-between;
