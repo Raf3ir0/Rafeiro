@@ -8,11 +8,10 @@ body {
 
 .banner {
   background-image: url("imagen/bannerhr.png");
-  background-size: cover; /* ou contain, se não quiser cortar */
+  background-size: cover;   /* cobre toda a largura */
   background-position: center;
-  height: 400px; /* tu escolhes */
-}
-
+  height: 400px;            /* controla altura do banner */
+  width: 100%;              /* largura total */
 
 html {
     font-size: 16px; /* Base */
