@@ -11,8 +11,8 @@ body {
   background-image: url("imagen/bannerhr.png");
   background-size: cover;
   background-position: center;
-  height: 250px; /* altura menor, tipo no site do One Piece */
-  width: 50%;
+  height: 600px; /* altura menor, tipo no site do One Piece */
+  width: 100%;
 }
 
 /* Menu */
