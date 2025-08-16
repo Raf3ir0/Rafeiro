@@ -5,13 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rafeiro - Banda Desenhada</title>
   <link rel="stylesheet" href="style.css">
+  <title>Imagem Fullscreen Cover</title>
+  <style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    .banner {
+        width: 100vw;       /* 100% da largura da tela */
+        height: 100vh;      /* 100% da altura da tela */
+        overflow: hidden;   /* Esconde o que passar */
+    }
+    .banner img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;  /* Faz a imagem cobrir todo o espaço */
+        display: block;
+    }
+</style>
 </head>
 <body>
 
+<img src="imagen/bannerhr.png" alt="Descrição da Imagem">
 
-
-<img src="imagen/bannerhr.png" alt="Descrição da Imagem" width="1920" height=auto margin:"100">
-<h1>📚 RAFEIR0 </h1>
+  <h1>📚 RAFEIR0 </h1>
   
 <div class="capitulos">
   <!-- Capítulo mais recente -->
