@@ -1,4 +1,11 @@
-/* Reset básico */
+@font-face {
+  font-family: "RAFEIROPLUS2";              /* nome que você vai usar no CSS */
+  src: url("Fonts/RAFEIROPLUS2.ttf") format("truetype"); /* caminho relativo */
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 body {
   margin: 0;
   font-family: RAFEIROPLUS2, sans-serif;
@@ -6,12 +13,7 @@ body {
   color: #222;
 }
 
-@font-face {
-  font-family: "RAFEIROPLUS2";              /* nome que você vai usar no CSS */
-  src: url("Fonts/RAFEIROPLUS2.ttf") format("truetype"); /* caminho relativo */
-  font-weight: normal;
-  font-style: normal;
-}
+
 
 .banner {
   background-image: url("imagen/bannerhr.png");
