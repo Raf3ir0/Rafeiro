@@ -10,7 +10,7 @@ body {
   background-image: url("imagen/bannerhr.png");
   background-size: cover;   /* cobre toda a largura */
   background-position: center;
-  height: 200px;            /* controla altura do banner */
+  height: 500px;            /* controla altura do banner */
   width: 100%;              /* largura total */
 
 html {
