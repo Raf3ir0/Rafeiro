@@ -1,9 +1,16 @@
 /* Reset básico */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: RAFEIROPLUS2, sans-serif;
   background-color: #f5f5f5;
   color: #222;
+}
+
+@font-face {
+  font-family: "RAFEIROPLUS2";              /* nome que você vai usar no CSS */
+  src: url(Fonts/RAFEIROPLUS2.tiff") format("tiff2"); /* caminho relativo */
+  font-weight: normal;
+  font-style: normal;
 }
 
 .banner {
