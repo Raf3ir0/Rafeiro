@@ -6,6 +6,14 @@ body {
     color: #222;
 }
 
+.banner {
+  background-image: url("imagen/bannerhr.png");
+  background-size: cover; /* ou contain, se não quiser cortar */
+  background-position: center;
+  height: 400px; /* tu escolhes */
+}
+
+
 html {
     font-size: 16px; /* Base */
 }
