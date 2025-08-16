@@ -8,7 +8,7 @@ body {
 
 @font-face {
   font-family: "RAFEIROPLUS2";              /* nome que você vai usar no CSS */
-  src: url(Fonts/RAFEIROPLUS2.tiff") format("tiff2"); /* caminho relativo */
+  src: url(Fonts/RAFEIROPLUS2.ttf") format("ttf"); /* caminho relativo */
   font-weight: normal;
   font-style: normal;
 }
