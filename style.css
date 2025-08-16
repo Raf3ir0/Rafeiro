@@ -1,79 +1,60 @@
+/* Reset básico */
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f5f5f5;
-    color: #222;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #222;
 }
 
+/* Banner */
 .banner {
   background-image: url("imagen/bannerhr.png");
-  background-size: cover;   /* cobre toda a largura */
+  background-size: cover;
   background-position: center;
-  height: 500px;            /* controla altura do banner */
-  width: 100%;              /* largura total */
-
-html {
-    font-size: 16px; /* Base */
+  height: 250px; /* altura menor, tipo no site do One Piece */
+  width: 100%;
 }
 
-h1 {
-    font-size: 3rem; /* 3 × 16px = 48px */
+/* Menu */
+.menu {
+  background-color: #222;
+  text-align: center;
+  padding: 10px 0;
 }
 
-p {
-    font-size: 1.2rem;
-    line-height: 1.6;
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #ddd;
+.menu a:hover {
+  text-decoration: underline;
 }
 
-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    padding: 0px;
+/* Conteúdo central */
+.content {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 8px;
 }
 
-img {
-    max-width: 100%;
-    max-height: 100vh;
-    border: 2px solid #333;
+.content h1 {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-.nav-btn {
-    padding: 10px;
-    font-size: 20px;
-    cursor: pointer;
+.resumo h2 {
+  margin-top: 0;
 }
 
-#lista-paginas {
-    margin: 20px 0;
-}
-
-#lista-paginas button {
-    margin: 2px;
-    padding: 5px 10px;
-    cursor: pointer;
-}
-
-/* Tema Escuro */
-body.escuro {
-    background-color: #1c1c1c;
-    color: #eee;
-}
-
-body.escuro header {
-    background-color: #333;
-}
-
-body.escuro img {
-    border-color: #eee;
+.resumo p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: justify;
 }
