@@ -17,8 +17,8 @@ body {
 
 
 .content {
-  max-width: 1500px;
-  margin-left: 10px; /* antes era 30px, agora é menor */
+  max-width: 100%;
+  margin-left: 10px;
   margin-right: 10px;
   padding: 20px;
   background: #fff;
