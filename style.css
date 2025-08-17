@@ -58,7 +58,7 @@ body {
   
   box-shadow: 0 4px 10px rgba(255,255,255,0.7);
   border: 0px solid white;
-  border-radius: 50px;
+  border-radius: 0px;
 
 }
 
@@ -92,7 +92,7 @@ body {
   width: 300px;                /* largura da imagem */
   height: auto;                /* altura proporcional */
   border: 0px solid black;     /* moldura preta */
-  border-radius: 0px;         /* cantos arredondados (opcional) */
+  border-radius: 60px;         /* cantos arredondados (opcional) */
   box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* sombra leve */
 }
 
