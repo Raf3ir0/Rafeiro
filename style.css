@@ -76,7 +76,7 @@ body {
   margin: 0 20px;
   font-size: 20px;
   font-weight: bold;
-  color: white !important;
+  color: white;
 }
 
 .menu a:hover {
@@ -117,7 +117,7 @@ body {
   font-size: 20px;
 }  
 .resumo h2 {
-  font-size: 60px;
+  font-size: 30px;
   margin-bottom: 40px;
 }
   
