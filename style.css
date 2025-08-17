@@ -17,8 +17,8 @@ body {
 main {
   margin-top: 50px;     /* espaço acima */
   margin-bottom: 50px;  /* espaço abaixo */
-  margin-left: 10px;    /* espaço à esquerda */
-  margin-right: 10px;   /* espaço à direita */
+  margin-left: 0px;    /* espaço à esquerda */
+  margin-right: 0px;   /* espaço à direita */
 }
 
 
