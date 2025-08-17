@@ -27,11 +27,13 @@ body {
 
 .banner .logo {
   position: absolute;
-  top: 40px;
-  left: 40%;
+  top: 10px;
+  left: 10%;
   transform: translateX(-50%); /* centraliza */
   width: 300px;
-  border: 10px solid white;
+  
+  box-shadow: 0 4px 10px rgba(255,255,255,0.7);
+  border: 0px solid white;
   border-radius: 0px;
 
 }
