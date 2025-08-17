@@ -14,6 +14,13 @@ body {
   text-transform: uppercase; /* deixa tudo maiúsculo */
 }
 
+main {
+  margin-top: 50px;     /* espaço acima */
+  margin-bottom: 50px;  /* espaço abaixo */
+  margin-left: 10px;    /* espaço à esquerda */
+  margin-right: 10px;   /* espaço à direita */
+}
+
 
 
 .banner {
