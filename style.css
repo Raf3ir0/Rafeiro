@@ -26,13 +26,19 @@ body {
   border-radius: 8px;
 }
 
-.content h1 img {
-  text-align: center;
-  margin-top: 100px;
-  margin-bottom: 100px;
-  max-width: 100px;  /* ajusta o valor ao tamanho que queres */
-  height: auto;      /* mantém a proporção */
+.content h1 {
+    text-align: center; /* Centraliza tudo dentro do h1 */
 }
+
+.content h1 img {
+  max-width: 100px;  /* ajusta o valor ao tamanho que queres */
+  margin: 100px auto;  /* centraliza horizontalmente e mantém top/bottom */
+  max-width: 100px;
+  height: auto;
+  display: block;      /* torna a imagem um bloco */
+}
+
+
 
 
 .banner {
