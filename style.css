@@ -159,6 +159,15 @@ body {
 
 
   
+.footer {
+  background-color: black;   /* cor de fundo */
+  color: white;              /* cor do texto */
+  text-align: center;        /* centraliza o texto */
+  padding: 20px 0;           /* espaço interno (topo e fundo) */
+  width: 100%;               /* ocupa 100% da largura */
+  position: relative;        /* mantém no fluxo normal */
+  bottom: 0;
+}
 
 
 
