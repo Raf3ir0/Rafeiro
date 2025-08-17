@@ -24,26 +24,22 @@ body {
   height: 400px; /* ajuste conforme a altura da sua imagem */
 }
 
-.capitulo1 {
+.capitulo {
   text-align: center;
-  color: black
+  margin: 10px 0; /* espaço entre capítulos */
 }
-.capitulo2 {
-  text-align: center;
-  color: black
+
+.capitulo a {
+  color: black;             /* cor do link */
+  text-decoration: none;    /* remove o sublinhado */
+  font-weight: bold;        /* deixa mais destacado */
+  font-size: 18px;          /* aumenta o tamanho do texto */
 }
-.capitulo3 {
-  text-align: center;
-  color: black
+
+.capitulo a:hover {
+  color: red;               /* muda de cor quando passa o rato por cima */
 }
-.capitulo4 {
-  text-align: center;
-  color: black
-}
-.capitulo5 {
-  text-align: center;
-  color: black
-}
+
 
   
 
