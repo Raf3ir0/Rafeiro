@@ -90,7 +90,7 @@ body {
   width: 300px;                /* largura da imagem */
   height: auto;                /* altura proporcional */
   border: 0px solid black;     /* moldura preta */
-  border-radius: 100px;         /* cantos arredondados (opcional) */
+  border-radius: 150px;         /* cantos arredondados (opcional) */
   box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* sombra leve */
 }
 
