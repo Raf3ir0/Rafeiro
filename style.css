@@ -14,11 +14,16 @@ body {
   text-transform: uppercase; /* deixa tudo maiúsculo */
 }
 
-main {
-  margin-top: 50px;     /* espaço acima */
-  margin-bottom: 50px;  /* espaço abaixo */
-  margin-left: 0px;    /* espaço à esquerda */
-  margin-right: 0px;   /* espaço à direita */
+
+
+.content {
+  max-width: 900px;
+  margin-left: 10px; /* antes era 30px, agora é menor */
+  margin-right: 10px;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 8px;
 }
 
 
