@@ -32,7 +32,7 @@ body {
 
 .content h1 img {
   max-width: 500px;  /* ajusta o valor ao tamanho que queres */
-  margin: 50px auto;  /* centraliza horizontalmente e mantém top/bottom */
+  margin: 20px auto;  /* centraliza horizontalmente e mantém top/bottom */
   height: auto;
   display: block;      /* torna a imagem um bloco */
 }
