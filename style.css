@@ -61,6 +61,22 @@ body {
 }
 
 
+.galeria {
+  display: flex;               /* coloca lado a lado */
+  justify-content: center;     /* centraliza no meio da página */
+  gap: 80px;                   /* espaço entre as imagens */
+  margin: 30px 0;              /* espaço acima e abaixo do bloco */
+}
+
+.galeria img {
+  width: 300px;                /* largura da imagem */
+  height: auto;                /* altura proporcional */
+  border: 0px solid black;     /* moldura preta */
+  border-radius: 150px;         /* cantos arredondados (opcional) */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* sombra leve */
+}
+
+
 
 .resumo {
   text-align: center;
@@ -84,20 +100,7 @@ body {
 }
 
 
-.galeria {
-  display: flex;               /* coloca lado a lado */
-  justify-content: center;     /* centraliza no meio da página */
-  gap: 80px;                   /* espaço entre as imagens */
-  margin: 30px 0;              /* espaço acima e abaixo do bloco */
-}
 
-.galeria img {
-  width: 300px;                /* largura da imagem */
-  height: auto;                /* altura proporcional */
-  border: 0px solid black;     /* moldura preta */
-  border-radius: 150px;         /* cantos arredondados (opcional) */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* sombra leve */
-}
 
 
 
