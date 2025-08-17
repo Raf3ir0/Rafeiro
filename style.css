@@ -57,11 +57,15 @@ body {
 
 
 .resumo {
-  text-align: center;
+  text-align: justify;
 }
 .resumo p {
   margin-bottom: 10px; /* espaço entre frases */
 }
+.resumo h2 {
+  text-align: center;
+}
+
 
 .capitulo {
   text-align: center;
