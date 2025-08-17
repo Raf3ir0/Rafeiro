@@ -151,6 +151,7 @@ body {
   text-decoration: none;    /* remove o sublinhado */
   font-weight: bold;        /* deixa mais destacado */
   font-size: 18px;          /* aumenta o tamanho do texto */
+  margin-bottom:20px;
 }
 
 .capitulo a:hover {
