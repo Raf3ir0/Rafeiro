@@ -68,7 +68,8 @@ body {
   margin-bottom: 100px;
   
 .resumo h2 {
-  fontsize: 40px;
+  fontsize: 80px;
+  margin-bottom: 40px;
 }
   
 .resumo p {
