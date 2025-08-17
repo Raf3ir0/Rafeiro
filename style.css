@@ -143,9 +143,8 @@ body {
 
 .capitulo {
   text-align: center;
-  margin: 40px 0; /* espaço entre capítulos */
-  margin-bottom: 120px; /* espaço abaixo da lista inteira */
-
+  margin: 120px 0; /* espaço entre capítulos */
+ 
 }
 
 .capitulo a {
