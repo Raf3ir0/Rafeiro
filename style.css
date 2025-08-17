@@ -125,11 +125,11 @@ body {
   margin: 0 20px;
   font-size: 20px;
   font-weight: bold;
-  color: red
+  color: white
 }
 
 .menu a:hover {
-  text-decoration: underline;
+   color: red;
 }
 
 
