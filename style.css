@@ -58,6 +58,8 @@ body {
 
 .resumo {
   text-align: justify;
+  margin-left: 100px;
+  margin-right: 100px;
 }
 .resumo p {
   margin-bottom: 10px; /* espaço entre frases */
