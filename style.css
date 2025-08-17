@@ -59,7 +59,9 @@ body {
 .resumo {
   text-align: center;
 }
-
+.resumo p {
+  margin-bottom: 10px; /* espaço entre frases */
+}
 
 .capitulo {
   text-align: center;
