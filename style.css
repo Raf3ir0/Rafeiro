@@ -136,9 +136,9 @@ body {
 
 
 .chapter-title {
-  margin: 40px 0;  /* margens em cima e em baixo */
+  margin: 100px 0;  /* margens em cima e em baixo */
   text-align: center; /* continua centralizado */
-  font-size: 20px;
+  font-size: 30px;
 }
 
 
