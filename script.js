@@ -14,7 +14,6 @@ function mostrarPagina(num) {
     if (num < 1) num = 1;
     if (num > totalPaginas) num = totalPaginas;
     paginaAtual = num;
-    imgPagina.src = `imagens/pagina${paginaAtual}.png`;
 
    if (paginaAtual === 23) {
         imgPagina.src = `imagens/23-24.png`; // página dupla final
