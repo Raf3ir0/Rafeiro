@@ -12,6 +12,14 @@ const paginasDuplas = {
     23: "imagen/pagina23-24.png",
     24: "imagen/pagina24-25.png",
 }
+// Lista de capítulos (apenas texto)
+const capitulos = [
+  "0x1: Sol e a Lua, pt 1",
+  "0x2: Sol e a Lua, pt 2",
+  "0x3: Cidade Terramoto, pt 1",
+  "0x4: cidade do terramoto, pt 2"
+];
+
 
 
 function mostrarPagina(num) {
@@ -29,13 +37,6 @@ function mostrarPagina(num) {
 
 
 
-// Lista de capítulos (apenas texto)
-const capitulos = [
-  "0x1: Sol e a Lua, pt 1",
-  "0x2: Sol e a Lua, pt 2",
-  "0x3: Cidade Terramoto, pt 1",
-  "0x4: cidade do terramoto, pt 2"
-];
 
 let capAtual = 0; // começa no primeiro capítulo
 
