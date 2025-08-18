@@ -1,5 +1,5 @@
 // Total de páginas (altera se necessário)
-const totalPaginas = 23;
+const totalPaginas = 25;
 let paginaAtual = 1;
 
 const imgPagina = document.getElementById("pagina");
@@ -8,23 +8,24 @@ const btnSeguinte = document.getElementById("seguinte");
 const listaPaginas = document.getElementById("lista-paginas");
 const btnTema = document.getElementById("toggle-tema");
 const body = document.body;
+const paginasDuplas = {
+    23: "imagen/pagina23-24.png",
+    24: "imagen/pagina24-25.png",
+}
 
 
-
-
-// Atualiza imagem
 function mostrarPagina(num) {
     if (num < 1) num = 1;
     if (num > totalPaginas) num = totalPaginas;
     paginaAtual = num;
 
-    if (paginaAtual === 23) {
-        imgPagina.src = `imagen/pagina23-24.png`; // página dupla final
+    // Verifica se a página é dupla
+    if (paginasDuplas[paginaAtual]) {
+        imgPagina.src = paginasDuplas[paginaAtual];
     } else {
-        imgPagina.src = `imagen/pagina${paginaAtual}.png`; 
+        imgPagina.src = `imagen/pagina${paginaAtual}.png`;
     }
 }
-
 
 
 
