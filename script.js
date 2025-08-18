@@ -9,18 +9,28 @@ const listaPaginas = document.getElementById("lista-paginas");
 const btnTema = document.getElementById("toggle-tema");
 const body = document.body;
 
+
+
+
 // Atualiza imagem
 function mostrarPagina(num) {
     if (num < 1) num = 1;
     if (num > totalPaginas) num = totalPaginas;
     paginaAtual = num;
 
-   if (paginaAtual === 23) {
-        imgPagina.src = `imagens/23-24.png`; // página dupla final
+    if (paginaAtual === 23) {
+        imgPagina.src = `imagen/23-24.png`; // página dupla final
     } else {
-        imgPagina.src = `imagens/${paginaAtual}.png`; 
+        imgPagina.src = `imagen/pagina${paginaAtual}.png`; 
     }
 }
+
+
+
+
+
+
+
 // Botões de navegação
 btnAnterior.addEventListener("click", () => {
     mostrarPagina(paginaAtual - 1);
