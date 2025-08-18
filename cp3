@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rafeiro - Banda Desenhada</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Banner -->
+  <div class="banner">
+    <img src="logos/LOGOpequenoinv.png" alt="Logopequenoinv" class="logo">
+</div>
+
+
+  <!-- Menu de navegação -->
+  <nav class="menu">
+    <a href="listadecapitulos.html">Capítulos</a>
+    <a href="rascunhos.html">Rascunhos</a>
+  </nav>
+
+
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: RAFEIROPLUS2, sans-serif;
+            text-align: center; /* centraliza o texto e imagens */
+            color: black;
+            margin: 0;
+            padding: 0;
+            text-transform: uppercase;
+            font-size: 30px;
+        }
+
+
+        img {
+            max-width: 40%;  /* a imagem ocupa no máximo 90% da largura da tela */
+            height: auto;    /* mantém proporção */
+            display: block;  /* faz a imagem ser um bloco */
+            margin: 20px auto; /* centraliza e dá espaço acima/abaixo */
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+  <h1 class="chapter-title">Rafeiro = OX3 =</h1>
+  <h2 class="chapter-subtitle">= cidade terramoto, pt 1</h2>
+
+    <img src="imagen/pagina1.png" alt="Página 1">
+    <img src="imagen/pagina2.png" alt="Página 2">
+    <img src="imagen/pagina3.png" alt="Página 3">
+    <img src="imagen/pagina4.png" alt="Página 4">
+    <img src="imagen/pagina5.png" alt="Página 5">
+    <img src="imagen/pagina6.png" alt="Página 6">
+    <img src="imagen/pagina7.png" alt="Página 7">
+    <img src="imagen/pagina8.png" alt="Página 8">
+    <img src="imagen/pagina9.png" alt="Página 9">
+    <img src="imagen/pagina10.png" alt="Página 10">
+    <img src="imagen/pagina11.png" alt="Página 11">
+    <img src="imagen/pagina12.png" alt="Página 12">
+    <img src="imagen/pagina13.png" alt="Página 13">
+    <img src="imagen/pagina14.png" alt="Página 14">
+    <img src="imagen/pagina15.png" alt="Página 15">
+    <img src="imagen/pagina16.png" alt="Página 16">
+    <img src="imagen/pagina17.png" alt="Página 17">
+    <img src="imagen/pagina18.png" alt="Página 18">
+    <img src="imagen/pagina19.png" alt="Página 19">
+    <img src="imagen/pagina20.png" alt="Página 20">
+    <img src="imagen/pagina21.png" alt="Página 21">
+    <img src="imagen/pagina22.png" alt="Página 22">
+    <img src="imagen/pagina23-24.png" alt="Página 23 e 24">
+    <img src="imagen/pagina25-26.png" alt="Página 25 e 26">
+
+
+
+  <div class="capitulo">
+    <button id="cap-anterior">Anterior</button>
+    <button id="cap-seguinte">Próximo</button>
+  </div>
+
+</div>
+   </body>
+
+
+  <div class="footer">
+  © 2025 Rafeiro Comics — Todos os direitos reservados
+</div>
+
+</html>
