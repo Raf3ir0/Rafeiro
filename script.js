@@ -19,7 +19,7 @@ function mostrarPagina(num) {
     paginaAtual = num;
 
     if (paginaAtual === 23) {
-        imgPagina.src = `imagen/23-24.png`; // página dupla final
+        imgPagina.src = `imagen/pagina23-24.png`; // página dupla final
     } else {
         imgPagina.src = `imagen/pagina${paginaAtual}.png`; 
     }
