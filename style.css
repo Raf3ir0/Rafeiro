@@ -7,66 +7,175 @@
 
 
 body {
-  background-color: #f4f4f4;
-  font-family: RAFEIROPLUS2, sans-serif;
-  text-align: center;
-  color: black;
   margin: 0;
-  padding: 0;
-  text-transform: uppercase;
-  font-size: 20px;
+  font-family: RAFEIROPLUS2, sans-serif;
+  background-color: #f5f5f5;
+  color: #222;
+  text-transform: uppercase; /* deixa tudo maiúsculo */
 }
+
+
+/* Conteúdo central */
+.content {
+  max-width: 100%;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+.content h1 {
+    text-align: center; /* Centraliza tudo dentro do h1 */
+}
+
+.content h1 img {
+  max-width: 500px;  /* ajusta o valor ao tamanho que queres */
+  margin: 5px auto;  /* centraliza horizontalmente e mantém top/bottom */
+  height: auto;
+  display: block;      /* torna a imagem um bloco */
+}
+
+
+
+.banner {
+  background-image: url("imagen/bannerhr.png");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 400px; /* ajuste conforme a altura da sua imagem */
+}
+
 
 .banner .logo {
-  max-width: 200px;
-  margin: 10px auto;
-  display: block;
+  position: absolute;
+  top: 10px;
+  left: 10%;
+  transform: translateX(-50%); /* centraliza */
+  width: 300px;
+  border: 0px solid white;
+  border-radius: 0px;
+
 }
 
+
+
+
+/* Menu */
 .menu {
-  margin: 10px 0;
+  background-color: black;
+  text-align: center;
+  padding: 30px 0;
+  margin-top: 0px;
 }
 
 .menu a {
-  margin: 0 15px;
   text-decoration: none;
-  color: black;
+  margin: 0 20px;
+  font-size: 20px;
   font-weight: bold;
+  color: white;
 }
 
-.content {
-  max-width: 800px;
-  margin: auto;
-  padding: 20px;
+.menu a:hover {
+   color: red;
 }
 
-#paginas img {
-  max-width: 90%;
-  height: auto;
-  display: block;
-  margin: 20px auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+
+
+
+
+
+
+
+
+
+
+.galeria {
+  display: flex;               /* coloca lado a lado */
+  justify-content: center;     /* centraliza no meio da página */
+  gap: 80px;                   /* espaço entre as imagens */
+  margin: 30px 0;              /* espaço acima e abaixo do bloco */
 }
+
+.galeria img {
+  width: 300px;                /* largura da imagem */
+  height: auto;                /* altura proporcional */
+  border: 0px solid black;     /* moldura preta */
+  border-radius: 150px;         /* cantos arredondados (opcional) */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* sombra leve */
+}
+
+
+
+.resumo {
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  font-size: 20px;
+}  
+.resumo h2 {
+  font-size: 30px;
+  margin-bottom: 40px;
+}
+
+.resumo p {
+  margin-bottom: 10px; /* espaço entre frases */
+}
+
+
+
+.listadecap{
+   text-align: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  font-size: 30px;
+}
+
+
+
+.chapter-title {
+  margin-top: 100px;  /* margin-bottom */
+  text-align: center; /* continua centralizado */
+  font-size: 40px;
+}
+
+.chapter-subtitle{
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 100px;
+{
+}
+
+
 
 .capitulo {
-  display: flex;
-  justify-content: space-between;
-  margin: 20px auto;
-  max-width: 400px;
+  text-align: center;
+  margin: 40px 0; /* espaço entre capítulos */
+
 }
 
-.capitulo button {
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
+.capitulo a {
+  color: black;             /* cor do link */
+  text-decoration: none;    /* remove o sublinhado */
+  font-weight: bold;        /* deixa mais destacado */
+  font-size: 18px;          /* aumenta o tamanho do texto */
 }
+
+.capitulo a:hover {
+  color: red;               /* muda de cor quando passa o rato por cima */
+}
+
+
 
 .footer {
-  text-align: center;
-  padding: 10px;
-  margin-top: 40px;
-  font-size: 14px;
+  background-color: black;   /* cor de fundo */
+  color: white;              /* cor do texto */
+  text-align: center;        /* centraliza o texto */
+  padding: 20px 0;           /* espaço interno (topo e fundo) */
+  width: 100%;               /* ocupa 100% da largura */
+  position: relative;        /* mantém no fluxo normal */
+  bottom: 0;
 }
-
 
