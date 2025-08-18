@@ -1,47 +1,18 @@
-// Total de páginas (altera se necessário)
-const totalPaginas = 25;
-let paginaAtual = 1;
-
-const imgPagina = document.getElementById("pagina");
-const btnAnterior = document.getElementById("anterior");
-const btnSeguinte = document.getElementById("seguinte");
-const listaPaginas = document.getElementById("lista-paginas");
-const btnTema = document.getElementById("toggle-tema");
-const body = document.body;
-const paginasDuplas = {
-    23: "imagen/pagina23-24.png",
-    24: "imagen/pagina24-25.png",
-}
-// Lista de capítulos (apenas texto)
+// Lista de capítulos
 const capitulos = [
   "0x1: Sol e a Lua, pt 1",
   "0x2: Sol e a Lua, pt 2",
   "0x3: Cidade Terramoto, pt 1",
-  "0x4: cidade do terramoto, pt 2"
+  "0x4: Cidade do Terramoto, pt 2"
 ];
 
+// Página inicial de cada capítulo (corresponde ao id do <img>)
+const paginaInicialCap = [1, 6, 11, 16];
 
+let capAtual = 0;
 
-function mostrarPagina(num) {
-    if (num < 1) num = 1;
-    if (num > totalPaginas) num = totalPaginas;
-    paginaAtual = num;
-
-    // Verifica se a página é dupla
-    if (paginasDuplas[paginaAtual]) {
-        imgPagina.src = paginasDuplas[paginaAtual];
-    } else {
-        imgPagina.src = `imagen/pagina${paginaAtual}.png`;
-    }
-}
-
-
-
-
-let capAtual = 0; // começa no primeiro capítulo
-
-const btnAnterior = document.getElementById("cap-anterior");
-const btnSeguinte = document.getElementById("cap-seguinte");
+const btnCapAnterior = document.getElementById("cap-anterior");
+const btnCapSeguinte = document.getElementById("cap-seguinte");
 const titulo = document.querySelector(".chapter-title");
 const subtitulo = document.querySelector(".chapter-subtitle");
 
@@ -53,48 +24,21 @@ function mostrarCapitulo(num) {
     // Atualiza título e subtítulo
     titulo.textContent = capitulos[capAtual].split(":")[0];
     subtitulo.textContent = capitulos[capAtual].split(":")[1] || "";
-    
-    // Desabilita botão anterior no primeiro capítulo
-    btnAnterior.disabled = (capAtual === 0);
-    // Desabilita botão seguinte no último capítulo
-    btnSeguinte.disabled = (capAtual === capitulos.length - 1);
+
+    // Desabilita botões
+    btnCapAnterior.disabled = (capAtual === 0);
+    btnCapSeguinte.disabled = (capAtual === capitulos.length - 1);
+
+    // Scroll para a página inicial do capítulo
+    const paginaId = `pagina${paginaInicialCap[capAtual]}`;
+    const elementoPagina = document.getElementById(paginaId);
+    if (elementoPagina) {
+        elementoPagina.scrollIntoView({ behavior: "smooth" });
+    }
 }
 
-btnAnterior.addEventListener("click", () => mostrarCapitulo(capAtual - 1));
-btnSeguinte.addEventListener("click", () => mostrarCapitulo(capAtual + 1));
+btnCapAnterior.addEventListener("click", () => mostrarCapitulo(capAtual - 1));
+btnCapSeguinte.addEventListener("click", () => mostrarCapitulo(capAtual + 1));
 
-// Inicializa
+// Inicializa no primeiro capítulo
 mostrarCapitulo(capAtual);
-
-
-
-
-
-
-
-// Botões de navegação
-btnAnterior.addEventListener("click", () => {
-    mostrarPagina(paginaAtual - 1);
-});
-
-btnSeguinte.addEventListener("click", () => {
-    mostrarPagina(paginaAtual + 1);
-});
-
-// Lista de páginas
-for (let i = 1; i <= totalPaginas; i++) {
-    const btn = document.createElement("button");
-    btn.textContent = i;
-    btn.addEventListener("click", () => mostrarPagina(i));
-    listaPaginas.appendChild(btn);
-}
-
-// Alternar tema
-btnTema.addEventListener("click", () => {
-    body.classList.toggle("escuro");
-    body.classList.toggle("claro");
-    btnTema.textContent = body.classList.contains("escuro") ? "☀ Claro" : "🌙 Escuro";
-});
-
-// Inicializa
-mostrarPagina(paginaAtual);
