@@ -1,98 +1,66 @@
-// --- Configurações ---
-const capitulos = [
-  {
-    titulo: "0x1: Sol e a Lua, pt 1",
-    paginas: [
-      "imagen/pagina1.png",
-      "imagen/pagina2.png",
-      "imagen/pagina3.png",
-      "imagen/pagina4.png",
-      "imagen/pagina5.png",
-      "imagen/pagina6.png",
-      "imagen/pagina7.png",
-      "imagen/pagina8.png",
-      "imagen/pagina9.png",
-      "imagen/pagina10.png",
-      "imagen/pagina11.png",
-      "imagen/pagina12.png",
-      "imagen/pagina13.png",
-      "imagen/pagina14.png",
-      "imagen/pagina15.png",
-      "imagen/pagina16.png",
-      "imagen/pagina17.png",
-      "imagen/pagina18.png",
-      "imagen/pagina19.png",
-      "imagen/pagina20.png",
-      "imagen/pagina21.png",
-      "imagen/pagina22.png",
-      "imagen/pagina23-24.png",
-      "imagen/pagina25-26.png"
-    ]
-  },
-  {
-    titulo: "0x2: Sol e a Lua, pt 2",
-    paginas: [
-      "imagen/pagina27.png",
-      "imagen/pagina28.png"
-      // Adiciona mais conforme necessário
-    ]
-  },
-  {
-    titulo: "0x3: Cidade Terramoto, pt 1",
-    paginas: [
-      "imagen/pagina29.png"
-    ]
-  },
-  {
-    titulo: "0x4: Cidade Terramoto, pt 2",
-    paginas: [
-      "imagen/pagina30.png"
-    ]
-  }
-];
+// Total de páginas (altera se necessário)
+const totalPaginas = 25;
+let paginaAtual = 1;
 
-let capAtual = 0;
-
-// --- Elementos ---
-const tituloEl = document.querySelector(".chapter-title");
-const subtituloEl = document.querySelector(".chapter-subtitle");
-const paginasDiv = document.getElementById("paginas");
-const btnAnterior = document.getElementById("cap-anterior");
-const btnSeguinte = document.getElementById("cap-seguinte");
-
-// --- Funções ---
-function mostrarCapitulo(num) {
-  if (num < 0) num = 0;
-  if (num >= capitulos.length) num = capitulos.length - 1;
-  capAtual = num;
-
-  // Atualiza título e subtítulo
-  const [titulo, subtitulo] = capitulos[capAtual].titulo.split(":");
-  tituloEl.textContent = titulo.trim();
-  subtituloEl.textContent = subtitulo ? subtitulo.trim() : "";
-
-  // Limpa páginas antigas
-  paginasDiv.innerHTML = "";
-
-  // Adiciona todas as páginas do capítulo
-  capitulos[capAtual].paginas.forEach((imgPath, index) => {
-    const img = document.createElement("img");
-    img.src = imgPath;
-    img.alt = `Página ${index + 1}`;
-    paginasDiv.appendChild(img);
-  });
-
-  // Atualiza botões
-  btnAnterior.disabled = (capAtual === 0);
-  btnSeguinte.disabled = (capAtual === capitulos.length - 1);
-
-  btnAnterior.textContent = capAtual > 0 ? `← ${capitulos[capAtual - 1].titulo}` : "Anterior";
-  btnSeguinte.textContent = capAtual < capitulos.length - 1 ? `${capitulos[capAtual + 1].titulo} →` : "Próximo";
+const imgPagina = document.getElementById("pagina");
+const btnAnterior = document.getElementById("anterior");
+const btnSeguinte = document.getElementById("seguinte");
+const listaPaginas = document.getElementById("lista-paginas");
+const btnTema = document.getElementById("toggle-tema");
+const body = document.body;
+const paginasDuplas = {
+    23: "imagen/pagina23-24.png",
+    24: "imagen/pagina24-25.png",
 }
 
-// --- Eventos ---
+
+function mostrarPagina(num) {
+    if (num < 1) num = 1;
+    if (num > totalPaginas) num = totalPaginas;
+    paginaAtual = num;
+
+    // Verifica se a página é dupla
+    if (paginasDuplas[paginaAtual]) {
+        imgPagina.src = paginasDuplas[paginaAtual];
+    } else {
+        imgPagina.src = `imagen/pagina${paginaAtual}.png`;
+    }
+}
+
+
+
+// Lista de capítulos (apenas texto)
+const capitulos = [
+  "0x1: Sol e a Lua, pt 1",
+  "0x2: Sol e a Lua, pt 2",
+  "0x3: Cidade Terramoto, pt 1",
+  "0x4: cidade do terramoto, pt 2"
+];
+
+let capAtual = 0; // começa no primeiro capítulo
+
+const btnAnterior = document.getElementById("cap-anterior");
+const btnSeguinte = document.getElementById("cap-seguinte");
+const titulo = document.querySelector(".chapter-title");
+const subtitulo = document.querySelector(".chapter-subtitle");
+
+function mostrarCapitulo(num) {
+    if (num < 0) num = 0;
+    if (num >= capitulos.length) num = capitulos.length - 1;
+    capAtual = num;
+
+    // Atualiza título e subtítulo
+    titulo.textContent = capitulos[capAtual].split(":")[0];
+    subtitulo.textContent = capitulos[capAtual].split(":")[1] || "";
+    
+    // Desabilita botão anterior no primeiro capítulo
+    btnAnterior.disabled = (capAtual === 0);
+    // Desabilita botão seguinte no último capítulo
+    btnSeguinte.disabled = (capAtual === capitulos.length - 1);
+}
+
 btnAnterior.addEventListener("click", () => mostrarCapitulo(capAtual - 1));
 btnSeguinte.addEventListener("click", () => mostrarCapitulo(capAtual + 1));
 
-// --- Inicializa ---
+// Inicializa
 mostrarCapitulo(capAtual);
