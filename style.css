@@ -141,6 +141,19 @@ body {
 }
 
 
+.listadecap1 a {
+  color: black;             /* cor do link */
+  text-decoration: none;    /* remove o sublinhado */
+  font-weight: bold;        /* mais destaque */
+}
+
+.listadecap1 a:hover {
+  color: red;               /* muda a cor quando passa o rato */
+}
+
+
+
+
 .listadecap2{
    text-align: right;
   margin-top: 30px;
@@ -148,6 +161,15 @@ body {
   font-size: 20px;
 }
 
+.listadecap2 a {
+  color: black;             /* cor do link */
+  text-decoration: none;    /* remove o sublinhado */
+  font-weight: bold;        /* mais destaque */
+}
+
+.listadecap2 a:hover {
+  color: red;               /* muda a cor quando passa o rato */
+}
 
 
 .chapter-title {
