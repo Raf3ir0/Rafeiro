@@ -192,6 +192,12 @@ body {
   transition: background-color 0.3s ease;
 }
 
+
+.capitulo a:only-child {
+  margin-left: auto; /* joga o único botão para a direita */
+}
+
+
 .capitulo button:hover {
   background-color: red;
 }
