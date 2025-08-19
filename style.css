@@ -168,6 +168,35 @@ body {
 }
 
 
+.capitulo {
+  display: flex;                  /* ativa layout flex */
+  justify-content: space-between; /* um botão à esquerda, outro à direita */
+  align-items: center;
+  margin: 40px 0;
+}
+
+.capitulo a {
+  text-decoration: none;
+}
+
+.capitulo button {
+  font-family: RAFEIROPLUS2, sans-serif; /* tua fonte */
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background-color: black;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.capitulo button:hover {
+  background-color: red;
+}
+
+
 
 .footer {
   background-color: black;   /* cor de fundo */
