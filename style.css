@@ -177,5 +177,6 @@ body {
   width: 100%;               /* ocupa 100% da largura */
   position: relative;        /* mantém no fluxo normal */
   bottom: 0;
+  font-size: 14px;
 }
 
