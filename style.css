@@ -126,50 +126,6 @@ body {
 
 
 
-.listadecap{
-   text-align: center;
-  margin-top: 100px;
-  margin-bottom: 100px;
-  font-size: 30px;
-}
-.listadecap1{
-   text-align: center;
-  margin-top: 100px;
-  margin-bottom: 100px;
-  font-size: 20px;
-  color: black;
-}
-
-
-.listadecap1 a {
-  color: black;             /* cor do link */
-  text-decoration: none;    /* remove o sublinhado */
-  font-weight: bold;        /* mais destaque */
-}
-
-.listadecap1 a:hover {
-  color: red;               /* muda a cor quando passa o rato */
-}
-
-
-
-
-.listadecap2{
-   text-align: right;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  font-size: 20px;
-}
-
-.listadecap2 a {
-  color: black;             /* cor do link */
-  text-decoration: none;    /* remove o sublinhado */
-  font-weight: bold;        /* mais destaque */
-}
-
-.listadecap2 a:hover {
-  color: red;               /* muda a cor quando passa o rato */
-}
 
 
 .chapter-title {
@@ -238,6 +194,46 @@ body {
 .capitulo button:hover {
   background-color: red;
 }
+
+
+.listadecap{
+   text-align: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  font-size: 30px;
+}
+
+
+.listadecap1 a {
+  color: black;             /* cor do link */
+  text-decoration: none;    /* remove o sublinhado */
+  font-weight: bold;        /* mais destaque */
+}
+
+.listadecap1 a:hover {
+  color: red;               /* muda a cor quando passa o rato */
+}
+
+
+
+
+.listadecap2{
+   text-align: right;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 20px;
+}
+
+.listadecap2 a {
+  color: black;             /* cor do link */
+  text-decoration: none;    /* remove o sublinhado */
+  font-weight: bold;        /* mais destaque */
+}
+
+.listadecap2 a:hover {
+  color: red;               /* muda a cor quando passa o rato */
+}
+
 
 
 
