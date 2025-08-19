@@ -208,6 +208,10 @@ body {
   color: black;             /* cor do link */
   text-decoration: none;    /* remove o sublinhado */
   font-weight: bold;        /* mais destaque */
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  
 }
 
 .listadecap1 a:hover {
