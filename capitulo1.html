@@ -5,15 +5,67 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rafeiro - Banda Desenhada</title>
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      background-color: #f4f4f4;
+      text-align: center;
+      color: black;
+      margin: 20;
+      padding: 0;
+      text-transform: uppercase;
+      font-size: 20px;
+    }
+
+    img {
+      max-width: 40%;
+      height: auto;
+      display: block;
+      margin: 20px auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    /* Estilo dos botões fixos */
+    .scroll-btn {
+      position: fixed;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      cursor: pointer;
+      z-index: 1000;
+      opacity: 0.7;
+      transition: opacity 0.3s, transform 0.3s;
+    }
+
+    .scroll-btn:hover {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+
+    #btnTop {
+      bottom: 90px; /* Botão de subir */
+    }
+
+    #btnBottom {
+      bottom: 20px; /* Botão de descer */
+    }
+
+    .scroll-btn img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+  </style>
 </head>
 <body>
 
   <!-- Banner -->
   <div class="banner">
     <a href="index.html" class="logo-link">
-    <img src="logos/LOGOpequenoinv.png" alt="Logopequenoinv" class="logo">
-</div>
-
+      <img src="logos/LOGOpequenoinv.png" alt="Logopequenoinv" class="logo">
+    </a>
+  </div>
 
   <!-- Menu de navegação -->
   <nav class="menu">
@@ -21,39 +73,11 @@
     <a href="rascunhos.html">Rascunhos</a>
   </nav>
 
+  <div class="content">
+    <h1 class="chapter-title">= (Rafeiro)OX1 =</h1>
+    <h2 class="chapter-subtitle">= sol e a lua, pt 1 =</h2>
 
-    <style>
-        body {
-            background-color: #f4f4f4;
-            
-            text-align: center; /* centraliza o texto e imagens */
-            color: black;
-            margin: 20;
-            padding: 0;
-            text-transform: uppercase;
-            font-size: 20px;
-        }
-
-
-        img {
-            max-width: 40%;  /* a imagem ocupa no máximo 90% da largura da tela */
-            height: auto;    /* mantém proporção */
-            display: block;  /* faz a imagem ser um bloco */
-            margin: 20px auto; /* centraliza e dá espaço acima/abaixo */
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
-    </style>
-</head>
-
-
-<img src="logos/LOGOverticalcortado.png" alt="Página 20">
-  
-<body>
-<div class="content">
-  <h1 class="chapter-title">= (Rafeiro)OX1 =</h1>
-  <h2 class="chapter-subtitle">= sol e a lua, pt 1 =</h2>
-
+    <!-- Páginas -->
     <img src="imagen/pagina1.png" alt="Página 1">
     <img src="imagen/pagina2.png" alt="Página 2">
     <img src="imagen/pagina3.png" alt="Página 3">
@@ -79,47 +103,57 @@
     <img src="imagen/pagina23-24.png" alt="Página 23 e 24">
     <img src="imagen/pagina25-26.png" alt="Página 25 e 26">
 
+    <div class="capitulo">
+      <a href="capitulo2.html"><button id="capitulo2">0x2 = sol e a lua, p2</button></a>
+    </div>
 
+    <div class="intro-lista">
+      <div class="intro-texto">
+        <h2>Sobre</h2>
+        <p>
+          "Rafeiro Comics" é uma banda desenhada independente.  
+          Aqui podes acompanhar as histórias e novidades mais recentes.
+        </p>
+      </div>
 
-<div class="capitulo">
-  <a href="capitulo2.html"><button id="capitulo2">0x2 = sol e a lua, p2</button></a>
-</div>
-
-
-
-
-
-
-<div class="intro-lista">
-  <div class="intro-texto">
-    <h2>Sobre</h2>
-    <p>
-      "Rafeiro Comics" é uma banda desenhada independente.  
-      Aqui podes acompanhar as histórias e novidades mais recentes.
-    </p>
+      <div class="lista-capitulos">
+        <h2>Últimos Capítulos</h2>
+        <ul>
+          <li><a href="cp4.html">0x4 = cidade terramoto,p2</a></li>
+          <li><a href="cp3.html">0x3 = Cidade Terramoto, p1</a></li>
+          <li><a href="capitulo2.html">0x2 = Sol e a Lua, pt2</a></li>
+          <li><a href="capitulo1.html">0x1 = Sol e a Lua, pt1</a></li>
+        </ul>
+      </div>
+    </div>
   </div>
 
-  <div class="lista-capitulos">
-    <h2>Últimos Capítulos</h2>
-    <ul>
-           <li><a href="cp4.html">0x4 = cidade terramoto,p2</a></li>
-      <li><a href="cp3.html">0x3 = Cidade Terramoto, p1</a></li>
-      <li><a href="capitulo2.html">0x2 = Sol e a Lua, pt2</a></li>
-      <li><a href="capitulo1.html">0x1 = Sol e a Lua, pt1</a></li>
-      
-    </ul>
+  <!-- Botões de scroll -->
+  <div id="btnTop" class="scroll-btn">
+    <img src="logos/LOGOverticalcortado.png" alt="Topo">
   </div>
-</div>
 
-
-
-  
-</div>
-   </body>
-
+  <div id="btnBottom" class="scroll-btn">
+    <img src="logos/LOGOverticalcortado.png" alt="Fim">
+  </div>
 
   <div class="footer">
-  © 2025 Rafeiro Comics — Todos os direitos reservados
-</div>
+    © 2025 Rafeiro Comics — Todos os direitos reservados
+  </div>
 
+  <script>
+    const btnTop = document.getElementById('btnTop');
+    const btnBottom = document.getElementById('btnBottom');
+
+    // Vai para o topo
+    btnTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Vai para o final da página
+    btnBottom.addEventListener('click', () => {
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    });
+  </script>
+</body>
 </html>
