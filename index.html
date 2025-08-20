@@ -62,8 +62,8 @@
 <style>
   .scroll-btn {
     position: fixed;
-    left: 0px;
-    bottom: 60px;
+    left: 20px;
+    bottom: 120px;
     width: 50px;
     height: 50px;
     cursor: pointer;
@@ -90,6 +90,12 @@
   }
 </style>
 
+
+
+         <!-- Botão único -->
+  <div id="scrollBtn" class="scroll-btn">
+    <img src="logos/LOGOverticalcortado.png" alt="Scroll">
+  </div>
 <script>
   const scrollBtn = document.getElementById('scrollBtn');
   const img = scrollBtn.querySelector('img');
@@ -113,6 +119,8 @@
       scrollBtn.classList.remove('up'); // normal (para baixo)
     }
   });
+
+
 </script>
 
 
@@ -123,10 +131,7 @@
   <p>© 2025 Rafeiro - Todos os direitos reservados</p>
 </footer>
 
-   <!-- Botão único -->
-  <div id="scrollBtn" class="scroll-btn">
-    <img src="logos/LOGOverticalcortado.png" alt="Scroll">
-  </div>
+ 
   
 </body>
 </html>
