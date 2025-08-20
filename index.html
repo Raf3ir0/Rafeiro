@@ -5,15 +5,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rafeiro - Banda Desenhada</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Estilo do botão de scroll */
+    .scroll-btn {
+      position: fixed;
+      left: 20px;
+      bottom: 120px;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      z-index: 1000;
+      opacity: 0.7;
+      transition: opacity 0.3s, transform 0.3s;
+    }
+
+    .scroll-btn:hover {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+
+    .scroll-btn img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      transition: transform 0.3s;
+    }
+
+    /* Gira a imagem para cima quando no fundo */
+    .scroll-btn.up img {
+      transform: rotate(180deg);
+    }
+
+    /* Lista de capítulos */
+    .listadecap1 {
+      margin: 10px 0;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background-color: #f9f9f9;
+    }
+
+    .listadecap1 a {
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+    }
+
+    .listadecap1 a:hover {
+      color: #0077cc;
+    }
+  </style>
 </head>
 <body>
 
   <!-- Banner -->
   <div class="banner">
     <img src="logos/LOGOpequenoinv.png" alt="Logopequenoinv" class="logo">
-</div>
+  </div>
 
-  
   <!-- Menu de navegação -->
   <nav class="menu">
     <a href="listadecapitulos.html">Capítulos</a>
@@ -22,116 +71,72 @@
 
   <!-- Conteúdo central -->
   <main class="content">
-    <h1> <img src="logos/LOGOpequeno.png" alt="logopequeno"> </h1>
+    <h1><img src="logos/LOGOpequeno.png" alt="logopequeno"></h1>
 
     <div class="galeria">
-  <img src="imagen/pagina3.png" alt="pagina 1">
-  <img src="cp2/p1.png" alt="1">
-</div>
+      <img src="imagen/pagina3.png" alt="pagina 1">
+      <img src="cp2/p1.png" alt="1">
+    </div>
 
+    <section class="resumo">
+      <h2>Resumo</h2>
+      <p>Abu é um abutre engraçadão que está sempre à procura da sua próxima refeição.</p>
+      <p>Rafeiro, seu fiel companheiro, está aqui para ajudar Abu a conseguir a sua refeição favorita:</p>
+      <p>Corações! Corações! Corações! Corações! Corações! Corações!</p>
+      <p>Rafeiro não fala muito, mas Abu está sempre de bom humor. Os dois vão se perder</p>
+      <p>em mil e uma aventuras pelas cidades que vão passando, juntamente com os cidadãos.</p>
+    </section>
 
-  <section class="resumo">
-  <h2>Resumo</h2>
-  <p>Abu é um abutre engraçadão q está sempre à procura da sua próxima refeição.</p>
-  <p>Rafeiro, seu fiel companheiro, está aqui para ajudar Abu a conseguir a sua refeição favorita:</p>
-  <p> Corações! Corações! Corações! Corações! Corações! Corações! </p>
-  <p>Rafeiro não fala muito, mas Abu está sempre de bom humor. Os dois vão se perder </p>
-  <p>em mil e uma aventuras pelas cidades q vão passando, juntamente com os cidadãos.</p>
-</section>
+    <section class="listadecap">
+      <h3>Lista de capítulos</h3>
+      <div class="listadecap1">
+        <a href="cp4.html">Capítulo 0x4 = CIDADE TERRAMOTO, PT2</a>
+      </div>
+      <div class="listadecap1">
+        <a href="cp3.html">Capítulo 0x3 = CIDADE TERRAMOTO, PT1</a>
+      </div>
+      <div class="listadecap1">
+        <a href="capitulo2.html">Capítulo 0x2 = SOL E A LUA, PT2</a>
+      </div>
+      <div class="listadecap1">
+        <a href="capitulo1.html">Capítulo 0x1 = SOL E A LUA, PT1</a>
+      </div>
+    </section>
+  </main>
 
-  <section class="listadecap">
-    <h3>lista de capitulos</h3>
-  </section>
-
-    
- <div class="listadecap1">
-  <a href="cp4.html">Capítulo 0x4 = CIDADE TERRAMOTO, PT2</a>
-</div>
-  <div class="listadecap1">
-  <a href="cp3.html">Capítulo 0x3 = CIDADE TERRAMOTO, PT1</a>
-</div>
-    <div class="listadecap1">
-  <a href="capitulo2.html">Capítulo 0x2 = SOL E A LUA, PT2</a>
-</div>
-<div class="listadecap1">
-  <a href="capitulo1.html">Capítulo 0x1 = SOL E A LUA, PT1</a>
-</div>
-
-
-
-<style>
-  .scroll-btn {
-    position: fixed;
-    left: 20px;
-    bottom: 120px;
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-    z-index: 1000;
-    opacity: 0.7;
-    transition: opacity 0.3s, transform 0.3s;
-  }
-
-  .scroll-btn:hover {
-    opacity: 1;
-    transform: scale(1.1);
-  }
-
-  .scroll-btn img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    transition: transform 0.3s;
-  }
-
-  /* Quando estiver no fundo da página, gira a imagem para cima */
-  .up img {
-    transform: rotate(180deg);
-  }
-</style>
-
-
-
-         <!-- Botão único -->
+  <!-- Botão de scroll -->
   <div id="scrollBtn" class="scroll-btn">
     <img src="logos/LOGOverticalcortado.png" alt="Scroll">
   </div>
-<script>
-  const scrollBtn = document.getElementById('scrollBtn');
-  const img = scrollBtn.querySelector('img');
 
-  // Clicar no botão → sobe ou desce
-  scrollBtn.addEventListener('click', () => {
-    if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 50) {
-      // Se já está no fim → vai para o topo
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else {
-      // Se não está no fim → vai para o fundo
-      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-    }
-  });
+  <script>
+    const scrollBtn = document.getElementById('scrollBtn');
 
-  // Detecta se está no fundo ou não para girar a imagem
-  window.addEventListener('scroll', () => {
-    if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 50) {
-      scrollBtn.classList.add('up'); // gira para cima
-    } else {
-      scrollBtn.classList.remove('up'); // normal (para baixo)
-    }
-  });
+    // Clicar no botão → sobe ou desce
+    scrollBtn.addEventListener('click', () => {
+      if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 50) {
+        // Se já está no fim → vai para o topo
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        // Se não está no fim → vai para o fundo
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+      }
+    });
 
+    // Detecta se está no fundo ou não para girar a imagem
+    window.addEventListener('scroll', () => {
+      if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 50) {
+        scrollBtn.classList.add('up'); // gira para cima
+      } else {
+        scrollBtn.classList.remove('up'); // normal
+      }
+    });
+  </script>
 
-</script>
+  <footer class="footer">
+    <p>© 2025 Rafeiro - Todos os direitos reservados</p>
+  </footer>
 
-
-    
-</main>
-
-<footer class="footer">
-  <p>© 2025 Rafeiro - Todos os direitos reservados</p>
-</footer>
-
- 
-  
 </body>
 </html>
+
