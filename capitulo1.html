@@ -128,32 +128,68 @@
     </div>
   </div>
 
-  <!-- Botões de scroll -->
-  <div id="btnTop" class="scroll-btn">
-    <img src="logos/LOGOverticalcortado.png" alt="Topo">
-  </div>
 
-  <div id="btnBottom" class="scroll-btn">
-    <img src="logos/LOGOverticalcortado.png" alt="Fim">
-  </div>
+<!-- Botão único -->
+<div id="scrollBtn" class="scroll-btn">
+  <img src="logos/LOGOverticalcortado.png" alt="Scroll">
+</div>
 
-  <div class="footer">
-    © 2025 Rafeiro Comics — Todos os direitos reservados
-  </div>
+<style>
+  .scroll-btn {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    z-index: 1000;
+    opacity: 0.7;
+    transition: opacity 0.3s, transform 0.3s;
+  }
 
-  <script>
-    const btnTop = document.getElementById('btnTop');
-    const btnBottom = document.getElementById('btnBottom');
+  .scroll-btn:hover {
+    opacity: 1;
+    transform: scale(1.1);
+  }
 
-    // Vai para o topo
-    btnTop.addEventListener('click', () => {
+  .scroll-btn img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s;
+  }
+
+  /* Quando estiver no fundo da página, gira a imagem para cima */
+  .up img {
+    transform: rotate(360deg);
+  }
+</style>
+
+<script>
+  const scrollBtn = document.getElementById('scrollBtn');
+  const img = scrollBtn.querySelector('img');
+
+  // Clicar no botão → sobe ou desce
+  scrollBtn.addEventListener('click', () => {
+    if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 50) {
+      // Se já está no fim → vai para o topo
       window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    // Vai para o final da página
-    btnBottom.addEventListener('click', () => {
+    } else {
+      // Se não está no fim → vai para o fundo
       window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-    });
-  </script>
+    }
+  });
+
+  // Detecta se está no fundo ou não para girar a imagem
+  window.addEventListener('scroll', () => {
+    if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 50) {
+      scrollBtn.classList.add('up'); // gira para cima
+    } else {
+      scrollBtn.classList.remove('up'); // normal (para baixo)
+    }
+  });
+</script>
+
+  
 </body>
 </html>
