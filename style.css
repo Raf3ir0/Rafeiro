@@ -196,6 +196,39 @@ body {
 }
 
 
+
+
+/* Galeria de capítulos com layout horizontal e linhas de até 4 imagens */
+.capitulos-galeria {
+  display: flex;
+  flex-wrap: wrap;          /* permite que as imagens "quebrem" para a próxima linha */
+  justify-content: center;  /* centraliza horizontalmente */
+  gap: 30px;                /* espaço entre imagens */
+  margin: 40px 0;           /* espaço acima e abaixo da galeria */
+}
+
+.capitulos-galeria a img {
+  width: 200px;             /* tamanho da imagem */
+  height: auto;
+  border-radius: 8px;       /* cantos arredondados */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+}
+
+.capitulos-galeria a img:hover {
+  transform: scale(1.05);   /* efeito leve de zoom ao passar o mouse */
+}
+
+/* Responsivo: no telemóvel, uma imagem por linha */
+@media (max-width: 768px) {
+  .capitulos-galeria a img {
+    width: 90%;             /* ocupa quase toda a largura da tela */
+  }
+}
+
+
+
+
 .listadecap{
    text-align: center;
   margin-top: 100px;
