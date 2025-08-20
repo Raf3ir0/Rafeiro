@@ -250,6 +250,83 @@ body {
 
 
 
+
+
+.intro-lista {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  margin: 80px 40px;
+  font-family: RAFEIROPLUS2, sans-serif;
+  text-transform: uppercase;
+}
+
+.intro-texto {
+  flex: 1;
+  font-size: 20px;
+  line-height: 1.6;
+  color: #222;
+}
+
+.intro-texto h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.lista-capitulos {
+  flex: 1;
+  background: #eaeaea; /* fundo diferente para destacar */
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.lista-capitulos h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.lista-capitulos ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lista-capitulos li {
+  margin-bottom: 12px;
+}
+
+.lista-capitulos a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.lista-capitulos a:hover {
+  color: red;
+}
+
+/* Responsivo: no telemóvel, fica um por cima do outro */
+@media (max-width: 768px) {
+  .intro-lista {
+    flex-direction: column;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 .footer {
   background-color: black;   /* cor de fundo */
   color: white;              /* cor do texto */
