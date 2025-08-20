@@ -232,6 +232,10 @@ body {
   font-size: 20px;
 }
 
+  background-color: #e6e6e6;     /* cinza claro diferente do fundo */
+  border-radius: 12px;           /* cantos arredondados */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* sombra suave */
+
 .listadecap2 a {
   color: black;             /* cor do link */
   text-decoration: none;    /* remove o sublinhado */
