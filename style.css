@@ -340,34 +340,37 @@ body {
 
 
 
-/* isto é o btn q vai para o topo e fundo*/
+
 .scroll-btn {
   position: fixed;
   left: 0px;
   bottom: 100px;
-  width: 60px;              /* largura */
-  height: 60px;             /* altura */
   cursor: pointer;
   z-index: 1000;
-  opacity: 0.7;
+  opacity: 0.9;
   transition: opacity 0.3s, transform 0.3s;
-  border: 2px solid #000;
-  border-radius: 8px;
-  background-color: #fff;
-
+  background: none; /* sem fundo */
+  border: none;     /* sem borda fixa */
 }
+
+.scroll-btn img {
+  width: 60px;
+  height: auto;
+  border: 2px solid #000;  /* a borda passa para a própria imagem */
+  border-radius: 50%;      /* se queres redondo */
+}
+
+
+
+
+
 
 .scroll-btn:hover {
   opacity: 1;
   transform: scale(1.1);
 }
 
-.scroll-btn img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  transition: transform 0.3s;
-}
+
 
 /* Quando estiver no fundo da página, gira a imagem para cima */
 .up img {
