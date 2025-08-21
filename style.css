@@ -160,15 +160,13 @@ img {
 
 
 
-.chapter-header {
+  .chapter-header {
   background-image: url("logos/rasc.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 40px 20px;  /* controla o espaço em volta do texto */
-  border-radius: 12px; /* opcional */
-  text-align: center;  /* centraliza o texto dentro da imagem */
+  background-size: 200px;   /* largura fixa da imagem */
+  background-repeat: no-repeat; 
+  background-position: center; /* posição da imagem */
 }
+
 
 
 
