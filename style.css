@@ -160,6 +160,19 @@ img {
 
 
 
+.chapter-header {
+  background-image: url("imagens/fundo-titulo.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 40px 20px;  /* controla o espaço em volta do texto */
+  border-radius: 12px; /* opcional */
+  text-align: center;  /* centraliza o texto dentro da imagem */
+}
+
+
+
+
 .capitulo {
   text-align: center;
   margin: 40px 0; /* espaço entre capítulos */
