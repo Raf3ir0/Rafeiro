@@ -15,6 +15,17 @@ body {
 }
 
 
+img {
+    max-width: 40%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+
+
+
 /* Conteúdo central */
 .content {
   max-width: 100%;
@@ -51,10 +62,11 @@ body {
 
 .banner .logo {
   width: 100%;       /* ocupa toda a largura do banner */
-  max-width: 500px;  /* largura máxima que quer para o logo */
+  max-width: 200px;  /* largura máxima que quer para o logo */
   height: auto;      /* mantém proporção */
   display: block;
   margin: 20px auto; /* centraliza horizontalmente */
+  background-position: left;
 }
 
 
