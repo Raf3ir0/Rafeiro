@@ -5,16 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rafeiro - Banda Desenhada</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-  
 
+  <style>
     /* Lista de capítulos */
     .listadecap1 {
       margin: 10px 0;
       padding: 10px;
-      border: 0px solid #ccc;
+      border: 2px solid #000; /* border igual ao capítulo 1 */
       border-radius: 6px;
-      background-color: none;
+      background-color: transparent;
     }
 
     .listadecap1 a {
@@ -25,6 +24,34 @@
 
     .listadecap1 a:hover {
       color: #0077cc;
+    }
+
+    /* Botão de scroll */
+    .scroll-btn {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 60px;
+      height: 60px;
+      border: 2px solid #000; /* mesma border do capítulo 1 */
+      border-radius: 50%;
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    .scroll-btn img {
+      width: 40px;
+      height: 40px;
+      transition: transform 0.3s;
+    }
+
+    /* Gira a imagem quando estiver no fundo */
+    .scroll-btn.up img {
+      transform: rotate(180deg);
     }
   </style>
 </head>
@@ -76,49 +103,33 @@
     </section>
   </main>
 
-
-
   <!-- Botão único -->
-<div id="scrollBtn" class="scroll-btn">
-  <img src="logos/LOGOverticalcortado.png" alt="Scroll">
-</div>
+  <div id="scrollBtn" class="scroll-btn">
+    <img src="logos/LOGOverticalcortado.png" alt="Scroll">
+  </div>
 
+  <script>
+    const scrollBtn = document.getElementById('scrollBtn');
 
+    // Clicar no botão → sobe ou desce
+    scrollBtn.addEventListener('click', () => {
+      if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 50) {
+        // Se já está no fim → vai para o topo
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        // Se não está no fim → vai para o fundo
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+      }
+    });
 
-
-
-<script>
-  const scrollBtn = document.getElementById('scrollBtn');
-  const img = scrollBtn.querySelector('img');
-
-  // Clicar no botão → sobe ou desce
-  scrollBtn.addEventListener('click', () => {
-    if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 50) {
-      // Se já está no fim → vai para o topo
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else {
-      // Se não está no fim → vai para o fundo
-      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-    }
-  });
-
-  // Detecta se está no fundo ou não para girar a imagem
-  window.addEventListener('scroll', () => {
-    if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 50) {
-      scrollBtn.classList.add('up'); // gira para cima
-    } else {
-      scrollBtn.classList.remove('up'); // normal (para baixo)
-    }
-  });
-</script>
-
-
-
-
-  <footer class="footer">
-    <p>© 2025 Rafeiro - Todos os direitos reservados</p>
-  </footer>
-
+    // Detecta se está no fundo ou não para girar a imagem
+    window.addEventListener('scroll', () => {
+      if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 50) {
+        scrollBtn.classList.add('up'); // gira para cima
+      } else {
+        scrollBtn.classList.remove('up'); // normal (para baixo)
+      }
+    });
+  </script>
 </body>
 </html>
-
