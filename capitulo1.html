@@ -108,6 +108,41 @@
 </div>
 
 
+<style>
+  .scroll-btn {
+    position: fixed;
+    left: 0px;
+    bottom: 60px;
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+    z-index: 1000;
+    opacity: 0.7;
+    transition: opacity 0.3s, transform 0.3s;
+  }
+
+  .scroll-btn:hover {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+
+  .scroll-btn img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s;
+  }
+
+  /* Quando estiver no fundo da página, gira a imagem para cima */
+  .up img {
+    transform: rotate(180deg);
+  }
+</style>
+
+
+
+  
+
 <script>
   const scrollBtn = document.getElementById('scrollBtn');
   const img = scrollBtn.querySelector('img');
