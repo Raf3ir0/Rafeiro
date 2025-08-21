@@ -162,10 +162,15 @@ img {
 
   .chapter-header {
   background-image: url("logos/rasc.png");
-  background-size: 200px;   /* largura fixa da imagem */
+  background-size: 200px auto;;   /* largura fixa da imagem */
   background-repeat: no-repeat; 
   background-position: center; /* posição da imagem */
 }
+
+
+
+
+
 
 
 
