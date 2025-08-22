@@ -6,31 +6,7 @@
   <title>Rafeiro - Banda Desenhada</title>
   <link rel="stylesheet" href="style.css">
 
-  <style>
-    body {
-      background-color: #f4f4f4;
-      text-align: center;
-      color: black;
-      margin: 20;
-      padding: 0;
-      text-transform: uppercase;
-      font-size: 20px;
-    }
-
-    img {
-      max-width: 40%;
-      height: auto;
-      display: block;
-      margin: 20px auto;
-    }
-    
-    
-
-
-     </style>
-  </head> 
-
-<body>
+ <body>
 
   <!-- Banner -->
   <div class="banner">
@@ -45,119 +21,36 @@
     <a href="rascunhos.html">Rascunhos</a>
   </nav>
 
-
-<div class="header-img-container"></div>
-<div class="content">
-  <!-- Imagem em cima -->
-  <img src="logos/rasc.png" alt="Personagens" class="header-img">
-  
-  
-
-  
-
-
+  <div class="content">
+    <!-- Imagem em cima -->
+    <img src="logos/rasc.png" alt="Personagens" class="header-img">
+    
     <h1 class="chapter-title">= projeto rafeiro =</h1>
     <p>Abu é um abutre engraçadão que está sempre à procura da sua próxima refeição.</p>
     <p>Rafeiro, seu fiel companheiro, está aqui para ajudar Abu a conseguir a sua refeição favorita:</p>
     <p>Corações! Corações! Corações! Corações! Corações! Corações!</p>
     <p>Rafeiro não fala muito, mas Abu está sempre de bom humor. Os dois vão se perder</p>
     <p>em mil e uma aventuras pelas cidades que vão passando, juntamente com os cidadãos.</p>
-  </div>
-</div>
+  </div> <!-- fecha .content -->
 
-
-  
-
-
-
-  
-   
-
-      <div class="lista-capitulos">
-        <h2>Últimos Capítulos</h2>
-        <ul>
-          <li><a href="cp4.html">0x2 = cidade terramoto,p2</a></li>
-          <li><a href="cp3.html">0x2 = Cidade Terramoto, p1</a></li>
-          <li><a href="capitulo2.html">0x1= Sol e a Lua, pt2</a></li>
-          <li><a href="capitulo1.html">0x1 = Sol e a Lua, pt1</a></li>
-        </ul>
-      </div>
-    </div>
+  <div class="lista-capitulos">
+    <h2>Últimos Capítulos</h2>
+    <ul>
+      <li><a href="cp4.html">0x2 = cidade terramoto,p2</a></li>
+      <li><a href="cp3.html">0x2 = Cidade Terramoto, p1</a></li>
+      <li><a href="capitulo2.html">0x1= Sol e a Lua, pt2</a></li>
+      <li><a href="capitulo1.html">0x1 = Sol e a Lua, pt1</a></li>
+    </ul>
   </div>
 
+  <!-- Botão único -->
+  <div id="scrollBtn" class="scroll-btn">
+    <img src="logos/LOGOverticalcortado.png" alt="Scroll">
+  </div>
 
-<!-- Botão único -->
-<div id="scrollBtn" class="scroll-btn">
-  <img src="logos/LOGOverticalcortado.png" alt="Scroll">
-</div>
-
-
-<style>
-  .scroll-btn {
-    position: fixed;
-    left: 0px;
-    bottom: 110px;
-    width: 150px;
-    height: 150px;
-    cursor: pointer;
-    z-index: 1000;
-    opacity: 0.7;
-    transition: opacity 0.3s, transform 0.3s;
-  }
-
-  .scroll-btn:hover {
-    opacity: 1;
-    transform: scale(1.1);
-  }
-
-  .scroll-btn img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    transition: transform 0.3s;
-  }
-
-  /* Quando estiver no fundo da página, gira a imagem para cima */
-  .up img {
-    transform: rotate(180deg);
-  }
-</style>
-
-
-
-  
-
-<script>
-  const scrollBtn = document.getElementById('scrollBtn');
-  const img = scrollBtn.querySelector('img');
-
-  // Clicar no botão → sobe ou desce
-  scrollBtn.addEventListener('click', () => {
-    if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 50) {
-      // Se já está no fim → vai para o topo
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else {
-      // Se não está no fim → vai para o fundo
-      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-    }
-  });
-
-  // Detecta se está no fundo ou não para girar a imagem
-  window.addEventListener('scroll', () => {
-    if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 50) {
-      scrollBtn.classList.add('up'); // gira para cima
-    } else {
-      scrollBtn.classList.remove('up'); // normal (para baixo)
-    }
-  });
-</script>
-
-  
-</body>
-
-
+  <!-- Footer -->
   <div class="footer">
-  © 2025 Rafeiro Comics — Todos os direitos reservados
-</div>
-  
-</html>
+    © 2025 Rafeiro Comics — Todos os direitos reservados
+  </div>
+
+</body>
