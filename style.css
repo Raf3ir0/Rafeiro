@@ -248,7 +248,7 @@ img {
   margin-top: 8px;       /* espaço entre imagem e legenda */
   color: #333;
   line-height: 1.2;
-  text-transform: none;
+  text-transform: uppercase;
 }
 
 .capitulos-galeria img {
