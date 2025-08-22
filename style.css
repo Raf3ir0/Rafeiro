@@ -229,64 +229,57 @@ img {
 
 
 
+/* Apenas afeta a galeria de capítulos */
 .capitulos-galeria {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+  grid-template-columns: repeat(4, auto); /* 4 colunas ajustadas ao conteúdo */
+  gap: 20px;                              /* espaço entre as imagens */
+  justify-content: center;                 /* centraliza o grid */
   margin: 40px 0;
-  justify-items: center;
-}
-
-.capitulos-galeria img {
-  width: 120px;       /* largura das imagens maior */
-  max-width: none;    /* ignora max-width global */
-  height: auto;
-  display: block;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  transition: transform 0.2s;
-}
-
-.capitulos-galeria a img:hover {
-  transform: scale(1.05);
 }
 
 .capitulos-galeria figure {
-  display: inline-block;      /* mantém cada figura isolada no grid */
-  text-align: center;         /* centraliza imagem + legenda */
-  margin: 0;                  /* podes ajustar */
+  text-align: center;    /* centraliza a imagem e a legenda */
+  margin: 0;             /* evita espaçamentos extras */
 }
 
 .capitulos-galeria figcaption {
-  font-size: 14px;
-  margin-top: 5px;
+  font-size: 14px;       /* tamanho da legenda */
+  margin-top: 8px;       /* espaço entre imagem e legenda */
   color: #333;
-  text-transform: none;       /* se quiseres legenda normal, não maiúscula */
+  line-height: 1.2;
+  text-transform: none;
 }
 
+.capitulos-galeria img {
+  width: 150px;          /* largura das imagens no desktop */
+  height: auto;          /* mantém proporção */
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+}
 
-/* Responsivo telemovel*/
+.capitulos-galeria img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsivo: 2 colunas no tablet/telemóvel */
 @media (max-width: 768px) {
   .capitulos-galeria {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, auto);
     gap: 15px;
   }
 
   .capitulos-galeria img {
-    width: 180px;
+    width: 120px;
+  }
+
+  .capitulos-galeria figcaption {
+    font-size: 12px;
   }
 }
 
-@media (max-width: 480px) {
-  .capitulos-galeria {
-    grid-template-columns: 1fr;
-  }
-
-  .capitulos-galeria img {
-    width: 100%;
-    max-width: 200px;
-  }
-}
 
 
 
