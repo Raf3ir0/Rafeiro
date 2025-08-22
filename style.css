@@ -385,7 +385,7 @@ img {
 }
 
 .scroll-btn img {
-  width: 60px;
+  width: 100px;
   height: auto;
   border: 2px solid #000;  /* a borda passa para a própria imagem */
   border-radius: 50%;      /* se queres redondo */
