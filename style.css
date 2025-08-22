@@ -253,7 +253,8 @@ img {
 
 .capitulos-galeria img {
   width: 150px !important;          /* largura das imagens no desktop */
-  height: auto;          /* mantém proporção */
+  max-width: none !important;
+  height: auto !important;          /* mantém proporção */
   display: block;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
