@@ -238,7 +238,7 @@ img {
 }
 
 .capitulos-galeria img {
-  width: 250px;       /* largura das imagens maior */
+  width: 180px;       /* largura das imagens maior */
   max-width: none;    /* ignora max-width global */
   height: auto;
   display: block;
