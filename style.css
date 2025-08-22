@@ -251,7 +251,21 @@ img {
   transform: scale(1.05);
 }
 
-/* Responsivo */
+.capitulos-galeria figure {
+  display: inline-block;      /* mantém cada figura isolada no grid */
+  text-align: center;         /* centraliza imagem + legenda */
+  margin: 0;                  /* podes ajustar */
+}
+
+.capitulos-galeria figcaption {
+  font-size: 14px;
+  margin-top: 5px;
+  color: #333;
+  text-transform: none;       /* se quiseres legenda normal, não maiúscula */
+}
+
+
+/* Responsivo telemovel*/
 @media (max-width: 768px) {
   .capitulos-galeria {
     grid-template-columns: repeat(2, 1fr);
