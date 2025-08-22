@@ -436,6 +436,17 @@ img {
 
 
 
+.header-img {
+  max-width: 100%;   /* ocupa toda a largura do content */
+  height: auto;      /* mantém proporção */
+  display: block;
+  margin: 0 auto 20px; /* centraliza horizontalmente e dá margem inferior */
+  border-radius: 8px;  /* opcional */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+
+
 
 
 
