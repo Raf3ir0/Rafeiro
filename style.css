@@ -447,7 +447,13 @@ img {
 
 
 
-
+.header-img {
+  max-width: 30%;   /* controla o tamanho */
+  height: auto;     /* mantém a proporção (não distorce) */
+  display: block;   /* evita comportamentos estranhos */
+  margin: 20px auto; /* centraliza e dá espaço em cima/baixo */
+}
+  
 
 
 
