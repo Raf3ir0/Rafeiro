@@ -239,7 +239,7 @@ img {
 }
 
 .capitulos-galeria a img {
-  width: 300px;             /* tamanho da imagem */
+  width: 400px;             /* tamanho da imagem */
   height: auto;
   border-radius: 8px;       /* cantos arredondados */
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
