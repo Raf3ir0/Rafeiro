@@ -48,6 +48,33 @@
     <img src="logos/LOGOverticalcortado.png" alt="Scroll">
   </div>
 
+<script>
+  const scrollBtn = document.getElementById('scrollBtn');
+  const img = scrollBtn.querySelector('img');
+
+  // Quando clicares no botão → sobe ou desce
+  scrollBtn.addEventListener('click', () => {
+    if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 50) {
+      // Já está no fim → vai para o topo
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      // Ainda não está no fim → vai para o fundo
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    }
+  });
+
+  // Detecta se está no fundo ou não para girar a imagem
+  window.addEventListener('scroll', () => {
+    if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 50) {
+      scrollBtn.classList.add('up'); // gira para cima
+    } else {
+      scrollBtn.classList.remove('up'); // normal (para baixo)
+    }
+  });
+</script>
+
+
+   
   <!-- Footer -->
   <div class="footer">
     © 2025 Rafeiro Comics — Todos os direitos reservados
