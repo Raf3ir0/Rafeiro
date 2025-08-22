@@ -436,12 +436,14 @@ img {
 
 
 
-.header-img {
-  max-width: 30%;   /* ocupa toda a largura do content */
-  height: auto;      /* mantém proporção */
-  display: block;
-  margin: 0 auto 20px; /* centraliza horizontalmente e dá margem inferior */
+.header-img-container {
+  width: 100%;
+  height: 100px; /* altura que queres */
+  background-image: url('logos/rasc.png');
+  background-repeat: repeat-x;
+  background-size: auto 100%; /* mantém proporção da altura */
 }
+
 
 
 
