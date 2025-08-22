@@ -30,7 +30,7 @@ img {
   margin-left: 10px;
   margin-right: 10px;
   padding: 10px;
-  background: #fff;
+  background: transparent;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   border-radius: 8px;
 }
