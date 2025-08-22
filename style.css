@@ -231,20 +231,18 @@ img {
 
 /* Galeria de capítulos com layout horizontal e linhas de até 4 imagens */
 .capitulos-galeria {
-  display: flex;
-  flex-wrap: wrap;          /* permite que as imagens "quebrem" para a próxima linha */
-  justify-content: center;  /* centraliza horizontalmente */
-  gap: 30px;                /* espaço entre imagens */
-  margin: 40px 0;           /* espaço acima e abaixo da galeria */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* sempre 4 colunas */
+  gap: 20px; /* controla o espaço entre elas */
+  margin: 40px 0;
+  justify-items: center; /* centraliza cada item na sua célula */
 }
 
-.capitulos-galeria a img {
-  width: 400px;             /* tamanho da imagem */
+.capitulos-galeria img {
+  width: 200px;  /* ajusta a largura para caber 4 de lado */
   height: auto;
-  border-radius: 8px;       /* cantos arredondados */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  transition: transform 0.3s;
 }
+
 
 .capitulos-galeria a img:hover {
   transform: scale(1.05);   /* efeito leve de zoom ao passar o mouse */
