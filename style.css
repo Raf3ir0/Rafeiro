@@ -437,7 +437,7 @@ img {
 
 
 .header-img {
-  max-width: 100%;   /* ocupa toda a largura do content */
+  max-width: 30%;   /* ocupa toda a largura do content */
   height: auto;      /* mantém proporção */
   display: block;
   margin: 0 auto 20px; /* centraliza horizontalmente e dá margem inferior */
