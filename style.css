@@ -239,8 +239,8 @@ img {
 }
 
 .capitulos-galeria img {
-  width: 200px;  /* ajusta a largura para caber 4 de lado */
-  height: auto;
+  width: 200px !important;  /* ajusta a largura para caber 4 de lado */
+  height: auto !important;
 }
 
 
