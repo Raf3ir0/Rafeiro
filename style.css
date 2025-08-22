@@ -232,29 +232,29 @@ img {
 /* Apenas afeta a galeria de capítulos */
 .capitulos-galeria {
   display: grid;
-  grid-template-columns: repeat(4, auto); /* 4 colunas ajustadas ao conteúdo */
-  gap: 20px;                              /* espaço entre as imagens */
-  justify-content: center;                 /* centraliza o grid */
+  grid-template-columns: repeat(4, 1fr); /* 4 colunas iguais no desktop */
+  gap: 25px;                             /* mais espaço entre imagens */
+  justify-content: center;               /* centraliza o grid */
   margin: 40px 0;
 }
 
 .capitulos-galeria figure {
-  text-align: center;    /* centraliza a imagem e a legenda */
-  margin: 0;             /* evita espaçamentos extras */
+  text-align: center;   /* centraliza a imagem e a legenda */
+  margin: 0;
 }
 
 .capitulos-galeria figcaption {
-  font-size: 14px;       /* tamanho da legenda */
-  margin-top: 8px;       /* espaço entre imagem e legenda */
+  font-size: 14px;
+  margin-top: 8px;
   color: #333;
   line-height: 1.2;
   text-transform: uppercase;
 }
 
 .capitulos-galeria img {
-  width: 150px !important;          /* largura das imagens no desktop */
-  max-width: none !important;
-  height: auto !important;          /* mantém proporção */
+  width: 150px !important;      /* desktop */
+  max-width: none !important;   /* ignora regras globais */
+  height: auto !important;
   display: block;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
@@ -265,19 +265,22 @@ img {
   transform: scale(1.05);
 }
 
-/* Responsivo: 2 colunas no tablet/telemóvel */
+/* Responsivo: tablet/telemóvel */
 @media (max-width: 768px) {
   .capitulos-galeria {
-    grid-template-columns: repeat(2, auto);
-    gap: 15px;
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas iguais */
+    gap: 20px;                             /* mais espaçamento */
   }
 
-
+  .capitulos-galeria img {
+    width: 120px;                           /* ajuste para telemóvel */
+  }
 
   .capitulos-galeria figcaption {
     font-size: 12px;
   }
 }
+
 
 
 
