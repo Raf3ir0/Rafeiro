@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rafeiro - Banda Desenhada</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      background-color: #f4f4f4;
+      text-align: right;
+      color: black;
+      margin: 20;
+      padding: 0;
+      text-transform: uppercase;
+      font-size: 20px;
+    }
+
+    img {
+      max-width: 40%;
+      height: auto;
+      display: block;
+      margin: 20px auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+
+     </style>
+  </head> 
+
+<body>
+
+  <!-- Banner -->
+  <div class="banner">
+    <a href="pt/index.html" class="logo-link">
+      <img src="logos/LOGOpequenoinv.png" alt="Logopequenoinv" class="logo">
+    </a>
+  </div>
+
+<!-- Menu de navegação -->
+  <nav class="menu">
+    <a href="pt/listabase.html">capítulos</a>
+ <a href="pt/cp4.html">último Capítulo</a>
+    <a href="pt/listadecapitulos.html">volumes</a>
+    <a href="pt/rascunhos.html">Rascunhos</a>
+     <a href="pt/projetorafeiro.html">SOBRE</a>
+  </nav>
+
+  <div class="content">
+  <h1 class="chapter-title">= (Rafeiro)OX1 =</h1>
+  <h2 class="chapter-subtitle">= sol e a lua, pt 1 =</h2>
+
+
+  
+
+
+    <!-- Páginas -->
+    <img src="imagen/pagina1.png" alt="Página 1">
+    <img src="imagen/pagina2.png" alt="Página 2">
+    <img src="imagen/pagina3.png" alt="Página 3">
+    <img src="imagen/pagina4.png" alt="Página 4">
+    <img src="imagen/pagina5.png" alt="Página 5">
+    <img src="imagen/pagina6.png" alt="Página 6">
+    <img src="imagen/pagina7.png" alt="Página 7">
+    <img src="imagen/pagina8.png" alt="Página 8">
+    <img src="imagen/pagina9.png" alt="Página 9">
+    <img src="imagen/pagina10.png" alt="Página 10">
+    <img src="imagen/pagina11.png" alt="Página 11">
+    <img src="imagen/pagina12.png" alt="Página 12">
+    <img src="imagen/pagina13.png" alt="Página 13">
+    <img src="imagen/pagina14.png" alt="Página 14">
+    <img src="imagen/pagina15.png" alt="Página 15">
+    <img src="imagen/pagina16.png" alt="Página 16">
+    <img src="imagen/pagina17.png" alt="Página 17">
+    <img src="imagen/pagina18.png" alt="Página 18">
+    <img src="imagen/pagina19.png" alt="Página 19">
+    <img src="imagen/pagina20.png" alt="Página 20">
+    <img src="imagen/pagina21.png" alt="Página 21">
+    <img src="imagen/pagina22.png" alt="Página 22">
+    <img src="imagen/pagina23-24.png" alt="Página 23 e 24">
+    <img src="imagen/pagina25-26.png" alt="Página 25 e 26">
+
+    <div class="capitulo">
+      <a href="chapter2.html"><button id="capitulo2">0x2 = sun and the moon, p2</button></a>
+    </div>
+
+    <div class="intro-lista">
+      <div class="intro-texto">
+        <h2>Sobre</h2>
+        <p>
+          Rafeiro is an independent Portuguese comic.
+Here you can follow the stories and the latest news
+from this project.
+        </p>
+      </div>
+
+      <div class="lista-capitulos">
+        <h2>Últimos Capítulos</h2>
+        <ul>
+          <li><a href="cp4.html">0x2 = terramoto city,p2</a></li>
+          <li><a href="cp3.html">0x2 = terramoto city, p1</a></li>
+          <li><a href="capitulo2.html">0x1= sun and the moon, pt2</a></li>
+          <li><a href="capitulo1.html">0x1 = sun and the moon, pt1</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+<!-- Botão único -->
+<div id="scrollBtn" class="scroll-btn">
+  <img src="logos/LOGOverticalcortado.png" alt="Scroll">
+</div>
+
+
+<style>
+  .scroll-btn {
+    position: fixed;
+    left: 0px;
+    bottom: 110px;
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+    z-index: 1000;
+    opacity: 0.7;
+    transition: opacity 0.3s, transform 0.3s;
+  }
+
+  .scroll-btn:hover {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+
+  .scroll-btn img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s;
+  }
+
+  /* Quando estiver no fundo da página, gira a imagem para cima */
+  .up img {
+    transform: rotate(180deg);
+  }
+</style>
+
+
+
+  
+
+<script>
+  const scrollBtn = document.getElementById('scrollBtn');
+  const img = scrollBtn.querySelector('img');
+
+  // Clicar no botão → sobe ou desce
+  scrollBtn.addEventListener('click', () => {
+    if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 50) {
+      // Se já está no fim → vai para o topo
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      // Se não está no fim → vai para o fundo
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    }
+  });
+
+  // Detecta se está no fundo ou não para girar a imagem
+  window.addEventListener('scroll', () => {
+    if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 50) {
+      scrollBtn.classList.add('up'); // gira para cima
+    } else {
+      scrollBtn.classList.remove('up'); // normal (para baixo)
+    }
+  });
+</script>
+
+  
+</body>
+
+
+  <div class="footer">
+  © 2025 Rafeiro Comics — all rights reserved
+</div>
+  
+</html>
