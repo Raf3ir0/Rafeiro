@@ -78,9 +78,11 @@
 <img src="cp2/p35" alt="Página 19 20">
 
 
-    <div class="capitulo">
-      <a href="chapter2.html"><button id="capitulo2">0x2 = sun and the moon, p2</button></a>
-    </div>
+  
+<div class="capitulo">
+  <a href="chapter1.html"><button id="capitulo1">0x1 = sun and the moon, p1</button></a>
+  <a href="chapter3.html"><button id="capitulo3">0x3 = terramoto city, p1</button></a>
+</div>
 
     <div class="intro-lista">
       <div class="intro-texto">
