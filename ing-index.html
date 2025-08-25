@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rafeiro - Banda Desenhada</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Lista de capítulos */
+    .listadecap1 {
+      margin: 10px 0;
+      padding: 10px;
+      background-color: transparent;
+    }
+
+    .listadecap1 a {
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+    }
+
+    .listadecap1 a:hover {
+      color: #0077cc;
+    }
+
+
+
+
+
+
+    /* Gira a imagem quando estiver no fundo */
+    .scroll-btn.up img {
+      transform: rotate(180deg);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Banner -->
+<div class="banner">
+  <a href="index.html" class="logo-link">
+    <img src="logos/LOGOpequenoinv.png" alt="Logo" class="logo">
+  </a>
+</div>
+
+
+
+<!-- Menu de navegação -->
+  <nav class="menu">
+    <a href="listabase.html">chapters</a>
+ <a href="cp4.html">last chapter</a>
+    <a href="listadecapitulos.html">volume</a>
+    <a href="rascunhos.html">drafts</a>
+     <a href="projetorafeiro.html">about</a>
+  </nav>
+
+  <!-- Conteúdo central -->
+  <main class="content">
+    <h1><img src="logos/LOGOpequeno.png" alt="logopequeno"></h1>
+
+    <div class="galeria">
+      <img src="imagen/pagina3.png" alt="pagina 1">
+      <img src="cp2/p1.png" alt="1">
+    </div>
+
+    <section class="resumo">
+      <h2>summary</h2>
+<p>Abu is a funny vulture who is always on the lookout for his next meal.</p>
+<p>Rafeiro, his loyal companion, is here to help Abu get his favorite food:</p>
+<p>Hearts! Hearts! Hearts! Hearts! Hearts! Hearts!</p>
+<p>Rafeiro doesn’t talk much, but Abu is always in a good mood. The two will get lost</p>
+<p>in a thousand and one adventures through the cities they pass, along with the citizens.</p>
+
+    <section class="listadecap">
+      <h3>Lista de capítulos</h3>
+      <div class="listadecap1">
+        <a href="cp4.html">Chapter 0x2 = terramoto city, PT2</a>
+      </div>
+      <div class="listadecap1">
+        <a href="cp3.html">Chapter 0x2 = terramoto city, PT1</a>
+      </div>
+      <div class="listadecap1">
+        <a href="capitulo2.html">Chapter 0x1 = sun and the moon, PT2</a>
+      </div>
+      <div class="listadecap1">
+        <a href="capitulo1.html">Chapter 0x1 = sun and the moon, PT1</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Botão único -->
+  <div id="scrollBtn" class="scroll-btn">
+    <img src="logos/LOGOverticalcortado.png" alt="Scroll">
+  </div>
+
+  <script>
+    const scrollBtn = document.getElementById('scrollBtn');
+
+    // Clicar no botão → sobe ou desce
+    scrollBtn.addEventListener('click', () => {
+      if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 50) {
+        // Se já está no fim → vai para o topo
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        // Se não está no fim → vai para o fundo
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+      }
+    });
+
+    // Detecta se está no fundo ou não para girar a imagem
+    window.addEventListener('scroll', () => {
+      if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 50) {
+        scrollBtn.classList.add('up'); // gira para cima
+      } else {
+        scrollBtn.classList.remove('up'); // normal (para baixo)
+      }
+    });
+  </script>
+</body>
+  <div class="footer">
+  © 2025 Rafeiro — all rights reserved
+</div>
+
+
+</html>
