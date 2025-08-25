@@ -24,6 +24,27 @@ img {
 }
 
 
+.lang-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #ff5050;
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  z-index: 1001; /* acima de tudo */
+  transition: background-color 0.3s;
+  text-transform: uppercase;
+}
+
+.lang-btn:hover {
+  background-color: #e63946;
+}
+
+
+
 /* Conteúdo central */
 .content {
   max-width: 100%;
