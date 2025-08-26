@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rafeiro - Banda Desenhada</title>
+  <link rel="stylesheet" href="style.css">
+
+   <style>
+    body {
+      background-color: white;
+      text-align: center;
+      color: black;
+ 
+      text-transform: uppercase;
+      font-size: 20px;
+    }
+
+    img {
+      max-width: 40%;
+      height: auto;
+      display: block;
+      margin: 20px auto;
+      
+    }
+
+
+     </style>
+  </head> 
+
+ <body>
+
+  <!-- Banner -->
+  <div class="banner">
+    <a href="index.html" class="logo-link">
+      <img src="logos/LOGOpequenoinv.png" alt="Logopequenoinv" class="logo">
+    </a>
+  </div>
+
+   <!-- Botão para versão pt -->
+<a href="rascunhos.html" class="lang-btn">pt</a>
+
+<!-- Menu de navegação -->
+  <nav class="menu">
+    <a href="listabase.html">capítulos</a>
+ <a href="cp4.html">último Capítulo</a>
+    <a href="listadecapitulos.html">volumes</a>
+    <a href="rascunhos.html">Rascunhos</a>
+     <a href="projetorafeiro.html">SOBRE</a>
+  </nav>
+
+
+ 
+    
+    <h1 class="chapter-title">= sketches =</h1>
+
+
+
+
+   <div class="capitulos-galeria">
+  <figure>
+      <img src="rasc/1R.jpg" alt="R1">
+  </figure>
+<img src="rasc/2R.png" alt="R1">
+  </figure>
+     <img src="rasc/3R.png" alt="R1">
+  </figure>
+     <img src="rasc/4R.png" alt="R1">
+  </figure>
+     <img src="rasc/5R.png" alt="R1">
+  </figure>
+     <img src="rasc/6R.png" alt="R1">
+  </figure>
+     <img src="rasc/7R.png" alt="R1">
+  </figure>
+     <img src="rasc/8R.png" alt="R1">
+  </figure>
+     <img src="rasc/9R.png" alt="R1">
+  </figure>
+
+</div>
+
+
+
+
+  <div class="lista-capitulos">
+    <h2>Últimos Capítulos</h2>
+    <ul>
+      <li><a href="chapter4.html">0x2 = terramoto city,p2</a></li>
+      <li><a href="chapter3.html">0x2 = Terramoto city, p1</a></li>
+      <li><a href="chapter2.html">0x1= Sun and the moon, pt2</a></li>
+      <li><a href="chapter1.html">0x1 = Sun and the moon, pt1</a></li>
+    </ul>
+  </div>
+
+  <!-- Botão único -->
+  <div id="scrollBtn" class="scroll-btn">
+    <img src="logos/LOGOverticalcortado.png" alt="Scroll">
+  </div>
+
+<script>
+  const scrollBtn = document.getElementById('scrollBtn');
+  const img = scrollBtn.querySelector('img');
+
+  // Quando clicares no botão → sobe ou desce
+  scrollBtn.addEventListener('click', () => {
+    if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 50) {
+      // Já está no fim → vai para o topo
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      // Ainda não está no fim → vai para o fundo
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    }
+  });
+
+  // Detecta se está no fundo ou não para girar a imagem
+  window.addEventListener('scroll', () => {
+    if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 50) {
+      scrollBtn.classList.add('up'); // gira para cima
+    } else {
+      scrollBtn.classList.remove('up'); // normal (para baixo)
+    }
+  });
+</script>
+
+
+   
+  <!-- Footer -->
+  <div class="footer">
+    © 2025 Rafeiro Comics — all rights reserved
+  </div>
+
+</body>
