@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rafeiro - Banda Desenhada</title>
+  <link rel="stylesheet" href="style.css">
+
+   <style>
+    body {
+      background-color: white;
+      text-align: center;
+      color: black;
+ 
+      text-transform: uppercase;
+      font-size: 20px;
+    }
+
+    img {
+      max-width: 40%;
+      height: auto;
+      display: block;
+      margin: 20px auto;
+      
+    }
+
+
+     </style>
+  </head> 
+
+ <body>
+
+  <!-- Banner -->
+  <div class="banner">
+    <a href="index.html" class="logo-link">
+      <img src="logos/LOGOpequenoinv.png" alt="Logopequenoinv" class="logo">
+    </a>
+  </div>
+
+<!-- Menu de navegação -->
+  <nav class="menu">
+    <a href="listabase.html">capítulos</a>
+ <a href="cp4.html">último Capítulo</a>
+    <a href="listadecapitulos.html">volumes</a>
+    <a href="rascunhos.html">Rascunhos</a>
+     <a href="projetorafeiro.html">SOBRE</a>
+  </nav>
+
+
+    <!-- Imagem em cima -->
+    <img src="logos/rasc.png" alt="Personagens" class="header-img">
+    
+    <h1 class="chapter-title">= projeto rafeiro =</h1>
+ <p>Tenho 27 anos, fiz uma licenciatura em artes em viana do castelo e outra de design em barcelos. </p>
+<p>Em puto via animes tipo naruto, one piece, bleach, death note... </p>
+  <p>dps + tarde vi evangelion, cowboy bepop, vinland saga, hxh, mob psycho...</p>
+<p>Dps comecei a ler manga, tipo berserk, gantz, jjk, chainsaw man, monster... </p>
+<p>Vou usar como referências Berserk, Gantz, Vinland Saga, vagabond.</p>
+<p>A partir dessas influências, estou a criar histórias originais que </p>
+  <p>cruzam essas referências narrativas dentro do contexto português. </p>
+<p>Ao publicar de forma independente, asseguro controlo total mas demoro mais a fzr as coisas xd. </p>
+
+   
+  </div> <!-- fecha .content -->
+
+  <div class="lista-capitulos">
+    <h2>Últimos Capítulos</h2>
+    <ul>
+      <li><a href="cp4.html">0x2 = cidade terramoto,p2</a></li>
+      <li><a href="cp3.html">0x2 = Cidade Terramoto, p1</a></li>
+      <li><a href="capitulo2.html">0x1= Sol e a Lua, pt2</a></li>
+      <li><a href="capitulo1.html">0x1 = Sol e a Lua, pt1</a></li>
+    </ul>
+  </div>
+
+  <!-- Botão único -->
+  <div id="scrollBtn" class="scroll-btn">
+    <img src="logos/LOGOverticalcortado.png" alt="Scroll">
+  </div>
+
+<script>
+  const scrollBtn = document.getElementById('scrollBtn');
+  const img = scrollBtn.querySelector('img');
+
+  // Quando clicares no botão → sobe ou desce
+  scrollBtn.addEventListener('click', () => {
+    if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 50) {
+      // Já está no fim → vai para o topo
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      // Ainda não está no fim → vai para o fundo
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    }
+  });
+
+  // Detecta se está no fundo ou não para girar a imagem
+  window.addEventListener('scroll', () => {
+    if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 50) {
+      scrollBtn.classList.add('up'); // gira para cima
+    } else {
+      scrollBtn.classList.remove('up'); // normal (para baixo)
+    }
+  });
+</script>
+
+
+   
+  <!-- Footer -->
+  <div class="footer">
+    © 2025 Rafeiro Comics — Todos os direitos reservados
+  </div>
+
+</body>
