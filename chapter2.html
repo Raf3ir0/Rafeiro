@@ -192,6 +192,67 @@ from this project.
   });
 </script>
 
+
+<script>
+const fullscreen = document.getElementById("fullscreen");
+const fullscreenImg = document.getElementById("fullscreen-img");
+const closeBtn = document.querySelector("#fullscreen .close");
+const prevBtn = document.querySelector("#fullscreen .prev");
+const nextBtn = document.querySelector("#fullscreen .next");
+
+let currentIndex = 0;
+
+// pegar imagens da pasta cp1ing
+const cp1ingImages = [...document.querySelectorAll("img[src^='cp1ing']")];
+
+// pegar apenas imagen/pagina2
+const pagina2 = document.querySelector("img[src='imagen/pagina2.png']");
+const pagina2Array = pagina2 ? [pagina2] : [];
+
+// pegar apenas cp1/p23
+const p23 = document.querySelector("img[src='cp1/23b.png']");
+const p23Array = p23 ? [p23] : [];
+
+// juntar todas
+const images = [...cp1ingImages, ...pagina2Array, ...p23Array];
+
+// abrir fullscreen ao clicar
+images.forEach((img, index) => {
+  img.addEventListener("click", () => {
+    fullscreen.style.display = "flex";
+    fullscreenImg.src = img.src;
+    currentIndex = index;
+  });
+});
+
+// fechar
+closeBtn.addEventListener("click", () => {
+  fullscreen.style.display = "none";
+});
+
+// anterior
+prevBtn.addEventListener("click", () => {
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  fullscreenImg.src = images[currentIndex].src;
+});
+
+// seguinte
+nextBtn.addEventListener("click", () => {
+  currentIndex = (currentIndex + 1) % images.length;
+  fullscreenImg.src = images[currentIndex].src;
+});
+
+// teclado (setas + Esc)
+document.addEventListener("keydown", (e) => {
+  if (fullscreen.style.display === "flex") {
+    if (e.key === "ArrowLeft") prevBtn.click();
+    if (e.key === "ArrowRight") nextBtn.click();
+    if (e.key === "Escape") closeBtn.click();
+  }
+});
+
+</script>
+
   
 </body>
 
