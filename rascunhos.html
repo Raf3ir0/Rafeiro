@@ -40,6 +40,19 @@
    <!-- Botão para versão ing -->
 <a href="sketches.html" class="lang-btn">pt</a>
 
+
+
+<!-- FULLSCREEN MODAL -->
+<div id="fullscreen">
+  <button class="close" onclick="closeFullscreen()">✕</button>
+  <button class="prev" onclick="prevPage()">‹</button>
+  <img id="fullscreen-img" src="" alt="Imagem">
+  <button class="next" onclick="nextPage()">›</button>
+</div>
+
+
+
+   
 <!-- Menu de navegação -->
   <nav class="menu">
     <a href="listabase.html">capítulos</a>
@@ -123,6 +136,53 @@
   });
 </script>
 
+<script>
+const fullscreen = document.getElementById("fullscreen");
+const fullscreenImg = document.getElementById("fullscreen-img");
+const closeBtn = document.querySelector("#fullscreen .close");
+const prevBtn = document.querySelector("#fullscreen .prev");
+const nextBtn = document.querySelector("#fullscreen .next");
+
+let currentIndex = 0;
+
+// apanha todas as imagens dentro da galeria
+const images = [...document.querySelectorAll(".capitulos-galeria img")];
+
+// abrir fullscreen ao clicar
+images.forEach((img, index) => {
+  img.addEventListener("click", () => {
+    fullscreen.style.display = "flex";
+    fullscreenImg.src = img.src;
+    currentIndex = index;
+  });
+});
+
+// fechar
+function closeFullscreen() {
+  fullscreen.style.display = "none";
+}
+
+// anterior
+function prevPage() {
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  fullscreenImg.src = images[currentIndex].src;
+}
+
+// seguinte
+function nextPage() {
+  currentIndex = (currentIndex + 1) % images.length;
+  fullscreenImg.src = images[currentIndex].src;
+}
+
+// teclado (setas + Esc)
+document.addEventListener("keydown", (e) => {
+  if (fullscreen.style.display === "flex") {
+    if (e.key === "ArrowLeft") prevPage();
+    if (e.key === "ArrowRight") nextPage();
+    if (e.key === "Escape") closeFullscreen();
+  }
+});
+</script>
 
    
   <!-- Footer -->
