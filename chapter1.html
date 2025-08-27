@@ -201,15 +201,20 @@ let currentIndex = 0;
 // pegar imagens da pasta cp1ing
 let cp1ingImages = [...document.querySelectorAll("img[src^='cp1ing']")];
 
-// filtrar pagina2 para ficar na posição desejada (se necessário)
-// aqui assumimos que cp1ingImages já está na ordem correta
+// pegar apenas imagen/pagina2
+const pagina2 = document.querySelector("img[src='imagen/pagina2.png']");
+const pagina2Array = pagina2 ? [pagina2] : [];
+
+// remover pagina2 de cp1ingImages caso esteja lá
+cp1ingImages = cp1ingImages.filter(img => img !== pagina2);
 
 // pegar apenas cp1/p23
 const p23 = document.querySelector("img[src='cp1/23b.png']");
 const p23Array = p23 ? [p23] : [];
 
-// juntar todas: cp1ing + pagina2 já no meio se estiver em cp1ing + p23 no final
-const images = [...cp1ingImages, ...p23Array];
+// juntar todas as imagens na ordem correta
+const images = [...cp1ingImages, ...pagina2Array, ...p23Array];
+
 
 
 // abrir fullscreen ao clicar
