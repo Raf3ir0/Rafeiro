@@ -539,3 +539,62 @@ img {
   font-size: 14px;
 }
 
+
+/* --- Ajustes para telemóvel --- */
+@media (max-width: 768px) {
+  /* Banner mais pequeno */
+  .banner {
+    height: 200px; /* em vez de 400px */
+  }
+  .banner .logo {
+    max-width: 120px; /* logo reduzido */
+    margin: 10px auto;
+    float: none;      /* no telemóvel fica centrado */
+  }
+
+  /* Botão de idioma mais visível */
+  .lang-btn {
+    top: 10px;
+    right: 10px;
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+
+  /* Conteúdo central mais estreito */
+  .content {
+    padding: 0 5px;
+  }
+
+  /* Galeria de imagens ajustada */
+  .galeria {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .galeria img {
+    max-width: 90%;
+    border-radius: 20px;
+  }
+
+  /* Texto mais pequeno */
+  .resumo {
+    font-size: 16px;
+    margin: 40px 0;
+  }
+  .resumo h2 {
+    font-size: 22px;
+  }
+
+  /* Botões de capítulos mais fáceis de clicar */
+  .capitulo button {
+    font-size: 16px;
+    padding: 10px 18px;
+  }
+
+  /* Lista de capítulos ocupa largura total */
+  .lista-capitulos {
+    margin: 20px 0;
+  }
+}
+
+
+
