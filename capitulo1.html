@@ -44,6 +44,15 @@
 <a href="chapter1.html" class="lang-btn">ENG</a>
 
 
+<!-- FULLSCREEN MODAL -->
+  <div id="fullscreen">
+    <button class="close" onclick="closeFullscreen()">✕</button>
+    <button class="prev" onclick="prevPage()">‹</button>
+    <img id="fullscreen-img" src="" alt="Página">
+    <button class="next" onclick="nextPage()">›</button>
+  </div>
+
+  
 <!-- Menu de navegação -->
   <nav class="menu">
     <a href="pt/listabase.html">capítulos</a>
@@ -153,6 +162,12 @@
 </style>
 
 
+  
+
+
+
+  
+
 
   
 
@@ -179,6 +194,57 @@
       scrollBtn.classList.remove('up'); // normal (para baixo)
     }
   });
+
+
+    // Fullscreen leitor
+    const allImgs = document.querySelectorAll(".content img");
+    const fullscreen = document.getElementById("fullscreen");
+    const fullscreenImg = document.getElementById("fullscreen-img");
+
+    const imageSources = Array.from(allImgs).map(img => img.src);
+    let currentIndex = 0;
+
+    allImgs.forEach((img, index) => {
+      img.addEventListener("click", () => {
+        openFullscreen(index);
+      });
+    });
+
+    function openFullscreen(index) {
+      currentIndex = index;
+      fullscreenImg.src = imageSources[currentIndex];
+      fullscreen.style.display = "flex";
+    }
+
+    function closeFullscreen() {
+      fullscreen.style.display = "none";
+    }
+
+    function prevPage() {
+      if (currentIndex > 0) {
+        currentIndex--;
+        fullscreenImg.src = imageSources[currentIndex];
+      }
+    }
+
+    function nextPage() {
+      if (currentIndex < imageSources.length - 1) {
+        currentIndex++;
+        fullscreenImg.src = imageSources[currentIndex];
+      }
+    }
+
+    // Navegação com teclado
+    document.addEventListener("keydown", (e) => {
+      if (fullscreen.style.display === "none") return;
+      if (e.key === "ArrowLeft") prevPage();
+      if (e.key === "ArrowRight") nextPage();
+      if (e.key === "Escape") closeFullscreen();
+    });
+
+
+
+  
 </script>
 
   
