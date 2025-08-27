@@ -168,32 +168,6 @@ from this project.
   
 
 <script>
-  const scrollBtn = document.getElementById('scrollBtn');
-  const img = scrollBtn.querySelector('img');
-
-  // Clicar no botão → sobe ou desce
-  scrollBtn.addEventListener('click', () => {
-    if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 50) {
-      // Se já está no fim → vai para o topo
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else {
-      // Se não está no fim → vai para o fundo
-      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-    }
-  });
-
-  // Detecta se está no fundo ou não para girar a imagem
-  window.addEventListener('scroll', () => {
-    if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 50) {
-      scrollBtn.classList.add('up'); // gira para cima
-    } else {
-      scrollBtn.classList.remove('up'); // normal (para baixo)
-    }
-  });
-</script>
-
-
-<script>
 const fullscreen = document.getElementById("fullscreen");
 const fullscreenImg = document.getElementById("fullscreen-img");
 const closeBtn = document.querySelector("#fullscreen .close");
@@ -203,18 +177,23 @@ const nextBtn = document.querySelector("#fullscreen .next");
 let currentIndex = 0;
 
 // pegar imagens da pasta cp1ing
-const cp1ingImages = [...document.querySelectorAll("img[src^='cp1ing']")];
+let cp1ingImages = [...document.querySelectorAll("img[src^='cp1ing']")];
 
 // pegar apenas imagen/pagina2
 const pagina2 = document.querySelector("img[src='imagen/pagina2.png']");
 const pagina2Array = pagina2 ? [pagina2] : [];
 
+// remover pagina2 de cp1ingImages caso esteja lá
+cp1ingImages = cp1ingImages.filter(img => img !== pagina2);
+
 // pegar apenas cp1/p23
 const p23 = document.querySelector("img[src='cp1/23b.png']");
 const p23Array = p23 ? [p23] : [];
 
-// juntar todas
+// juntar todas as imagens na ordem correta
 const images = [...cp1ingImages, ...pagina2Array, ...p23Array];
+
+
 
 // abrir fullscreen ao clicar
 images.forEach((img, index) => {
