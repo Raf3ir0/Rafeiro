@@ -24,6 +24,61 @@ img {
 }
 
 
+
+    img {
+      max-width: 40%;
+      height: auto;
+      display: block;
+      margin: 20px auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      cursor: pointer; /* ADICIONADO → para mostrar que dá para clicar */
+    }
+
+    /* --- FULLSCREEN ---  ADICIONADO --- */
+    #fullscreen {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.95);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+    }
+
+    #fullscreen img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 8px;
+    }
+
+    #fullscreen button {
+      position: absolute;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 3rem;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    #fullscreen .close {
+      top: 20px;
+      right: 30px;
+      font-size: 2.5rem;
+    }
+
+    #fullscreen .prev {
+      left: 20px;
+    }
+
+    #fullscreen .next {
+      right: 20px;
+    }
+
+
+
+
 .lang-btn {
   position: fixed;
   top: 20px;
