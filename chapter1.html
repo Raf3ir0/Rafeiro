@@ -43,6 +43,16 @@
   <!-- Botão para versão pt -->
 <a href="capitulo1.html" class="lang-btn">pt</a>
 
+
+<!-- FULLSCREEN MODAL -->
+  <div id="fullscreen">
+    <button class="close" onclick="closeFullscreen()">✕</button>
+    <button class="prev" onclick="prevPage()">‹</button>
+    <img id="fullscreen-img" src="" alt="Página">
+    <button class="next" onclick="nextPage()">›</button>
+  </div>
+
+
   
 
 <!-- Menu de navegação -->
@@ -81,7 +91,7 @@
 <img src="cp1ing/ING CP 17.png" alt="Página 16">
 <img src="cp1ing/ING CP 18.png" alt="Página 17">
 <img src="cp1ing/ING CP 19 20.png" alt="Página 19 20">
-    <img src="cp2/p35.png" alt="Página 21 22">
+    <img src="cp1/23b.png" alt="Página 21 22">
      <img src="logos/LOGO.png" alt="Página 23">
 
 
@@ -181,7 +191,7 @@ from this project.
 
  <script>
   // apanha só as imagens das páginas da BD
-  const images = document.querySelectorAll("img[src^='imagen/pagina']");
+  const images = document.querySelectorAll("img[src^='cp1ing']");
 
   const fullscreen = document.getElementById("fullscreen");
   const fullscreenImg = document.getElementById("fullscreen-img");
