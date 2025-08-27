@@ -188,7 +188,6 @@ from this project.
   });
 </script>
 
-
 <script>
 const fullscreen = document.getElementById("fullscreen");
 const fullscreenImg = document.getElementById("fullscreen-img");
@@ -198,21 +197,19 @@ const nextBtn = document.querySelector("#fullscreen .next");
 
 let currentIndex = 0;
 
+// pegar imagens da pasta cp1ing
+const cp1ingImages = [...document.querySelectorAll("img[src^='cp1ing']")];
 
-// apanha só as imagens das páginas da BD
-  const images = document.querySelectorAll("img[src^='cp1ing']");
+// pegar apenas imagen/pagina2
+const pagina2 = document.querySelector("img[src='imagen/pagina2.png']");
+const pagina2Array = pagina2 ? [pagina2] : [];
 
-// pegar apenas a imagem imagen/pagina2
-const cp1Image = document.querySelector("img[src='imagen/pagina2.png']");
-const cp1Images = cp1Image ? [cp1Image] : [];
+// pegar apenas cp1/p23
+const p23 = document.querySelector("img[src='cp1/23b.png']");
+const p23Array = p23 ? [p23] : [];
 
-  
-// pegar apenas a imagem cp1/p23
-const cp1Image = document.querySelector("img[src='cp1/23b.png']");
-const cp1Images = cp1Image ? [cp1Image] : [];
-
-// juntar todos
-const images = [...cp2Images, ...cp1Images];
+// juntar todas
+const images = [...cp1ingImages, ...pagina2Array, ...p23Array];
 
 // abrir fullscreen ao clicar
 images.forEach((img, index) => {
@@ -250,7 +247,6 @@ document.addEventListener("keydown", (e) => {
 });
 
 </script>
-
   
   
 </body>
