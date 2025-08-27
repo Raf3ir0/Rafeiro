@@ -196,51 +196,53 @@
   });
 
 
-    // Fullscreen leitor
-    const allImgs = document.querySelectorAll(".content img");
-    const fullscreen = document.getElementById("fullscreen");
-    const fullscreenImg = document.getElementById("fullscreen-img");
+  <script>
+  // apanha só as imagens das páginas da BD
+  const images = document.querySelectorAll("img[src^='imagen/pagina']");
 
-    const imageSources = Array.from(allImgs).map(img => img.src);
-    let currentIndex = 0;
+  const fullscreen = document.getElementById("fullscreen");
+  const fullscreenImg = document.getElementById("fullscreen-img");
+  const closeBtn = document.querySelector("#fullscreen .close");
+  const prevBtn = document.querySelector("#fullscreen .prev");
+  const nextBtn = document.querySelector("#fullscreen .next");
 
-    allImgs.forEach((img, index) => {
-      img.addEventListener("click", () => {
-        openFullscreen(index);
-      });
-    });
+  let currentIndex = 0;
 
-    function openFullscreen(index) {
-      currentIndex = index;
-      fullscreenImg.src = imageSources[currentIndex];
+  // abrir fullscreen ao clicar
+  images.forEach((img, index) => {
+    img.addEventListener("click", () => {
       fullscreen.style.display = "flex";
-    }
-
-    function closeFullscreen() {
-      fullscreen.style.display = "none";
-    }
-
-    function prevPage() {
-      if (currentIndex > 0) {
-        currentIndex--;
-        fullscreenImg.src = imageSources[currentIndex];
-      }
-    }
-
-    function nextPage() {
-      if (currentIndex < imageSources.length - 1) {
-        currentIndex++;
-        fullscreenImg.src = imageSources[currentIndex];
-      }
-    }
-
-    // Navegação com teclado
-    document.addEventListener("keydown", (e) => {
-      if (fullscreen.style.display === "none") return;
-      if (e.key === "ArrowLeft") prevPage();
-      if (e.key === "ArrowRight") nextPage();
-      if (e.key === "Escape") closeFullscreen();
+      fullscreenImg.src = img.src;
+      currentIndex = index;
     });
+  });
+
+  // fechar
+  closeBtn.addEventListener("click", () => {
+    fullscreen.style.display = "none";
+  });
+
+  // anterior
+  prevBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    fullscreenImg.src = images[currentIndex].src;
+  });
+
+  // seguinte
+  nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    fullscreenImg.src = images[currentIndex].src;
+  });
+
+  // teclado (setas + Esc)
+  document.addEventListener("keydown", (e) => {
+    if (fullscreen.style.display === "flex") {
+      if (e.key === "ArrowLeft") prevBtn.click();
+      if (e.key === "ArrowRight") nextBtn.click();
+      if (e.key === "Escape") closeBtn.click();
+    }
+  });
+</script>
 
 
 
