@@ -359,6 +359,10 @@ img {
 }
 
 
+
+/* Responsivo: tablet/telemóvel */
+@media (max-width: 768px) {
+
 .listadecap{
    text-align: center;
   margin-top: 100px;
