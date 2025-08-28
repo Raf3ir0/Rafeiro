@@ -576,8 +576,8 @@ img {
     gap: 20px;
   }
   .galeria img {
-    width: 70%;       /* quase toda a largura */
-    max-width: 90px; /* evita exagero */
+    width: 80%;       /* quase toda a largura */
+    max-width: 110px; /* evita exagero */
     border-radius: 150px;
   }
 
