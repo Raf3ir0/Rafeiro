@@ -467,15 +467,16 @@ img {
   .intro-lista {
     flex-direction: column;
   }
-}
+
 
 
   .menu a {
     margin: 0 20px;   /* menos espaço */
     font-size: 16px;  /* texto menor */
     color: white;    /* exemplo: cor diferente */
+    padding: 10px;
   }
-
+}
 
 
 .scroll-btn {
