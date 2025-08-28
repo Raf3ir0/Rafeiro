@@ -360,8 +360,7 @@ img {
 
 
 
-/* Responsivo: tablet/telemóvel */
-@media (max-width: 768px) {
+
 
 .listadecap{
    text-align: center;
@@ -450,7 +449,7 @@ img {
 .lista-capitulos a:hover {
   color: red;
 }
-}
+
 
 /* Responsivo: no telemóvel, fica um por cima do outro */
 @media (max-width: 768px) {
