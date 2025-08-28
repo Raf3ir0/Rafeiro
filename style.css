@@ -356,22 +356,12 @@ img {
   .capitulos-galeria figcaption {
     font-size: 12px;
   }
-}
-
-
-
-
-
 .listadecap{
    text-align: center;
   margin-top: 100px;
   margin-bottom: 100px;
   font-size: 20px;
 }
-
-
-
-
 .listadecap1 {
   text-align: center;
   margin-top: 20px;
@@ -387,14 +377,6 @@ img {
 .listadecap1 a:hover {
   color: red;
 }
-
-
-
-
-
-
-
-
 
 .intro-lista {
   display: flex;
@@ -461,7 +443,8 @@ img {
 .lista-capitulos a:hover {
   color: red;
 }
-
+}
+  
 /* Responsivo: no telemóvel, fica um por cima do outro */
 @media (max-width: 768px) {
   .intro-lista {
@@ -476,7 +459,6 @@ img {
     color: white;    /* exemplo: cor diferente */
     padding: 10px;
   }
-}
 
 
 .scroll-btn {
@@ -545,7 +527,7 @@ img {
   bottom: 0;
   font-size: 14px;
 }
-
+}
 
 /* --- Ajustes para telemóvel --- */
 @media (max-width: 768px) {
@@ -635,4 +617,4 @@ img {
   .intro-texto h2 {
     font-size: 20px;
   }
-
+  }
