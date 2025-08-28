@@ -536,6 +536,19 @@ img {
 }
 
 
+
+
+  /* Botão PT/ENG */
+  .lang-btn {
+    top: 10px;
+    right: 10px;
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+
+
+
+
 /* --- Ajustes para telemóvel --- */
 @media (max-width: 768px) {
 
@@ -549,13 +562,6 @@ img {
     float: none; /* centra no telemóvel */
   }
 
-  /* Botão PT/ENG */
-  .lang-btn {
-    top: 10px;
-    right: 10px;
-    padding: 6px 10px;
-    font-size: 14px;
-  }
 
   /* Conteúdo central */
   .content {
