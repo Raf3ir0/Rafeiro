@@ -572,7 +572,7 @@ img {
 
   /* Galeria de imagens */
   .galeria {
-    flex-direction: column; /* empilha imagens */
+    flex-direction: row; /* empilha imagens */
     gap: 20px;
   }
   .galeria img {
