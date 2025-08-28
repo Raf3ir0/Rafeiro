@@ -566,7 +566,7 @@ img {
     padding: 0 10px; /* mais estreito */
   }
   .content h1 img {
-    max-width: 80px; /* logo menor */
+    max-width: 180px; /* logo menor */
     margin: 10px auto;
   }
 
