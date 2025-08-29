@@ -622,6 +622,14 @@ img {
   }
 
 
+
+
+  
+  .intro-texto h2 {
+    font-size: 20px;
+  }
+  }
+
 .social-btns {
   display: flex;
   gap: 15px;
@@ -662,9 +670,3 @@ img {
   opacity: 0.9;
 }
 
-
-  
-  .intro-texto h2 {
-    font-size: 20px;
-  }
-  }
