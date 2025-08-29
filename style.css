@@ -620,6 +620,50 @@ img {
     margin-left: 0;
     font-size: 16px;
   }
+
+
+.social-btns {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.social-btns a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 25px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.social-btns a .icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.btn-patreon {
+  background: linear-gradient(45deg, #FF424D, #FF8C69);
+  color: white;
+}
+
+.btn-insta {
+  background: white;
+  color: #d6249f;
+  border: 2px solid #d6249f;
+}
+
+.social-btns a:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+
+  
   .intro-texto h2 {
     font-size: 20px;
   }
