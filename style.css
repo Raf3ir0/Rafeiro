@@ -199,6 +199,17 @@ img {
   margin: 0px;
 }
 
+.galeria a img {
+  max-width: 200px;   /* ajusta ao tamanho que tinhas antes */
+  height: auto;
+  border-radius: 8px; /* se tinhas cantos arredondados */
+  transition: transform 0.3s ease;
+}
+
+.galeria a img:hover {
+  transform: scale(1.05); /* efeito hover antigo */
+}
+
 
 
 .resumo {
