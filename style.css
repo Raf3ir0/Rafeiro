@@ -202,7 +202,7 @@ img {
 .galeria a img {
   max-width: 200px;   /* ajusta ao tamanho que tinhas antes */
   height: auto;
-  border-radius: 20px; /* se tinhas cantos arredondados */
+  border-radius: 150px; /* se tinhas cantos arredondados */
   transition: transform 0.3s ease;
 }
 
