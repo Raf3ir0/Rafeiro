@@ -5,44 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rafeiro - Banda Desenhada</title>
   <link rel="stylesheet" href="style.css">
-
-  <style>
-    body {
-      background-color: #f4f4f4;
-      text-align: right;
-      color: black;
-      margin: 20;
-      padding: 0;
-      text-transform: uppercase;
-      font-size: 20px;
-    }
-
-    img {
-      max-width: 40%;
-      height: auto;
-      display: block;
-      margin: 20px auto;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
-
-
-     </style>
-  </head> 
-
+</head>
 <body>
 
   <!-- Banner -->
   <div class="banner">
-    <a href="ing-index.html" class="logo-link">
-      <img src="logos/LOGOpequenoinv.png" alt="Logopequenoinv" class="logo">
-    </a>
-  </div>
+    <a href="index.html" class="logo-link">
+    <img src="logos/LOGOpequenoinv.png" alt="Logopequenoinv" class="logo">
+</div>
 
 
-<!-- Botão para versão pt -->
-<a href="cp5.html" class="lang-btn">pt</a>
 
+
+ <!-- Botão para versão inglesa -->
+<a href="chapter5.html" class="lang-btn">ENG</a>
 
 
 
@@ -55,22 +31,46 @@
   </div>
 
   
+
   
 <!-- Menu de navegação -->
   <nav class="menu">
-    <a href="listabaseing.html">chapters</a>
- <a href="chapter4.html">last chapter</a>
-    <a href="listadecpitulosing.html">volumes</a>
-    <a href="sketches.html">sketches</a>
-     <a href="projetorafeiroing.html">about</a>
+    <a href="listabase.html">capítulos</a>
+ <a href="cp4.html">último Capítulo</a>
+    <a href="listadecapitulos.html">volumes</a>
+    <a href="rascunhos.html">Rascunhos</a>
+     <a href="projetorafeiro.html">SOBRE</a>
   </nav>
 
-  <div class="content">
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: RAFEIROPLUS2, sans-serif;
+            text-align: right; /* centraliza o texto e imagens */
+            color: black;
+            margin: 0;
+            padding: 0;
+            text-transform: uppercase;
+            font-size: 20px;
+        }
+
+
+        img {
+            max-width: 40%;  /* a imagem ocupa no máximo 90% da largura da tela */
+            height: auto;    /* mantém proporção */
+            display: block;  /* faz a imagem ser um bloco */
+            margin: 20px auto; /* centraliza e dá espaço acima/abaixo */
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+<div class="content">
   <h1 class="chapter-title">= (Rafeiro)OX3 =</h1>
-  <h2 class="chapter-subtitle">= beauty city, pt 1 =</h2>
+  <h2 class="chapter-subtitle">= cidade BELEZA, pt 1 =</h2>
 
 
-  
 
 
     <!-- Páginas -->
@@ -102,33 +102,28 @@
 
 
 
-  
-<div class="capitulo">
-  <a href="chapter4.html"><button id="capitulo4">0x2 = terramoto city, p1</button></a>
-  <a href="chapter6.html"><button id="capitulo6">0x3 = beauty city, p1</button></a>
-</div>
 
-    <div class="intro-lista">
-      <div class="intro-texto">
-        <h2>Sobre</h2>
-        <p>
-          Rafeiro is an independent comic.
-Here you can follow the stories and the latest news
-from this project.
-        </p>
-      </div>
-
-      <div class="lista-capitulos">
-        <h2>last chapters</h2>
-        <ul>
-             <li><a href="chapter4.html">0x2 = terramoto city,p2</a></li>
-      <li><a href="chapter3.html">0x2 = terramoto city, p1</a></li>
-      <li><a href="chapter2.html">0x1= sun and the moon, pt2</a></li>
-      <li><a href="chapter1.html">0x1 = sun and the moon, pt1</a></li>
-        </ul>
-      </div>
-    </div>
+<div class="intro-lista">
+  <div class="intro-texto">
+    <h2>Sobre</h2>
+    <p>
+      Rafeiro é uma banda desenhada independente.  
+          Aqui podes acompanhar as histórias e as 
+          novidades mais recentes, deste projeto. 
+    </p>
   </div>
+
+  <div class="lista-capitulos">
+    <h2>Últimos Capítulos</h2>
+    <ul>
+         <li><a href="cp4.html">0x2 = cidade terramoto,p2</a></li>
+      <li><a href="cp3.html">0x2 = Cidade Terramoto, p1</a></li>
+      <li><a href="capitulo2.html">0x1 = Sol e a Lua, pt2</a></li>
+      <li><a href="capitulo1.html">0x1 = Sol e a Lua, pt1</a></li>
+    </ul>
+  </div>
+</div>
+</div>
 
 
 <!-- Botão único -->
@@ -136,12 +131,11 @@ from this project.
   <img src="logos/LOGOverticalcortado.png" alt="Scroll">
 </div>
 
-
 <style>
   .scroll-btn {
     position: fixed;
     left: 0px;
-    bottom: 110px;
+    
     width: 100px;
     height: 100px;
     cursor: pointer;
@@ -167,10 +161,6 @@ from this project.
     transform: rotate(180deg);
   }
 </style>
-
-
-
-  
 
 <script>
   const scrollBtn = document.getElementById('scrollBtn');
@@ -198,7 +188,6 @@ from this project.
 </script>
 
 
-
 <script>
 const fullscreen = document.getElementById("fullscreen");
 const fullscreenImg = document.getElementById("fullscreen-img");
@@ -208,26 +197,22 @@ const nextBtn = document.querySelector("#fullscreen .next");
 
 let currentIndex = 0;
 
-// pegar imagens da pasta cp1ing
-let cp1ingImages = [...document.querySelectorAll("img[src^='cp2ing']")];
-
-// pegar apenas imagen/pagina2
-const pagina2 = document.querySelector("img[src='imagen/pagina2.png']");
-const pagina2Array = pagina2 ? [pagina2] : [];
-
-// remover pagina2 de cp1ingImages caso esteja lá
-cp1ingImages = cp1ingImages.filter(img => img !== pagina2);
+// pegar todas as imagens da pasta cp2
+const allCp2 = document.querySelectorAll("img[src^='cp2/']");
+const cp2Images = [...allCp2].filter(img => {
+  const name = img.src.split("/").pop().split(".")[0]; // "p1", "p2", etc
+  const num = parseInt(name.slice(1));
+  return num >= 16 && num <= 35;
+});
 
 
-  // pegar apenas cp1/p23
-const p23 = document.querySelector("img[src='imagen/pagina25-26.png']");
-const p23Array = p23 ? [p23] : [];
 
+// pegar apenas a imagem cp1/p23
+const cp1Image = document.querySelector("img[src='cp1/23b.png']");
+const cp1Images = cp1Image ? [cp1Image] : [];
 
-// juntar todas as imagens na ordem correta
-const images = [...cp1ingImages, ...pagina2Array, ...p23Array];
-
-
+// juntar todos
+const images = [...cp2Images, ...cp1Images];
 
 // abrir fullscreen ao clicar
 images.forEach((img, index) => {
@@ -267,12 +252,17 @@ document.addEventListener("keydown", (e) => {
 </script>
 
 
+
+
+
+
   
-</body>
+   </body>
 
 
   <div class="footer">
-  © 2025 Rafeiro Comics — all rights reserved
+  © 2025 Rafeiro Comics — Todos os direitos reservados
 </div>
-  
+
 </html>
+
