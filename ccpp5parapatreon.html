@@ -9,13 +9,13 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/stpageflip@2.0.7/dist/css/page-flip.css">
 
   <style>
-    /* Mantive o teu CSS */
     #book {
       width: 90%;
       max-width: 1200px;
       height: 80vh;
       margin: 20px auto;
-      display: none;
+      display: block;           /* display block para StPageFlip */
+      visibility: hidden;       /* esconde visualmente até inicializar */
     }
   </style>
 </head>
@@ -159,30 +159,32 @@
 
       function startNormalMode() {
         document.querySelector(".content").style.display = "block";
-        document.getElementById("book").style.display = "none";
+        const bookDiv = document.getElementById("book");
+        bookDiv.style.display = "none";
+        bookDiv.innerHTML = "";
       }
 
- function startBookMode() {
-  document.querySelector(".content").style.display = "none";
-  const bookDiv = document.getElementById("book");
-  bookDiv.style.display = "block";
-  bookDiv.innerHTML = "";
+      function startBookMode() {
+        document.querySelector(".content").style.display = "none";
+        const bookDiv = document.getElementById("book");
+        bookDiv.style.display = "block";
+        bookDiv.style.visibility = "hidden"; // esconde até carregar
+        bookDiv.innerHTML = "";
 
-  // espera o browser renderizar o container
-  setTimeout(() => {
-    pageFlip = new St.PageFlip(bookDiv, {
-      width: bookDiv.clientWidth,
-      height: bookDiv.clientHeight,
-      showCover: true,
-      usePortrait: true,
-    });
-    pageFlip.loadFromImages(comicImages);
+        // espera o browser renderizar
+        setTimeout(() => {
+          pageFlip = new St.PageFlip(bookDiv, {
+            width: bookDiv.clientWidth,
+            height: bookDiv.clientHeight,
+            showCover: true,
+            usePortrait: true
+          });
+          pageFlip.loadFromImages(comicImages);
 
-    if (bookDiv.requestFullscreen) {
-      bookDiv.requestFullscreen();
-    }
-  }, 50); // 50ms já é suficiente
-}
+          bookDiv.style.visibility = "visible"; // mostra o livro
+          if (bookDiv.requestFullscreen) bookDiv.requestFullscreen();
+        }, 50);
+      }
 
       document.getElementById("toggleMode").addEventListener("click", () => {
         if (mode === "normal") {
