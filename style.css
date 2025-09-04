@@ -681,3 +681,23 @@ img {
   opacity: 0.9;
 }
 
+
+
+.toggle-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 2000;
+}
+.toggle-btn:hover {
+  background: #444;
+}
+
+
