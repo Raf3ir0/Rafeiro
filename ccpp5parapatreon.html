@@ -162,25 +162,27 @@
         document.getElementById("book").style.display = "none";
       }
 
-      function startBookMode() {
-        document.querySelector(".content").style.display = "none";
-        const bookDiv = document.getElementById("book");
-        bookDiv.style.display = "block";
-        bookDiv.innerHTML = "";
+ function startBookMode() {
+  document.querySelector(".content").style.display = "none";
+  const bookDiv = document.getElementById("book");
+  bookDiv.style.display = "block";
+  bookDiv.innerHTML = "";
 
-        pageFlip = new St.PageFlip(bookDiv, {
-          width: bookDiv.clientWidth,
-          height: bookDiv.clientHeight,
-          showCover: true,
-          usePortrait: true,
-        });
+  // espera o browser renderizar o container
+  setTimeout(() => {
+    pageFlip = new St.PageFlip(bookDiv, {
+      width: bookDiv.clientWidth,
+      height: bookDiv.clientHeight,
+      showCover: true,
+      usePortrait: true,
+    });
+    pageFlip.loadFromImages(comicImages);
 
-        pageFlip.loadFromImages(comicImages);
-
-        if (bookDiv.requestFullscreen) {
-          bookDiv.requestFullscreen();
-        }
-      }
+    if (bookDiv.requestFullscreen) {
+      bookDiv.requestFullscreen();
+    }
+  }, 50); // 50ms já é suficiente
+}
 
       document.getElementById("toggleMode").addEventListener("click", () => {
         if (mode === "normal") {
