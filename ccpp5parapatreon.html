@@ -5,113 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rafeiro - Banda Desenhada</title>
   <link rel="stylesheet" href="style.css">
-
   <!-- StPageFlip CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/stpageflip@2.0.7/dist/css/page-flip.css">
 
   <style>
-    body {
-      background-color: #f4f4f4;
-      font-family: RAFEIROPLUS2, sans-serif;
-      text-align: right;
-      color: black;
-      margin: 0;
-      padding: 0;
-      text-transform: uppercase;
-      font-size: 20px;
-    }
-
-    img {
-      max-width: 40%;
-      height: auto;
-      display: block;
+    /* Mantive o teu CSS */
+    #book {
+      width: 90%;
+      max-width: 1200px;
+      height: 80vh;
       margin: 20px auto;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      cursor: pointer;
-    }
-
-    .toggle-btn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      padding: 10px 15px;
-      background: black;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-size: 16px;
-      cursor: pointer;
-      z-index: 2000;
-    }
-
-    .toggle-btn:hover {
-      background: #444;
-    }
-
-    .scroll-btn {
-      position: fixed;
-      left: 0px;
-      width: 100px;
-      height: 100px;
-      cursor: pointer;
-      z-index: 1000;
-      opacity: 0.7;
-      transition: opacity 0.3s, transform 0.3s;
-    }
-
-    .scroll-btn:hover {
-      opacity: 1;
-      transform: scale(1.1);
-    }
-
-    .scroll-btn img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      transition: transform 0.3s;
-    }
-
-    .up img {
-      transform: rotate(180deg);
-    }
-
-    #fullscreen {
       display: none;
-      position: fixed;
-      z-index: 3000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.9);
-      align-items: center;
-      justify-content: center;
-    }
-
-    #fullscreen img {
-      max-width: 90%;
-      max-height: 90%;
-    }
-
-    #fullscreen button {
-      position: absolute;
-      background: none;
-      border: none;
-      color: white;
-      font-size: 2rem;
-      cursor: pointer;
-    }
-
-    #fullscreen .close { top: 20px; right: 20px; }
-    #fullscreen .prev { left: 20px; top: 50%; transform: translateY(-50%); }
-    #fullscreen .next { right: 20px; top: 50%; transform: translateY(-50%); }
-
-    .footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
-      color: #666;
     }
   </style>
 </head>
@@ -124,13 +28,13 @@
     </a>
   </div>
 
-  <!-- Botão para alternar modo de leitura -->
+  <!-- Botão alternar modo -->
   <button id="toggleMode" class="toggle-btn">📖 Ler como livro</button>
 
-  <!-- Botão para versão inglesa -->
+  <!-- Botão inglês -->
   <a href="ccpp5forpatreon.html" class="lang-btn">ENG</a>
 
-  <!-- FULLSCREEN MODAL (modo normal) -->
+  <!-- FULLSCREEN MODAL -->
   <div id="fullscreen">
     <button class="close">✕</button>
     <button class="prev">‹</button>
@@ -152,7 +56,6 @@
     <h1 class="chapter-title">= (Rafeiro)OX3 =</h1>
     <h2 class="chapter-subtitle">= cidade BELEZA, pt 1 =</h2>
 
-    <!-- Páginas -->
     <img src="belezapt/capa.png" alt="Página 1">
     <img src="belezapt/D.png" alt="Página 2">
     <img src="belezapt/PAGINA 1.png" alt="Página 3">
@@ -178,7 +81,7 @@
   </div>
 
   <!-- CONTAINER DO MODO LIVRO -->
-  <div id="book" style="display:none;"></div>
+  <div id="book"></div>
 
   <!-- Botão Scroll -->
   <div id="scrollBtn" class="scroll-btn">
@@ -194,108 +97,105 @@
   <script src="https://cdn.jsdelivr.net/npm/stpageflip@2.0.7/dist/js/page-flip.browser.min.js"></script>
 
   <script>
-    // ==== SCROLL BTN ====
-    const scrollBtn = document.getElementById('scrollBtn');
-    const img = scrollBtn.querySelector('img');
-
-    scrollBtn.addEventListener('click', () => {
-      if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 50) {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      } else {
-        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-      }
-    });
-
-    window.addEventListener('scroll', () => {
-      if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 50) {
-        scrollBtn.classList.add('up');
-      } else {
-        scrollBtn.classList.remove('up');
-      }
-    });
-
-    // ==== FULLSCREEN (modo normal) ====
-    const fullscreen = document.getElementById("fullscreen");
-    const fullscreenImg = document.getElementById("fullscreen-img");
-    const closeBtn = document.querySelector("#fullscreen .close");
-    const prevBtn = document.querySelector("#fullscreen .prev");
-    const nextBtn = document.querySelector("#fullscreen .next");
-
-    let currentIndex = 0;
-    const images = document.querySelectorAll(".content img");
-
-    images.forEach((img, index) => {
-      img.addEventListener("click", () => {
-        if (mode === "normal") { // só abre fullscreen no modo normal
-          fullscreen.style.display = "flex";
-          fullscreenImg.src = img.src;
-          currentIndex = index;
+    document.addEventListener("DOMContentLoaded", () => {
+      // ==== SCROLL BTN ====
+      const scrollBtn = document.getElementById('scrollBtn');
+      scrollBtn.addEventListener('click', () => {
+        if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 50) {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
         }
       });
-    });
-
-    closeBtn.addEventListener("click", () => { fullscreen.style.display = "none"; });
-    prevBtn.addEventListener("click", () => {
-      currentIndex = (currentIndex - 1 + images.length) % images.length;
-      fullscreenImg.src = images[currentIndex].src;
-    });
-    nextBtn.addEventListener("click", () => {
-      currentIndex = (currentIndex + 1) % images.length;
-      fullscreenImg.src = images[currentIndex].src;
-    });
-    document.addEventListener("keydown", (e) => {
-      if (fullscreen.style.display === "flex") {
-        if (e.key === "ArrowLeft") prevBtn.click();
-        if (e.key === "ArrowRight") nextBtn.click();
-        if (e.key === "Escape") closeBtn.click();
-      }
-    });
-
-    // ==== MODO NORMAL / LIVRO ====
-    const comicImages = Array.from(images).map(img => img.src);
-    let mode = "normal";
-    let pageFlip = null;
-
-    function startNormalMode() {
-      document.querySelector(".content").style.display = "block";
-      document.getElementById("book").style.display = "none";
-    }
-
-    function startBookMode() {
-      document.querySelector(".content").style.display = "none";
-      const bookDiv = document.getElementById("book");
-      bookDiv.style.display = "block";
-      bookDiv.innerHTML = "";
-
-      pageFlip = new St.PageFlip(bookDiv, {
-        width: 800,
-        height: 600,
-        showCover: true,
-        usePortrait: true,
+      window.addEventListener('scroll', () => {
+        if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 50) {
+          scrollBtn.classList.add('up');
+        } else {
+          scrollBtn.classList.remove('up');
+        }
       });
 
-      pageFlip.loadFromImages(comicImages);
+      // ==== FULLSCREEN (modo normal) ====
+      const fullscreen = document.getElementById("fullscreen");
+      const fullscreenImg = document.getElementById("fullscreen-img");
+      const closeBtn = document.querySelector("#fullscreen .close");
+      const prevBtn = document.querySelector("#fullscreen .prev");
+      const nextBtn = document.querySelector("#fullscreen .next");
+      const images = document.querySelectorAll(".content img");
 
-      // fullscreen automático no modo livro
-      if (bookDiv.requestFullscreen) {
-        bookDiv.requestFullscreen();
-      }
-    }
+      let currentIndex = 0;
+      let mode = "normal";
+      let pageFlip = null;
 
-    document.getElementById("toggleMode").addEventListener("click", () => {
-      if (mode === "normal") {
-        startBookMode();
-        document.getElementById("toggleMode").innerText = "📑 Ler normal";
-        mode = "book";
-      } else {
-        startNormalMode();
-        document.getElementById("toggleMode").innerText = "📖 Ler como livro";
-        mode = "normal";
+      images.forEach((img, index) => {
+        img.addEventListener("click", () => {
+          if (mode === "normal") {
+            fullscreen.style.display = "flex";
+            fullscreenImg.src = img.src;
+            currentIndex = index;
+          }
+        });
+      });
+
+      closeBtn.addEventListener("click", () => { fullscreen.style.display = "none"; });
+      prevBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        fullscreenImg.src = images[currentIndex].src;
+      });
+      nextBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        fullscreenImg.src = images[currentIndex].src;
+      });
+      document.addEventListener("keydown", (e) => {
+        if (fullscreen.style.display === "flex") {
+          if (e.key === "ArrowLeft") prevBtn.click();
+          if (e.key === "ArrowRight") nextBtn.click();
+          if (e.key === "Escape") closeBtn.click();
+        }
+      });
+
+      // ==== MODO LIVRO ====
+      const comicImages = Array.from(images).map(img => img.src);
+
+      function startNormalMode() {
+        document.querySelector(".content").style.display = "block";
+        document.getElementById("book").style.display = "none";
       }
+
+      function startBookMode() {
+        document.querySelector(".content").style.display = "none";
+        const bookDiv = document.getElementById("book");
+        bookDiv.style.display = "block";
+        bookDiv.innerHTML = "";
+
+        pageFlip = new St.PageFlip(bookDiv, {
+          width: bookDiv.clientWidth,
+          height: bookDiv.clientHeight,
+          showCover: true,
+          usePortrait: true,
+        });
+
+        pageFlip.loadFromImages(comicImages);
+
+        if (bookDiv.requestFullscreen) {
+          bookDiv.requestFullscreen();
+        }
+      }
+
+      document.getElementById("toggleMode").addEventListener("click", () => {
+        if (mode === "normal") {
+          startBookMode();
+          document.getElementById("toggleMode").innerText = "📑 Ler normal";
+          mode = "book";
+        } else {
+          startNormalMode();
+          document.getElementById("toggleMode").innerText = "📖 Ler como livro";
+          mode = "normal";
+        }
+      });
+
+      startNormalMode();
     });
-
-    // começa no modo normal
-    startNormalMode();
   </script>
 </body>
 </html>
