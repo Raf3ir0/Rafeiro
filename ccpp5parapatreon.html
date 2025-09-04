@@ -159,47 +159,75 @@
 
       // ===== Modo livro =====
       const comicImages = Array.from(images).map(img => img.src);
+      const comicImages = [
+    "belezapt/capa.png",
+    "belezapt/D.png",
+    "belezapt/PAGINA 1.png",
+    "belezapt/PAGINA 2.png",
+    "belezapt/PAGINA 3.png",
+    "belezapt/PAGINA 4.png",
+    "belezapt/PAGINA 5.png",
+    "belezapt/PAGINA 6.png",
+    "belezapt/PAGINA 7.png",
+    "belezapt/PAGINA 8.png"
+    "belezapt/PAGINA 9.png"
+      "belezapt/PAGINA 10.png"
+      "belezapt/PAGINA 11.png"
+      "belezapt/PAGINA 12.png"
+      "belezapt/PAGINA 13.png"
+      "belezapt/PAGINA 14.png"
+      "belezapt/PAGINA 15.png"
+      "belezapt/PAGINA 16.png"
+      "belezapt/PAGINA 17.png"
+      "imagen/pagina25-26.png" 
+      "belezapt/PB1.png" 
+      "logos/LOGO.png" 
+  ];
 
-      function startNormalMode() {
-        document.querySelector(".content").style.display = "block";
-        document.getElementById("book").style.display = "none";
-      }
+     function startNormalMode() {
+    document.querySelector(".content").style.display = "block";
+    document.getElementById("book").style.display = "none";
+  }
 
-      function startBookMode() {
-        const bookDiv = document.getElementById("book");
-        document.querySelector(".content").style.display = "none";
-        bookDiv.style.display = "block";
+  function startBookMode() {
+    const bookDiv = document.getElementById("book");
+    document.querySelector(".content").style.display = "none";
+    bookDiv.style.display = "block";
+    bookDiv.style.visibility = "hidden";
 
-        // Inicializa PageFlip com tamanhos fixos
-        pageFlip = new St.PageFlip(bookDiv, {
-          width: 1080, // largura em px (aproximadamente 90% do container)
-          height: 600, // altura em px (aproximadamente 80% da viewport)
-          showCover: true,
-          usePortrait: true,
-        });
-
-        pageFlip.loadFromImages(comicImages);
-
-        if (bookDiv.requestFullscreen) {
-          bookDiv.requestFullscreen();
-        }
-      }
-
-      document.getElementById("toggleMode").addEventListener("click", () => {
-        if (mode === "normal") {
-          startBookMode();
-          document.getElementById("toggleMode").innerText = "📑 Ler normal";
-          mode = "book";
-        } else {
-          startNormalMode();
-          document.getElementById("toggleMode").innerText = "📖 Ler como livro";
-          mode = "normal";
-        }
+    setTimeout(() => {
+      pageFlip = new St.PageFlip(bookDiv, {
+        width: bookDiv.clientWidth,
+        height: bookDiv.clientHeight,
+        showCover: true,
+        usePortrait: true,
       });
 
-      startNormalMode();
+      pageFlip.loadFromImages(comicImages);
+      bookDiv.style.visibility = "visible";
 
-    });
-  </script>
+      if(bookDiv.requestFullscreen) {
+        bookDiv.requestFullscreen();
+      }
+    }, 50);
+  }
+
+  document.getElementById("toggleMode").addEventListener("click", () => {
+    if(mode==="normal") {
+      startBookMode();
+      document.getElementById("toggleMode").innerText = "📑 Ler normal";
+      mode="book";
+    } else {
+      startNormalMode();
+      document.getElementById("toggleMode").innerText = "📖 Ler como livro";
+      mode="normal";
+    }
+  });
+
+  startNormalMode();
+
+});
+</script>
+
 </body>
 </html>
