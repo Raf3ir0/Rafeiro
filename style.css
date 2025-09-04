@@ -701,3 +701,13 @@ img {
 }
 
 
+#book {
+  width: 90%;       /* ocupa 90% da largura da tela */
+  max-width: 1200px;
+  height: 80vh;     /* altura de 80% da viewport */
+  margin: 20px auto;
+  display: none;    /* começa escondido */
+}
+
+
+
