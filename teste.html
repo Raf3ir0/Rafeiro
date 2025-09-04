@@ -1,108 +1,85 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Teste PageFlip</title>
-  
-  <!-- StPageFlip CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/stpageflip@2.0.7/dist/css/page-flip.css">
-
-  <style>
-    body {
-      font-family: sans-serif;
-      text-align: center;
-      margin: 0;
-      padding: 20px;
-    }
-
-    .content img {
-      width: 200px;
-      margin: 10px;
-      cursor: pointer;
-    }
-
-    #book {
-      width: 800px;
-      height: 500px;
-      margin: 20px auto;
-      display: none;
-      border: 1px solid #333;
-    }
-
-    .toggle-btn {
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rafeiro - Teste PageFlip</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/stpageflip@2.0.7/dist/css/page-flip.css">
+<style>
+  /* apenas estilos essenciais para teste */
+  #book { width: 90%; max-width: 1200px; height: 80vh; margin: 20px auto; display: none; }
+</style>
 </head>
 <body>
 
-  <h1>Teste PageFlip</h1>
+<!-- Botão alternar modo -->
+<button id="toggleMode" class="toggle-btn">📖 Ler como livro</button>
 
-  <button id="toggleMode" class="toggle-btn">📖 Ler como livro</button>
+<!-- Conteúdo normal -->
+<div class="content">
+  <h1>Teste Banda Desenhada</h1>
+  <img src="belezapt/capa.png" alt="Página 1">
+  <img src="belezapt/D.png" alt="Página 2">
+  <img src="belezapt/PAGINA 1.png" alt="Página 3">
+</div>
 
-  <!-- Conteúdo normal -->
-  <div class="content">
-    <img src="https://via.placeholder.com/400x500/ff9999/000000?text=Página+1" alt="Página 1">
-    <img src="https://via.placeholder.com/400x500/99ccff/000000?text=Página+2" alt="Página 2">
-  </div>
+<!-- Container do modo livro -->
+<div id="book"></div>
 
-  <!-- Container do PageFlip -->
-  <div id="book"></div>
+<!-- StPageFlip JS -->
+<script src="https://cdn.jsdelivr.net/npm/stpageflip@2.0.7/dist/js/page-flip.browser.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const content = document.querySelector(".content");
+  const bookDiv = document.getElementById("book");
+  const toggleBtn = document.getElementById("toggleMode");
+  let pageFlip = null;
+  let mode = "normal";
 
-  <!-- StPageFlip JS -->
-  <script src="https://cdn.jsdelivr.net/npm/stpageflip@2.0.7/dist/js/page-flip.browser.min.js"></script>
+  // Pega todas as imagens do conteúdo
+  const comicImages = Array.from(content.querySelectorAll("img")).map(img => img.src);
 
-  <script>
-    const content = document.querySelector(".content");
-    const bookDiv = document.getElementById("book");
-    const toggleBtn = document.getElementById("toggleMode");
+  function startNormalMode() {
+    if (pageFlip) pageFlip.destroy();
+    content.style.display = "block";
+    bookDiv.style.display = "none";
+    mode = "normal";
+    toggleBtn.innerText = "📖 Ler como livro";
+  }
 
-    const images = Array.from(document.querySelectorAll(".content img"));
-    const comicImages = images.map(img => img.src);
+  function startBookMode() {
+    content.style.display = "none";
+    bookDiv.style.display = "block";
+    bookDiv.style.visibility = "hidden"; // evita flash
 
-    let pageFlip = null;
-    let mode = "normal";
+    // espera o browser renderizar o container
+    setTimeout(() => {
+      pageFlip = new St.PageFlip(bookDiv, {
+        width: bookDiv.clientWidth,
+        height: bookDiv.clientHeight,
+        showCover: true,
+        usePortrait: true
+      });
+      pageFlip.loadFromImages(comicImages);
+      bookDiv.style.visibility = "visible";
 
-    function startNormalMode() {
-      content.style.display = "block";
-      bookDiv.style.display = "none";
-    }
+      // fullscreen opcional
+      if (bookDiv.requestFullscreen) bookDiv.requestFullscreen();
+    }, 50);
 
-    function startBookMode() {
-      content.style.display = "none";
-      bookDiv.style.display = "block";
-      bookDiv.style.visibility = "hidden";
+    mode = "book";
+    toggleBtn.innerText = "📑 Ler normal";
+  }
 
-      setTimeout(() => {
-        pageFlip = new St.PageFlip(bookDiv, {
-          width: bookDiv.clientWidth,
-          height: bookDiv.clientHeight,
-          showCover: true,
-          usePortrait: true,
-        });
+  toggleBtn.addEventListener("click", () => {
+    if (mode === "normal") startBookMode();
+    else startNormalMode();
+  });
 
-        pageFlip.loadFromImages(comicImages);
-
-        bookDiv.style.visibility = "visible";
-      }, 100);
-    }
-
-    toggleBtn.addEventListener("click", () => {
-      if (mode === "normal") {
-        startBookMode();
-        toggleBtn.innerText = "📑 Ler normal";
-        mode = "book";
-      } else {
-        startNormalMode();
-        toggleBtn.innerText = "📖 Ler como livro";
-        mode = "normal";
-      }
-    });
-
-    startNormalMode();
-  </script>
+  // Inicializa no modo normal
+  startNormalMode();
+});
+</script>
 </body>
 </html>
