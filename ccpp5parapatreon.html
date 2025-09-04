@@ -161,30 +161,38 @@
         document.getElementById("book").style.display = "none";
       }
 
-      function startBookMode() {
-        document.querySelector(".content").style.display = "none";
-        const bookDiv = document.getElementById("book");
-        bookDiv.style.display = "block";
-        bookDiv.style.visibility = "hidden";
 
-        // espera o container renderizar
-        requestAnimationFrame(() => {
-          pageFlip = new St.PageFlip(bookDiv, {
-            width: bookDiv.clientWidth,
-            height: bookDiv.clientHeight,
-            showCover: true,
-            usePortrait: true,
-          });
-          pageFlip.loadFromImages(comicImages);
-          bookDiv.style.visibility = "visible";
+function startBookMode() {
+  const content = document.querySelector(".content");
+  const bookDiv = document.getElementById("book");
 
-          // fullscreen automático
-          if (bookDiv.requestFullscreen) {
-            bookDiv.requestFullscreen();
-          }
-        });
-      }
+  // 1️⃣ mostra o container antes de iniciar o PageFlip
+  content.style.display = "none";
+  bookDiv.style.display = "block";
+  bookDiv.style.visibility = "hidden"; // evita flash
 
+  // 2️⃣ espera o browser renderizar
+  setTimeout(() => {
+    pageFlip = new St.PageFlip(bookDiv, {
+      width: bookDiv.clientWidth,
+      height: bookDiv.clientHeight,
+      showCover: true,
+      usePortrait: true,
+    });
+
+    pageFlip.loadFromImages(comicImages);
+
+    // agora mostramos o container
+    bookDiv.style.visibility = "visible";
+
+    // fullscreen opcional
+    if (bookDiv.requestFullscreen) {
+      bookDiv.requestFullscreen();
+    }
+  }, 100); // 100ms é seguro
+}
+
+      
       document.getElementById("toggleMode").addEventListener("click", () => {
         if (mode === "normal") {
           startBookMode();
