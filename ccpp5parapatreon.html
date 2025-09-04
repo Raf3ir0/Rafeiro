@@ -9,13 +9,15 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/stpageflip@2.0.7/dist/css/page-flip.css">
 
   <style>
+    /* CSS do container do modo livro */
     #book {
       width: 90%;
       max-width: 1200px;
       height: 80vh;
       margin: 20px auto;
-      display: none; /* começa escondido */
+      display: none;
     }
+    /* Mantém todo o teu CSS anterior para body, imgs, botões etc. */
   </style>
 </head>
 <body>
@@ -55,6 +57,7 @@
     <h1 class="chapter-title">= (Rafeiro)OX3 =</h1>
     <h2 class="chapter-subtitle">= cidade BELEZA, pt 1 =</h2>
 
+    <!-- Páginas -->
     <img src="belezapt/capa.png" alt="Página 1">
     <img src="belezapt/D.png" alt="Página 2">
     <img src="belezapt/PAGINA 1.png" alt="Página 3">
@@ -97,7 +100,8 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      // ==== SCROLL BTN ====
+
+      // ===== Scroll button =====
       const scrollBtn = document.getElementById('scrollBtn');
       scrollBtn.addEventListener('click', () => {
         if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 50) {
@@ -114,7 +118,7 @@
         }
       });
 
-      // ==== FULLSCREEN (modo normal) ====
+      // ===== Fullscreen modo normal =====
       const fullscreen = document.getElementById("fullscreen");
       const fullscreenImg = document.getElementById("fullscreen-img");
       const closeBtn = document.querySelector("#fullscreen .close");
@@ -153,7 +157,7 @@
         }
       });
 
-      // ==== MODO LIVRO ====
+      // ===== Modo livro =====
       const comicImages = Array.from(images).map(img => img.src);
 
       function startNormalMode() {
@@ -161,38 +165,26 @@
         document.getElementById("book").style.display = "none";
       }
 
+      function startBookMode() {
+        const bookDiv = document.getElementById("book");
+        document.querySelector(".content").style.display = "none";
+        bookDiv.style.display = "block";
 
-function startBookMode() {
-  const content = document.querySelector(".content");
-  const bookDiv = document.getElementById("book");
+        // Inicializa PageFlip com tamanhos fixos
+        pageFlip = new St.PageFlip(bookDiv, {
+          width: 1080, // largura em px (aproximadamente 90% do container)
+          height: 600, // altura em px (aproximadamente 80% da viewport)
+          showCover: true,
+          usePortrait: true,
+        });
 
-  // 1️⃣ mostra o container antes de iniciar o PageFlip
-  content.style.display = "none";
-  bookDiv.style.display = "block";
-  bookDiv.style.visibility = "hidden"; // evita flash
+        pageFlip.loadFromImages(comicImages);
 
-  // 2️⃣ espera o browser renderizar
-  setTimeout(() => {
-    pageFlip = new St.PageFlip(bookDiv, {
-      width: bookDiv.clientWidth,
-      height: bookDiv.clientHeight,
-      showCover: true,
-      usePortrait: true,
-    });
+        if (bookDiv.requestFullscreen) {
+          bookDiv.requestFullscreen();
+        }
+      }
 
-    pageFlip.loadFromImages(comicImages);
-
-    // agora mostramos o container
-    bookDiv.style.visibility = "visible";
-
-    // fullscreen opcional
-    if (bookDiv.requestFullscreen) {
-      bookDiv.requestFullscreen();
-    }
-  }, 100); // 100ms é seguro
-}
-
-      
       document.getElementById("toggleMode").addEventListener("click", () => {
         if (mode === "normal") {
           startBookMode();
@@ -205,8 +197,8 @@ function startBookMode() {
         }
       });
 
-      // inicia no modo normal
       startNormalMode();
+
     });
   </script>
 </body>
