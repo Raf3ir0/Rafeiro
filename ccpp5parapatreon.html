@@ -14,8 +14,7 @@
       max-width: 1200px;
       height: 80vh;
       margin: 20px auto;
-      display: block;           /* display block para StPageFlip */
-      visibility: hidden;       /* esconde visualmente até inicializar */
+      display: none; /* começa escondido */
     }
   </style>
 </head>
@@ -159,31 +158,31 @@
 
       function startNormalMode() {
         document.querySelector(".content").style.display = "block";
-        const bookDiv = document.getElementById("book");
-        bookDiv.style.display = "none";
-        bookDiv.innerHTML = "";
+        document.getElementById("book").style.display = "none";
       }
 
       function startBookMode() {
         document.querySelector(".content").style.display = "none";
         const bookDiv = document.getElementById("book");
         bookDiv.style.display = "block";
-        bookDiv.style.visibility = "hidden"; // esconde até carregar
-        bookDiv.innerHTML = "";
+        bookDiv.style.visibility = "hidden";
 
-        // espera o browser renderizar
-        setTimeout(() => {
+        // espera o container renderizar
+        requestAnimationFrame(() => {
           pageFlip = new St.PageFlip(bookDiv, {
             width: bookDiv.clientWidth,
             height: bookDiv.clientHeight,
             showCover: true,
-            usePortrait: true
+            usePortrait: true,
           });
           pageFlip.loadFromImages(comicImages);
+          bookDiv.style.visibility = "visible";
 
-          bookDiv.style.visibility = "visible"; // mostra o livro
-          if (bookDiv.requestFullscreen) bookDiv.requestFullscreen();
-        }, 50);
+          // fullscreen automático
+          if (bookDiv.requestFullscreen) {
+            bookDiv.requestFullscreen();
+          }
+        });
       }
 
       document.getElementById("toggleMode").addEventListener("click", () => {
@@ -198,6 +197,7 @@
         }
       });
 
+      // inicia no modo normal
       startNormalMode();
     });
   </script>
