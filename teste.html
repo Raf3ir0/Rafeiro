@@ -7,7 +7,6 @@
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/stpageflip@2.0.7/dist/css/page-flip.css">
 <style>
-  /* botão alternar modo */
   .toggle-btn {
     position: fixed;
     bottom: 20px;
@@ -22,8 +21,6 @@
     z-index: 2000;
   }
   .toggle-btn:hover { background: #444; }
-
-  /* container PageFlip */
   #book {
     width: 90%;
     max-width: 1200px;
@@ -35,15 +32,12 @@
 </head>
 <body>
 
-<!-- Banner -->
 <div class="banner">
   <a href="index.html"><img src="logos/LOGOpequenoinv.png" alt="Logo"></a>
 </div>
 
-<!-- Botão alternar modo -->
 <button id="toggleMode" class="toggle-btn">📖 Ler como livro</button>
 
-<!-- Conteúdo normal -->
 <div class="content">
   <h1>Teste Banda Desenhada</h1>
   <img src="belezapt/capa.png" alt="Página 1">
@@ -52,15 +46,12 @@
   <img src="belezapt/PAGINA%202.png" alt="Página 4">
 </div>
 
-<!-- Container PageFlip -->
 <div id="book"></div>
 
-<!-- Footer -->
 <div class="footer">
   © 2025 Rafeiro Comics — Todos os direitos reservados
 </div>
 
-<!-- JS PageFlip -->
 <script src="https://cdn.jsdelivr.net/npm/stpageflip@2.0.7/dist/js/page-flip.browser.min.js"></script>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
@@ -73,6 +64,16 @@ document.addEventListener("DOMContentLoaded", () => {
   // Pega todas as imagens do conteúdo
   const comicImages = Array.from(content.querySelectorAll("img")).map(img => img.src);
 
+  // Função que garante que todas as imagens carregaram antes de iniciar PageFlip
+  function loadImages(urls) {
+    return Promise.all(urls.map(src => new Promise(resolve => {
+      const img = new Image();
+      img.onload = () => resolve(src);
+      img.onerror = () => resolve(src); // evita travar se imagem não carregar
+      img.src = src;
+    })));
+  }
+
   function startNormalMode() {
     if(pageFlip) pageFlip.destroy();
     content.style.display = "block";
@@ -81,27 +82,27 @@ document.addEventListener("DOMContentLoaded", () => {
     toggleBtn.innerText = "📖 Ler como livro";
   }
 
-  function startBookMode() {
+  async function startBookMode() {
     content.style.display = "none";
     bookDiv.style.display = "block";
+    bookDiv.style.visibility = "hidden";
 
-    // Força o navegador a calcular largura/altura
-    bookDiv.style.height = "80vh";
-    bookDiv.style.width = "90%";
+    // Espera todas as imagens carregarem
+    await loadImages(comicImages);
 
-    // Inicializa PageFlip com um pequeno delay
-    setTimeout(() => {
-      pageFlip = new St.PageFlip(bookDiv, {
-        width: bookDiv.clientWidth,
-        height: bookDiv.clientHeight,
-        showCover: true,
-        usePortrait: true
-      });
-      pageFlip.loadFromImages(comicImages);
+    // Inicializa PageFlip
+    pageFlip = new St.PageFlip(bookDiv, {
+      width: bookDiv.clientWidth,
+      height: bookDiv.clientHeight,
+      showCover: true,
+      usePortrait: true
+    });
+    pageFlip.loadFromImages(comicImages);
+    bookDiv.style.visibility = "visible";
 
-      // fullscreen
-      if(bookDiv.requestFullscreen) bookDiv.requestFullscreen();
-    }, 100); // 100ms é suficiente
+    // fullscreen
+    if(bookDiv.requestFullscreen) bookDiv.requestFullscreen();
+
     mode = "book";
     toggleBtn.innerText = "📑 Ler normal";
   }
@@ -114,5 +115,6 @@ document.addEventListener("DOMContentLoaded", () => {
   startNormalMode();
 });
 </script>
+
 </body>
 </html>
