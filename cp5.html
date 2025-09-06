@@ -176,22 +176,8 @@ const nextBtn = document.querySelector("#fullscreen .next");
 
 let currentIndex = 0;
 
-// pegar todas as imagens da pasta cp2
-const allCp2 = document.querySelectorAll("img[src^='cp2/']");
-const cp2Images = [...allCp2].filter(img => {
-  const name = img.src.split("/").pop().split(".")[0]; // "p1", "p2", etc
-  const num = parseInt(name.slice(1));
-  return num >= 16 && num <= 35;
-});
-
-
-
-// pegar apenas a imagem cp1/p23
-const cp1Image = document.querySelector("img[src='cp1/23b.png']");
-const cp1Images = cp1Image ? [cp1Image] : [];
-
-// juntar todos
-const images = [...cp2Images, ...cp1Images];
+// pega todas as imagens dentro do conteúdo
+const images = document.querySelectorAll(".content img");
 
 // abrir fullscreen ao clicar
 images.forEach((img, index) => {
@@ -227,8 +213,8 @@ document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeBtn.click();
   }
 });
-
 </script>
+
 
 
 
