@@ -713,4 +713,28 @@ img {
 }
 
 
+/* --- Social buttons mobile --- */
+@media (max-width: 768px) {
+  .social-btns {
+    gap: 10px;          /* menos espaçamento entre botões */
+    margin: 15px 0;
+    flex-wrap: wrap;     /* permite que quebrem linha se necessário */
+  }
+
+  .social-btns a {
+    padding: 6px 12px;   /* menor botão */
+    font-size: 14px;     /* texto menor */
+    border-radius: 20px; /* bordas um pouco menores */
+  }
+
+  .social-btns a .icon {
+    width: 16px;        /* ícone menor */
+    height: 16px;
+  }
+}
+
+
+
+
+
 
