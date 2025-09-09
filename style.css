@@ -145,7 +145,10 @@ img {
 }
 
 
-
+.logo:hover {
+  transform: scale(1.1); /* aumenta 10% */
+  filter: brightness(1.2); /* fica mais claro */
+}
 
 
 
@@ -570,7 +573,7 @@ img {
   .banner .logo {
     max-width: 120px;
     margin: 10px auto;
-    float: none; /* centra no telemóvel */
+    float: left; /* centra no telemóvel */
   }
 
 
