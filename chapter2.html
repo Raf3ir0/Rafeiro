@@ -76,6 +76,7 @@
 
 
     <!-- Páginas -->
+    <img src="imagen/pagina1.png" loading="lazy" alt="Página 1">
 <img src="imagen/pagina2.png" loading="lazy" alt="Página 1">
     <img src="belezaing/D ing.png" loading="lazy" alt="Página 1">
 <img src="cp1ing/ING CP 21.png" loading="lazy" alt="Página 2">
@@ -96,7 +97,7 @@
 <img src="cp1ing/ING CP 37.png" loading="lazy" alt="Página 17">
 <img src="cp1ing/ING CP 38.png" loading="lazy" alt="Página 18">
 <img src="imagen/pagina25-26.png" loading="lazy" alt="Página 19 20">
-    <img src="cp1/OS PATROES.png" loading="lazy" alt="Página 25 e 26">
+    <img src="imagen/pagina27.png" loading="lazy" alt="Página 25 e 26">
      <img src="logos/LOGO.png" loading="lazy" alt="Página 21">
 
 
@@ -201,26 +202,8 @@ const nextBtn = document.querySelector("#fullscreen .next");
 
 let currentIndex = 0;
 
-// pegar imagens da pasta cp1ing
-let cp1ingImages = [...document.querySelectorAll("img[src^='cp1ing']")];
-
-// pegar apenas imagen/pagina2
-const pagina2 = document.querySelector("img[src='imagen/pagina2.png']");
-const pagina2Array = pagina2 ? [pagina2] : [];
-
-// remover pagina2 de cp1ingImages caso esteja lá
-cp1ingImages = cp1ingImages.filter(img => img !== pagina2);
-
-
-  // pegar apenas cp1/p23
-const p23 = document.querySelector("img[src='imagen/pagina25-26.png']");
-const p23Array = p23 ? [p23] : [];
-
-
-// juntar todas as imagens na ordem correta
-const images = [...cp1ingImages, ...pagina2Array, ...p23Array];
-
-
+// Selecionar todas as imagens dentro do conteúdo da BD
+const images = [...document.querySelectorAll(".content img")];
 
 // abrir fullscreen ao clicar
 images.forEach((img, index) => {
@@ -256,7 +239,6 @@ document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeBtn.click();
   }
 });
-
 </script>
 
   
