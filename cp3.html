@@ -196,13 +196,9 @@ const nextBtn = document.querySelector("#fullscreen .next");
 
 let currentIndex = 0;
 
-// pegar todas as imagens da pasta cp2
-const allCp2 = document.querySelectorAll("img[src^='cp2/']");
-const cp2Images = [...allCp2].filter(img => {
-  const name = img.src.split("/").pop().split(".")[0]; // "p1", "p2", etc
-  const num = parseInt(name.slice(1));
-  return num >= 1 && num <= 16;
-});
+// pegar todas as imagens da pasta cp2 (sem filtrar pelo número)
+const cp2Images = document.querySelectorAll("img[src^='cp2/']");
+
 
 // pegar apenas a imagem cp1/p23
 const cp1Image = document.querySelector("img[src='cp1/23b.png']");
