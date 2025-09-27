@@ -6,11 +6,13 @@
 
 ## 📖 About
 
-**NEW COMIC RELEASE!**  
+**NEW COMIC RELEASE! / NOVO LANÇAMENTO DE BANDA DESENHADA!**
+
 Meet **Abu**, a funny vulture always chasing his favorite meal – *Hearts!*  
 Together with **Rafeiro**, his loyal (and mostly silent) companion, they dive into hilarious adventures across cities, meeting bizarre characters along the way.  
 
----
+"This comic is available in both Portuguese and English, so everyone can follow the adventures of Abu & Rafeiro!"
+
 
 ## 🌐 Read & Support
 
@@ -25,7 +27,7 @@ Together with **Rafeiro**, his loyal (and mostly silent) companion, they dive in
 Here are some pages from the comic:  
 
 ![Page 1](imagen/pagina13.png)  
-![Page 2](cp2ing/2%20cap%208%209.png)
+![Page 2](cp1/14b.png)
 
 
 ---
