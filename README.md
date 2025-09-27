@@ -25,7 +25,8 @@ Together with **Rafeiro**, his loyal (and mostly silent) companion, they dive in
 Here are some pages from the comic:  
 
 ![Page 1](imagen/pagina13.png)  
-![Page 2](cp2ing/2 cap 8 9.png)
+![Page 2](cp2ing/2%20cap%208%209.png)
+
 
 ---
 
