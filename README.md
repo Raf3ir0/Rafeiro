@@ -18,7 +18,7 @@ Together with **Rafeiro**, his loyal (and mostly silent) companion, they dive in
 
 - 📺 [Read the comic here](https://raf3ir0.github.io/Rafeiro/)  
 - 💖 [Support me on Patreon](https://www.patreon.com/RAFEIRO)  
-- 📷 [Follow me on Instagram]((https://www.instagram.com/toufartodetrabalhar/))  
+- 📷 [Follow me on Instagram](https://www.instagram.com/toufartodetrabalhar/)  
 
 ---
 
