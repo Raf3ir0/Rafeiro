@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rafeiro - Banda Desenhada</title>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style.css">
 
   <style>
     body {
       background-color: #f4f4f4;
       text-align: right;
       color: black;
-      margin: 20px;
+      margin: 20;
       padding: 0;
       text-transform: uppercase;
       font-size: 20px;
@@ -26,241 +26,245 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
 
-    /* scroll button rotation when at page bottom */
-    .scroll-btn {
-      position: fixed;
-      left: 0px;
-      bottom: 110px;
-      width: 100px;
-      height: 100px;
-      cursor: pointer;
-      z-index: 1000;
-      opacity: 0.7;
-      transition: opacity 0.3s, transform 0.3s;
-    }
 
-    .scroll-btn:hover {
-      opacity: 1;
-      transform: scale(1.1);
-    }
-
-    .scroll-btn img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      transition: transform 0.3s;
-    }
-
-    /* Quando estiver no fundo da página, gira a imagem para cima */
-    .scroll-btn.up img {
-      transform: rotate(180deg);
-    }
-
-    .banner .logo {
-      max-width: 120px; /* ajusta conforme necessidade */
-    }
-
-    .footer {
-      text-align: center;
-      margin: 40px 0 20px 0;
-      font-size: 14px;
-      color: #666;
-    }
-  </style>
-</head>
+     </style>
+  </head> 
 
 <body>
 
-  <!-- Banner -->
+
+
+
+<!-- Banner -->
   <div class="banner">
     <a href="index.html" class="logo-link">
        <img src="logos/casa logo.png" alt="Logopequenoinv" class="logo">
     </a>
   </div>
+  
 
-  <!-- Botão para versão ing -->
-  <a href="cp5pt3ing.html" class="lang-btn">ing</a>
+<!-- Botão para versão pt -->
+<a href="cp5pt4ing.html" class="lang-btn">ing</a>
 
-  <!-- FULLSCREEN MODAL -->
-  <div id="fullscreen" style="display:none; align-items:center; justify-content:center; position:fixed; inset:0; background:rgba(0,0,0,0.85); z-index:2000;">
-    <button class="close" aria-label="Fechar">✕</button>
-    <button class="prev" aria-label="Anterior">‹</button>
-    <img id="fullscreen-img" src="" alt="Página" style="max-width:90%; max-height:90%; margin:0 12px;">
-    <button class="next" aria-label="Seguinte">›</button>
+
+
+
+<!-- FULLSCREEN MODAL -->
+  <div id="fullscreen">
+    <button class="close" onclick="closeFullscreen()">✕</button>
+    <button class="prev" onclick="prevPage()">‹</button>
+    <img id="fullscreen-img" src="" alt="Página">
+    <button class="next" onclick="nextPage()">›</button>
   </div>
 
-  <!-- Menu de navegação -->
+  
+  
+<!-- Menu de navegação -->
   <nav class="menu">
     <a href="listabaseing.html">capítulos</a>
-    <a href="cp5pt4.html">último Capítulo</a>
+  <a href="cp5pt4.html">último Capítulo</a>
     <a href="listadecpitulosing.html">volumes</a>
     <a href="sketches.html">rascunhos</a>
-    <a href="projetorafeiroing.html">sobre</a>
+     <a href="projetorafeiroing.html">sobre</a>
   </nav>
 
   <div class="content">
-    <h1 class="chapter-title">= (Rafeiro)OX3 =</h1>
-    <h2 class="chapter-subtitle">= CIDADE BELEZa, pt 3 =</h2>
+  <h1 class="chapter-title">= (Rafeiro)OX3 =</h1>
+  <h2 class="chapter-subtitle">= CIDADE BELEZa, pt 4 =</h2>
 
-    <!-- Páginas (igual ao segundo ficheiro) -->
-    <img src="belezapt/capa.png" loading="lazy" alt="Página 1">
-    <img src="belezapt/D.png" loading="lazy" alt="Página 2">
 
-    <img src="belezapt/pagina 35.png" loading="lazy" alt="Página 35">
-    <img src="belezapt/pagina 36.png" loading="lazy" alt="Página 36">
-    <img src="belezapt/pagina 37.png" loading="lazy" alt="Página 37">
-    <img src="belezapt/pagina 38.png" loading="lazy" alt="Página 38">
-    <img src="belezapt/pagina 39.png" loading="lazy" alt="Página 39">
-    <img src="belezapt/pagina 40.png" loading="lazy" alt="Página 40">
-    <img src="belezapt/pagina 41.png" loading="lazy" alt="Página 41">
-    <img src="belezapt/pagina 42.png" loading="lazy" alt="Página 42">
-    <img src="belezapt/pagina 43.png" loading="lazy" alt="Página 43">
-    <img src="belezapt/pagina 44.png" loading="lazy" alt="Página 44">
-    <img src="belezapt/PAGINA 45.png" loading="lazy" alt="Página 45">
-    <img src="belezapt/PAGINA 46.png" loading="lazy" alt="Página 46">
-    <img src="belezapt/PAGINA 47.png" loading="lazy" alt="Página 47">
-    <img src="belezapt/PAGINA 48.png" loading="lazy" alt="Página 48">
-    <img src="belezapt/PAGINA 49.png" loading="lazy" alt="Página 49">
-    <img src="belezapt/PAGINA 50.png" loading="lazy" alt="Página 50">
-    <img src="belezapt/PAGINA 51.png" loading="lazy" alt="Página 51">
-    <img src="belezapt/PAGINA 52.png" loading="lazy" alt="Página 52">
-    <img src="belezapt/PAGINA 53.png" loading="lazy" alt="Página 53">
+  
 
-    <img src="belezapt/PB.png" loading="lazy" alt="Página PB">
-    <img src="belezaing/BONNUS 333 OG ing.png" loading="lazy" alt="Página Bónus">
-    <img src="belezapt/créditos PT.png" loading="lazy" alt="Créditos PT">
-    <img src="imagen/pagina25-26.png" loading="lazy" alt="Página 25-26">
-    <img src="cp1/24b.png" loading="lazy" alt="Página 24b">
-    <img src="logos/LOGO.png" loading="lazy" alt="Logo">
 
-    <div class="capitulo">
-      <a href="cp5pt3.html"><button id="capitulo2">0x3 = cidade beleza, pt3</button></a>
-      <a href="cp5pt4.html"><button id="capitulo2">0x3 = cidade beleza, pt4</button></a>
-    </div>
+    <!-- Páginas -->
+     <img src="belezapt/capa.png" loading="lazy" alt="Página 1">
+  <img src="belezapt/D.png" loading="lazy" alt="Página 1">
+    
+     <img src="belezapt/pagina 54.png" loading="lazy" alt="Página 1">
+     <img src="belezapt/pagina 55.png" loading="lazy" alt="Página 1">
+     <img src="belezapt/pagina 56.png" loading="lazy" alt="Página 1">
+     <img src="belezapt/pagina 57.png" loading="lazy" alt="Página 1">
+     <img src="belezapt/pagina 58.png" loading="lazy" alt="Página 1">
+     <img src="belezapt/pagina 59.png" loading="lazy" alt="Página 1">
+     <img src="belezapt/pagina 60.png" loading="lazy" alt="Página 1">
+     <img src="belezapt/pagina 61.png" loading="lazy" alt="Página 1">
+     <img src="belezapt/pagina 62.png" loading="lazy" alt="Página 1">
+     <img src="belezapt/pagina 63.png" loading="lazy" alt="Página 1">
+     <img src="belezapt/PAGINA 64.png" loading="lazy" alt="Página 1">
+     <img src="belezapt/PAGINA 65.png" loading="lazy" alt="Página 1">
+     <img src="belezapt/PAGINA 66.png" loading="lazy" alt="Página 1">
+     <img src="belezapt/PAGINA 67.png" loading="lazy" alt="Página 1">
+     <img src="belezapt/PAGINA 68.png" loading="lazy" alt="Página 1">
+     <img src="belezapt/PAGINA 69.png" loading="lazy" alt="Página 1">
+ 
+<img src="belezapt/PB.png" loading="lazy" alt="Página 1">
 
-    <div class="intro-lista">
-      <div class="intro-texto">
-        <h2>Sobre</h2>
-        <p>
-          Rafeiro é uma banda desenhada independente.  
+<img src="belezaing/BONNUS 333 OG ing.png" loading="lazy" alt="Página 1">
+     <img src="belezapt/créditos PT.png" loading="lazy" alt="Página 1">
+     <img src="imagen/pagina25-26.png" loading="lazy" alt="Página 1">
+    <img src="cp1/24b.png" loading="lazy" alt="Página 25 e 26">
+
+     <img src="logos/LOGO.png" loading="lazy" alt="Página 27">
+
+
+<div class="capitulo">
+  <a href="cp5pt3.html"><button id="capitulo2">0x3 = cidade beleza, pt3</button></a>
+  <a href="cp5pt4.html"><button id="capitulo2">0x3 = cidade beleza, pt4</button></a>
+  
+  
+</div>
+  
+
+
+   
+   <div class="intro-lista">
+  <div class="intro-texto">
+    <h2>Sobre</h2>
+    <p>
+      Rafeiro é uma banda desenhada independente.  
           Aqui podes acompanhar as histórias e as 
           novidades mais recentes, deste projeto. 
-        </p>
-      </div>
-
-      <div class="lista-capitulos">
-        <h2>Últimos Capítulos</h2>
-        <ul>
-           <li><a href="cp5pt4.html">0x3 = cidade beleza, pt4</a></li> 
-           <li><a href="cp5pt3.html">0x3 = cidade beleza, pt3</a></li>          
-           <li><a href="cp5pt2.html">0x3 = cidade beleza, pt2</a></li>
-           <li><a href="cp5.html">0x3 = cidade beleza, pt1</a></li>
-        </ul>
-      </div>
-    </div>
-
-  </div> <!-- fim .content -->
-
-  <!-- Botão único -->
-  <div id="scrollBtn" class="scroll-btn" role="button" aria-label="Scroll para fundo/topo">
-    <img src="logos/LOGOverticalcortado.png" alt="Scroll">
+    </p>
   </div>
+
+  <div class="lista-capitulos">
+    <h2>Últimos Capítulos</h2>
+    <ul>
+       <li><a href="cp5pt4.html">0x3 = cidade beleza, pt4</a></li> 
+          <li><a href="cp5pt3.html">0x3 = cidade beleza, pt3</a></li>          
+      <li><a href="cp5pt2.html">0x3 = cidade beleza, pt2</a></li>
+      <li><a href="cp5.html">0x3 = cidade beleza, pt1</a></li>
+    
+    </ul>
+  </div>
+</div>
+</div>
+
+
+<!-- Botão único -->
+<div id="scrollBtn" class="scroll-btn">
+  <img src="logos/LOGOverticalcortado.png" alt="Scroll">
+</div>
+
+
+<style>
+  .scroll-btn {
+    position: fixed;
+    left: 0px;
+    bottom: 110px;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    z-index: 1000;
+    opacity: 0.7;
+    transition: opacity 0.3s, transform 0.3s;
+  }
+
+  .scroll-btn:hover {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+
+  .scroll-btn img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s;
+  }
+
+  /* Quando estiver no fundo da página, gira a imagem para cima */
+  .up img {
+    transform: rotate(180deg);
+  }
+</style>
+
+
+
+  
+
+<script>
+  const scrollBtn = document.getElementById('scrollBtn');
+  const img = scrollBtn.querySelector('img');
+
+  // Clicar no botão → sobe ou desce
+  scrollBtn.addEventListener('click', () => {
+    if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 50) {
+      // Se já está no fim → vai para o topo
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      // Se não está no fim → vai para o fundo
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    }
+  });
+
+  // Detecta se está no fundo ou não para girar a imagem
+  window.addEventListener('scroll', () => {
+    if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 50) {
+      scrollBtn.classList.add('up'); // gira para cima
+    } else {
+      scrollBtn.classList.remove('up'); // normal (para baixo)
+    }
+  });
+</script>
+
+
+
+<script>
+const fullscreen = document.getElementById("fullscreen");
+const fullscreenImg = document.getElementById("fullscreen-img");
+const closeBtn = document.querySelector("#fullscreen .close");
+const prevBtn = document.querySelector("#fullscreen .prev");
+const nextBtn = document.querySelector("#fullscreen .next");
+
+let currentIndex = 0;
+
+// pegar TODAS as imagens dentro do .content
+const images = document.querySelectorAll(".content img");
+
+// abrir fullscreen ao clicar
+images.forEach((img, index) => {
+  img.addEventListener("click", () => {
+    fullscreen.style.display = "flex";
+    fullscreenImg.src = img.src;
+    currentIndex = index;
+  });
+});
+
+// fechar
+closeBtn.addEventListener("click", () => {
+  fullscreen.style.display = "none";
+});
+
+// anterior
+prevBtn.addEventListener("click", () => {
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  fullscreenImg.src = images[currentIndex].src;
+});
+
+// seguinte
+nextBtn.addEventListener("click", () => {
+  currentIndex = (currentIndex + 1) % images.length;
+  fullscreenImg.src = images[currentIndex].src;
+});
+
+// teclado (setas + Esc)
+document.addEventListener("keydown", (e) => {
+  if (fullscreen.style.display === "flex") {
+    if (e.key === "ArrowLeft") prevBtn.click();
+    if (e.key === "ArrowRight") nextBtn.click();
+    if (e.key === "Escape") closeBtn.click();
+  }
+});
+</script>
+
+
+
+  
+</body>
+
 
   <div class="footer">
-    © 2025 Rafeiro Comics — todos os direitos reservados
-  </div>
-
-  <!-- SCRIPTS -->
-  <script>
-    /* -------- Scroll button: rola até ao fundo / volta ao topo -------- */
-    (function() {
-      const scrollBtn = document.getElementById('scrollBtn');
-
-      function isAtBottom() {
-        const pageHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
-        return (window.innerHeight + window.scrollY) >= (pageHeight - 5);
-      }
-
-      scrollBtn.addEventListener('click', () => {
-        const pageHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
-        if (isAtBottom()) {
-          // se já está no fundo -> vai para topo
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        } else {
-          // vai para o fundo (usamos a altura do documento)
-          window.scrollTo({ top: pageHeight, behavior: 'smooth' });
-        }
-      });
-
-      // atualiza a classe "up" para rotacionar a imagem quando estiver no fundo
-      function updateScrollBtnState() {
-        if (isAtBottom()) scrollBtn.classList.add('up');
-        else scrollBtn.classList.remove('up');
-      }
-
-      window.addEventListener('scroll', updateScrollBtnState);
-      window.addEventListener('resize', updateScrollBtnState);
-      // inicializa estado
-      updateScrollBtnState();
-    })();
-  </script>
-
-  <script>
-    /* -------- Fullscreen modal & navegação entre imagens -------- */
-    (function() {
-      const fullscreen = document.getElementById("fullscreen");
-      const fullscreenImg = document.getElementById("fullscreen-img");
-      const closeBtn = document.querySelector("#fullscreen .close");
-      const prevBtn = document.querySelector("#fullscreen .prev");
-      const nextBtn = document.querySelector("#fullscreen .next");
-
-      let currentIndex = 0;
-      const images = document.querySelectorAll(".content img");
-
-      // Abre fullscreen ao clicar numa imagem
-      images.forEach((img, index) => {
-        img.addEventListener("click", () => {
-          fullscreen.style.display = "flex";
-          fullscreenImg.src = img.src;
-          currentIndex = index;
-        });
-      });
-
-      // Funções para compatibilidade com event attributes (se usados)
-      window.closeFullscreen = function() {
-        fullscreen.style.display = "none";
-      };
-      window.prevPage = function() {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        fullscreenImg.src = images[currentIndex].src;
-      };
-      window.nextPage = function() {
-        currentIndex = (currentIndex + 1) % images.length;
-        fullscreenImg.src = images[currentIndex].src;
-      };
-
-      // Event listeners
-      closeBtn.addEventListener("click", () => { fullscreen.style.display = "none"; });
-      prevBtn.addEventListener("click", () => {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        fullscreenImg.src = images[currentIndex].src;
-      });
-      nextBtn.addEventListener("click", () => {
-        currentIndex = (currentIndex + 1) % images.length;
-        fullscreenImg.src = images[currentIndex].src;
-      });
-
-      // teclado (setas + Esc)
-      document.addEventListener("keydown", (e) => {
-        if (fullscreen.style.display === "flex") {
-          if (e.key === "ArrowLeft") prevBtn.click();
-          if (e.key === "ArrowRight") nextBtn.click();
-          if (e.key === "Escape") closeBtn.click();
-        }
-      });
-    })();
-  </script>
-
-</body>
+  © 2025 Rafeiro Comics — todos os direitos reservados
+</div>
+  
 </html>
-
