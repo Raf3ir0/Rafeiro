@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rafeiro - Capítulo 0x4 - CIDADE DA CHUVA</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      background-color: #f4f4f4;
+      text-align: center;
+      color: black;
+      margin: 20;
+      padding: 0;
+      font-size: 18px;
+    }
+
+    .hub-container {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .capa-img {
+      max-width: 30%;
+      height: auto;
+      display: block;
+      margin: 30px auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .chapter-title {
+      font-size: 1.8em;
+      font-weight: bold;
+      margin: 20px 0;
+      text-transform: uppercase;
+    }
+
+    .chapter-subtitle {
+      font-size: 1.3em;
+      color: #666;
+      margin-bottom: 40px;
+      text-transform: uppercase;
+    }
+
+    .parts-list {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin: 30px 0;
+    }
+
+    .parts-list a {
+      display: inline-block;
+      text-decoration: none;
+      color: #fff;
+      background-color: #000000;
+      padding: 12px 24px;
+      border-radius: 4px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+      font-size: 1.1em;
+    }
+
+    .parts-list a:hover {
+      background-color: #005fa3;
+    }
+  </style>
+</head> 
+
+<body>
+
+  <!-- Banner -->
+  <div class="banner">
+    <a href="index.html" class="logo-link">
+      <img src="logos/casa logo.png" alt="Logo" class="logo">
+    </a>
+  </div>
+
+  <!-- Botão para versão inglesa -->
+  <a href="cap0x4-hub-ing.html" class="lang-btn">Pt</a>
+
+  <!-- Menu de navegação -->
+  <nav class="menu">
+    <a href="listabaseing.html">capítulos</a>
+    <a href="cidadedachuvaing.html">último Capítulo</a>
+    <a href="listadecpitulosing.html">volumes</a>
+    <a href="sketches.html">Rascunhos</a> 
+    <a href="projetorafeiroing.html">SOBRE</a>
+  </nav>
+
+  <div class="hub-container">
+    <h1 class="chapter-title">Rain City</h1>
+    <h2 class="chapter-subtitle">Chapter 0x4</h2>
+
+    <img src="cidadedachuva/capa.png" alt="Capa do Capítulo 0x4" class="capa-img">
+
+    <div class="parts-list">
+      <a href="cidadedachuvaing.html">Pt 1</a>
+    </div>
+  </div>
+
+  <!-- Botão único -->
+  <div id="scrollBtn" class="scroll-btn">
+    <img src="logos/LOGOverticalcortado.png" alt="Scroll" />
+  </div>
+
+  <script>
+    const scrollBtn = document.getElementById("scrollBtn");
+
+    scrollBtn.addEventListener("click", () => {
+      if (
+        window.innerHeight + window.scrollY >=
+        document.body.scrollHeight - 50
+      ) {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        window.scrollTo({
+          top: document.body.scrollHeight,
+          behavior: "smooth",
+        });
+      }
+    });
+
+    // Funções para atualizar posição do botão
+    function updateScrollBtn() {
+      const atBottom =
+        window.innerHeight + window.scrollY >=
+        document.body.scrollHeight - 50;
+      scrollBtn.classList.toggle("up", atBottom);
+    }
+
+    window.addEventListener("scroll", updateScrollBtn);
+  </script>
+</body>
+</html>

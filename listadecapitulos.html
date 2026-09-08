@@ -3,190 +3,171 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rafeiro - Banda Desenhada</title>
+  <title>Rafeiro - Volumes</title>
   <link rel="stylesheet" href="style.css">
+  
+  <style>
+    body {
+      background-color: #f4f4f4;
+      text-align: center;
+      color: black;
+      margin: 20;
+      padding: 0;
+      font-size: 18px;
+    }
+
+    .content {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .volume-section {
+      margin: 40px 0;
+      padding: 30px 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .volume-title {
+      font-size: 1.8em;
+      font-weight: bold;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+      color: #333;
+    }
+
+    .chapter-list {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+ .chapter-btn {
+    display: inline-block;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.chapter-btn img {
+    display: block;
+    width: 220px; /* ajuste ao tamanho da imagem */
+    height: auto;
+}
+
+.chapter-btn:hover img {
+    transform: scale(1.05);
+}
+
+    .scroll-btn {
+      position: fixed;
+      left: 0px;
+      bottom: 100px;
+      width: 100px;
+      height: 100px;
+      cursor: pointer;
+      z-index: 1000;
+      opacity: 0.7;
+      transition: opacity 0.3s, transform 0.3s;
+    }
+
+    .scroll-btn:hover {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+
+    .scroll-btn.up img {
+      transform: rotate(180deg);
+    }
+  </style>
 </head>
 <body>
 
-
-    <!-- Banner -->
+  <!-- Banner -->
   <div class="banner">
     <a href="index.html" class="logo-link">
-     <img src="logos/casa logo.png" alt="Logopequenoinv" class="logo">
-</div>
+      <img src="logos/casa logo.png" alt="Logo" class="logo">
+    </a>
+  </div>
 
+  <!-- Botão para versão inglesa -->
+  <a href="listadecpitulosing.html" class="lang-btn">ENG</a>
 
-
-<!-- Botão para versão inglesa -->
-<a href="listadecpitulosing.html" class="lang-btn">ENG</a>
-
-  
   <!-- Menu de navegação -->
   <nav class="menu">
     <a href="listabase.html">capítulos</a>
- <a href="cp5pt4.html">último Capítulo</a>
+    <a href="cidadedachuva.html">último Capítulo</a>
     <a href="listadecapitulos.html">volumes</a>
     <a href="rascunhos.html">Rascunhos</a>
-     <a href="projetorafeiro.html">SOBRE</a>
+    <a href="projetorafeiro.html">SOBRE</a>
   </nav>
-  
-  
- 
+
   <main class="content">
- <h1> VOLUME 2X0 </h1>
+    <!-- VOLUME 2X0 -->
+    <div class="volume-section">
+      <h1 class="volume-title">VOLUME 2X0</h1>
+      <div class="chapter-list">
+        <a href="cap0x4-hub.html" class="chapter-btn">
+    <img src="cidadedachuva/capa.png" alt="Ler Capítulo">
+</a>
+        <a href="cap0x3-hub.html" class="chapter-btn">
+    <img src="belezapt/capa.png" alt="Ler Capítulo">
+</a>
+    </div>
+
+    <!-- VOLUME 1X0 -->
+    <div class="volume-section">
+      <h1 class="volume-title">VOLUME 1X0</h1>
+      <div class="chapter-list">
+        <a href="cap0x2-hub.html" class="chapter-btn">
+    <img src="cp2/p1.png" alt="Ler Capítulo">
+</a>
+       <a href="cap0x1-hub.html" class="chapter-btn">
+    <img src="cp1/3b.png" alt="Ler Capítulo">
+</a>
+    </div>
+  </main>
+
+  <!-- Botão único -->
+  <div id="scrollBtn" class="scroll-btn">
+    <img src="logos/LOGOverticalcortado.png" alt="Scroll">
+  </div>
 
 
-
- <div class="capitulos-galeria">
-  <figure>
-    <a href="cp5.html">
-      <img src="belezapt/capa.png" alt="1">
-    </a>
-    <figcaption>Capítulo 0x3, pt1</figcaption>
-  </figure>
-
-  <figure>
-    <a href="cp5pt2.html">
-      <img src="belezapt/capa.png" alt="1">
-    </a>
-    <figcaption>Capítulo 0x3, pt2</figcaption>
-  </figure>
-
-  <figure>
-    <a href="cp5pt3.html">
-      <img src="belezapt/capa.png" alt="1">
-    </a>
-    <figcaption>Capítulo 0x3, pt3</figcaption>
-  </figure>
-
-  <figure>
-    <a href="cp5pt4.html">
-      <img src="belezapt/capa.png" alt="1">
-    </a>
-    <figcaption>Capítulo 0x3, pt4</figcaption>
-  </figure>
-   
-   <figure>
-    <a href="cp5pt5.html">
-      <img src="belezapt/capa.png" alt="1">
-    </a>
-    <figcaption>Capítulo 0x3, pt5</figcaption>
-  </figure>
-
-    <figure>
-    <a href="cidadedachuva.html">
-      <img src="cidadedachuva/capa.png" alt="1">
-    </a>
-    <figcaption>Capítulo 0x4</figcaption>
-  </figure>
-   
-</div>
-  
-  
-  <main class="content">
- <h1> VOLUME 1X0 </h1>
-
-
-
- <div class="capitulos-galeria">
-  <figure>
-    <a href="capitulo1.html">
-      <img src="imagen/pagina3.png" alt="Capítulo 0x1, pt1">
-    </a>
-    <figcaption>Capítulo 0x1, pt1</figcaption>
-  </figure>
-
-  <figure>
-    <a href="capitulo2.html">
-      <img src="imagen/pagina3.png" alt="Capítulo 0x1, pt2">
-    </a>
-    <figcaption>Capítulo 0x1, pt2</figcaption>
-  </figure>
-
-  <figure>
-    <a href="cp3.html">
-      <img src="cp2/p1.png" alt="Capítulo 0x2, pt1">
-    </a>
-    <figcaption>Capítulo 0x2, pt1</figcaption>
-  </figure>
-
-  <figure>
-    <a href="cp4.html">
-      <img src="cp2/p1.png" alt="Capítulo 0x2, pt2">
-    </a>
-    <figcaption>Capítulo 0x2, pt2</figcaption>
-  </figure>
-</div>
-
-
- 
+  <script>
     
+    const scrollBtn = document.getElementById("scrollBtn");
 
-    
-  <!-- Mais capítulos -->
-</div>
-</main>
-<!-- Botão único -->
-<div id="scrollBtn" class="scroll-btn">
-  <img src="logos/LOGOverticalcortado.png" alt="Scroll">
-</div>
+    scrollBtn.addEventListener("click", () => {
+      if (
+        window.innerHeight + window.scrollY >=
+        document.body.scrollHeight - 50
+      ) {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        window.scrollTo({
+          top: document.body.scrollHeight,
+          behavior: "smooth",
+        });
+      }
+    });
 
-<style>
-  .scroll-btn {
-    position: fixed;
-    left: 0px;
-    bottom: 100px;
-    width: 100px;
-    height: 100px;
-    cursor: pointer;
-    z-index: 1000;
-    opacity: 0.7;
-    transition: opacity 0.3s, transform 0.3s;
-  }
+    // Atualizar posição do botão
+    function updateScrollBtn() {
+      const atBottom =
+        window.innerHeight + window.scrollY >=
+        document.body.scrollHeight - 50;
+      scrollBtn.classList.toggle("up", atBottom);
+    }
 
-  .scroll-btn:hover {
-    opacity: 1;
-    transform: scale(1.1);
-  }
+    window.addEventListener("scroll", updateScrollBtn);
+  </script>
+</body>
+</html>
 
-  .scroll-btn img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    transition: transform 0.3s;
-  }
 
-  /* Quando estiver no fundo da página, gira a imagem para cima */
-  .up img {
-    transform: rotate(180deg);
-  }
 </style>
-
-<script>
-  const scrollBtn = document.getElementById('scrollBtn');
-  const img = scrollBtn.querySelector('img');
-
-  // Clicar no botão → sobe ou desce
-  scrollBtn.addEventListener('click', () => {
-    if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 50) {
-      // Se já está no fim → vai para o topo
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else {
-      // Se não está no fim → vai para o fundo
-      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-    }
-  });
-
-  // Detecta se está no fundo ou não para girar a imagem
-  window.addEventListener('scroll', () => {
-    if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 50) {
-      scrollBtn.classList.add('up'); // gira para cima
-    } else {
-      scrollBtn.classList.remove('up'); // normal (para baixo)
-    }
-  });
-</script>
-
 
 <script src="script.js"></script>
 
@@ -197,5 +178,8 @@
 
 </body>
 
+<footer>
+  Rafeiro Comics — Todos os direitos reservados
+</footer>
 
   </html>

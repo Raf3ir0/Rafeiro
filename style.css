@@ -29,8 +29,7 @@ img {
       max-width: 40%;
       height: auto;
       display: block;
-      margin: 20px auto;
-      border-radius: 8px;
+      border-radius: 15px;
 
       cursor: pointer; /* ADICIONADO → para mostrar que dá para clicar */
     }
@@ -246,8 +245,25 @@ img {
   margin-bottom: 100px;
 }
 
+.chapter-btn,
+.chapter-parts a {
+    display: inline-block;
+    text-decoration: none;
+}
 
+.chapter-btn img,
+.chapter-parts a img {
+    display: block;
+    width: 220px;      /* ou o tamanho que pretender */
+    height: auto;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
 
+.chapter-btn:hover img,
+.chapter-parts a:hover img {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
 
   .chapter-header {
   background-image: url("logos/rasc.png");
@@ -271,21 +287,12 @@ img {
 
 }
 
-.capitulo a {
-  color: black;             /* cor do link */
-  text-decoration: none;    /* remove o sublinhado */
-  font-weight: bold;        /* deixa mais destacado */
-  font-size: 18px;          /* aumenta o tamanho do texto */
-}
 
-.capitulo a:hover {
-  color: red;               /* muda de cor quando passa o rato por cima */
-}
 
 
 .capitulo {
-  display: flex;                  /* ativa layout flex */
-  justify-content: space-between; /* um botão à esquerda, outro à direita */
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   margin: 40px 0;
 }
@@ -294,27 +301,15 @@ img {
   text-decoration: none;
 }
 
-.capitulo button {
-  font-family: RAFEIROPLUS2, sans-serif; /* tua fonte */
-  font-size: 18px;
-  font-weight: bold;
-  color: white;
-  background-color: black;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.capitulo img {
+  width: 220px; /* ajusta o tamanho das imagens */
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
 }
 
-
-.capitulo a:only-child {
-  margin-left: auto; /* joga o único botão para a direita */
-}
-
-
-.capitulo button:hover {
-  background-color: red;
+.capitulo a:hover img {
+  transform: scale(1.05);
 }
 
 
