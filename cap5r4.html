@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rafeiro - Banda Desenhada</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      background-color: #f4f4f4;
+      text-align: right;
+      color: black;
+      margin: 20;
+      padding: 0;
+      text-transform: uppercase;
+      font-size: 20px;
+    }
+
+    img {
+      max-width: 40%;
+      height: auto;
+      display: block;
+      margin: 20px auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+
+     </style>
+  </head> 
+
+<body>
+
+  <!-- Banner -->
+  <div class="banner">
+    <a href="index.html" class="logo-link">
+      <img src="logos/casa logo.png" alt="Logopequenoinv" class="logo">
+    </a>
+  </div>
+
+
+  <!-- Botão para versão inglesa -->
+<a href="chapter1.html" class="lang-btn">ENG</a>
+
+
+<!-- FULLSCREEN MODAL -->
+  <div id="fullscreen">
+    <button class="close" onclick="closeFullscreen()">✕</button>
+    <button class="prev" onclick="prevPage()">‹</button>
+    <img id="fullscreen-img" src="" alt="Página">
+    <button class="next" onclick="nextPage()">›</button>
+  </div>
+
+  
+<!-- Menu de navegação -->
+  <nav class="menu">
+    <a href="listabase.html">capítulos</a>
+ <a href="cidadedachuva.html">último Capítulo</a>
+    <a href="pt/listadecapitulos.html">volumes</a>
+    <a href="pt/rascunhos.html">Rascunhos</a>
+     <a href="pt/projetorafeiro.html">SOBRE</a>
+  </nav>
+
+  <div class="content">
+  <h1 class="chapter-title">= (Rafeiro)OX5 =</h1>
+  <h2 class="chapter-subtitle">= Cidade ???, pt 3 =</h2>
+
+
+  
+
+
+    <!-- Páginas -->
+    <img src="5 cidade/capa.png" alt="Página 1">
+      <img src="5 cidade/pós cap pg 2.png.png" loading="lazy" alt="Página 1">
+    <img src="5 cidade/pós cap pg 3.png" loading="lazy" alt="Página 2">
+    <img src="5 cidade/pós cap pg 4.png" loading="lazy" alt="Página 3">
+    <img src="5 cidade/pós cap pg 5.png" loading="lazy" alt="Página 4">
+    <img src="5 cidade/pós cap pg 6.png" loading="lazy" alt="Página 5">
+    <img src="5 cidade/pós cap pg 7.png" loading="lazy" alt="Página 6">
+    <img src="5 cidade/pós cap pg 8.png" loading="lazy" alt="Página 7">
+    <img src="5 cidade/pós cap pg 9.png" loading="lazy" alt="Página 8">
+    <img src="5 cidade/pós cap pg 10.png" loading="lazy" alt="Página 9">
+    <img src="5 cidade/pós cap pg 11.png" loading="lazy" alt="Página 10">
+    <img src="5 cidade/pós cap pg 12.png" loading="lazy" alt="Página 11">
+    <img src="5 cidade/pós cap pg 13.png" loading="lazy" alt="Página 12">
+    <img src="5 cidade/pós cap pg 14.png" loading="lazy" alt="Página 13">
+    <img src="5 cidade/pós cap pg 15.png" loading="lazy" alt="Página 14">
+    <img src="5 cidade/pós cap pg 16.png" loading="lazy" alt="Página 15">
+    <img src="imagen/pagina25-26.png" loading="lazy" alt="Página 25 e 26">
+    <img src="imagen/pagina27.png" loading="lazy" alt="Página 27">
+     <img src="logos/LOGO.png" loading="lazy" alt="Página 27">
+
+    <div class="capitulo"> 
+      <a href="index.html"><button id="capitulo2">0x5 = para a semana</button></a>
+    </div>
+
+
+    <div class="intro-lista">
+      <div class="intro-texto">
+        <h2>Sobre</h2>
+        <p>
+          Rafeiro é uma banda desenhada independente.  
+          Aqui podes acompanhar as histórias e as 
+          novidades mais recentes, deste projeto. 
+        </p>
+      </div>
+
+      <div class="lista-capitulos">
+        <h2>Últimos Capítulos</h2>
+        <ul>
+          <li><a href="cidadedachuva.html">0x4 = cidade da chuva</a></li> 
+          <li><a href="cp5pt5.html">0x3 = cidade beleza, pt5</a></li> 
+          <li><a href="cp5pt4.html">0x3 = cidade beleza, pt4</a></li> 
+          <li><a href="cp5pt3.html">0x3 = cidade beleza, pt3</a></li>          
+      
+      
+      
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+<!-- Botão único -->
+<div id="scrollBtn" class="scroll-btn">
+  <img src="logos/LOGOverticalcortado.png" alt="Scroll">
+</div>
+
+
+<style>
+  .scroll-btn {
+    position: fixed;
+    left: 0px;
+    bottom: 110px;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    z-index: 1000;
+    opacity: 0.7;
+    transition: opacity 0.3s, transform 0.3s;
+  }
+
+  .scroll-btn:hover {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+
+  .scroll-btn img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s;
+  }
+
+  /* Quando estiver no fundo da página, gira a imagem para cima */
+  .up img {
+    transform: rotate(180deg);
+  }
+</style>
+
+
+  
+
+
+
+  
+
+
+  
+
+<script>
+  const scrollBtn = document.getElementById('scrollBtn');
+  const img = scrollBtn.querySelector('img');
+
+  // Clicar no botão → sobe ou desce
+  scrollBtn.addEventListener('click', () => {
+    if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 50) {
+      // Se já está no fim → vai para o topo
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      // Se não está no fim → vai para o fundo
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    }
+  });
+
+  // Detecta se está no fundo ou não para girar a imagem
+  window.addEventListener('scroll', () => {
+    if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 50) {
+      scrollBtn.classList.add('up'); // gira para cima
+    } else {
+      scrollBtn.classList.remove('up'); // normal (para baixo)
+    }
+  });
+
+  </script>
+
+  <script>
+  // apanha só as imagens das páginas da BD
+  const images = document.querySelectorAll("img[src^='imagen/pagina']");
+
+  const fullscreen = document.getElementById("fullscreen");
+  const fullscreenImg = document.getElementById("fullscreen-img");
+  const closeBtn = document.querySelector("#fullscreen .close");
+  const prevBtn = document.querySelector("#fullscreen .prev");
+  const nextBtn = document.querySelector("#fullscreen .next");
+
+  let currentIndex = 0;
+
+  // abrir fullscreen ao clicar
+  images.forEach((img, index) => {
+    img.addEventListener("click", () => {
+      fullscreen.style.display = "flex";
+      fullscreenImg.src = img.src;
+      currentIndex = index;
+    });
+  });
+
+  // fechar
+  closeBtn.addEventListener("click", () => {
+    fullscreen.style.display = "none";
+  });
+
+  // anterior
+  prevBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    fullscreenImg.src = images[currentIndex].src;
+  });
+
+  // seguinte
+  nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    fullscreenImg.src = images[currentIndex].src;
+  });
+
+  // teclado (setas + Esc)
+  document.addEventListener("keydown", (e) => {
+    if (fullscreen.style.display === "flex") {
+      if (e.key === "ArrowLeft") prevBtn.click();
+      if (e.key === "ArrowRight") nextBtn.click();
+      if (e.key === "Escape") closeBtn.click();
+    }
+  });
+</script>
+
+
+  
+</body>
+
+
+  <div class="footer">
+  © 2025 Rafeiro Comics — Todos os direitos reservados
+</div>
+  
+</html>
