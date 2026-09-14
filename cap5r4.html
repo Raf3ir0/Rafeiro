@@ -46,10 +46,10 @@
 
 <!-- FULLSCREEN MODAL -->
   <div id="fullscreen">
-    <button class="close" onclick="closeFullscreen()">✕</button>
-    <button class="prev" onclick="prevPage()">‹</button>
+    <button class="close" aria-label="Fechar">✕</button>
+    <button class="prev" aria-label="Página anterior">‹</button>
     <img id="fullscreen-img" src="" alt="Página">
-    <button class="next" onclick="nextPage()">›</button>
+    <button class="next" aria-label="Página seguinte">›</button>
   </div>
 
   
@@ -197,8 +197,8 @@
   </script>
 
   <script>
-  // apanha só as imagens das páginas da BD
-  const images = document.querySelectorAll("img[src^='imagen/pagina']");
+  // Apanha apenas as imagens das páginas da BD.
+  const images = document.querySelectorAll(".content > img");
 
   const fullscreen = document.getElementById("fullscreen");
   const fullscreenImg = document.getElementById("fullscreen-img");
